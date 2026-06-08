@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicaciones - Juanjo Vergara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --color-text: #333;
+      --color-accent: #e60000;
+      --color-rojo-claro: #d65a47;
+      --header-height: 80px; 
+      --font-principal: 'Roboto', sans-serif;
+      --bg-col-izquierda: #fdfaf4;
+      --bg-col-centro: #f4f4f4;
+      --bg-col-derecha: #fcf9eb;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--font-principal); color: var(--color-text); background-color: #fff; line-height: 1.6; }
+
+    .site-header { display: flex; align-items: center; justify-content: space-between; padding: 0 40px; background: #fff; position: sticky; top: 0; z-index: 2000; height: var(--header-height); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .site-header a img { height: 60px; display: block; }
+    nav#nav-escritorio { display: flex; gap: 20px; align-items: center; height: 100%; }
+    .nav-button { display: inline-flex; align-items: center; text-decoration: none; color: #555; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.2px; transition: color 0.3s ease; background: none; border: none; padding: 0 5px; }
+    .nav-button:hover { color: var(--color-accent); }
+    .menu-hamburguesa { display: none; font-size: 28px; color: var(--color-accent); cursor: pointer; z-index: 2100; }
+
+    .main-container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+    .header-seccion { margin-bottom: 45px; }
+    .header-seccion h1 { font-size: 36px; font-weight: 800; color: #4a4a4a; margin: 0; letter-spacing: -0.5px; }
+    .header-seccion h1 span.rojo-tit { color: var(--color-rojo-claro); }
+    .header-seccion p { font-size: 24px; font-weight: 400; color: #333; margin: 5px 0 0 0; }
+
+    .grid-publicaciones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; align-items: start; }
+    .columna-titulo { font-size: 17px; font-weight: 400; color: var(--color-rojo-claro); margin: 0 0 22px 0; }
+    .lista-fichas { display: flex; flex-direction: column; gap: 18px; }
+    .ficha-card { border-radius: 14px; padding: 20px; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .ficha-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.06); }
+
+    .ficha-card.tipo-libro { background-color: var(--bg-col-izquierda); padding-left: 32px; }
+    .ficha-card.tipo-articulo { background-color: var(--bg-col-centro); }
+    .ficha-card.tipo-lectura { background-color: var(--bg-col-derecha); }
+
+    .ficha-card h4 { margin: 0 0 6px 0; font-size: 16px; font-weight: 700; color: #111; line-height: 1.3; }
+    .ficha-card .autor-meta { font-size: 12px; color: #777; margin-bottom: 8px; }
+    .ficha-card p { margin: 0; font-size: 13px; color: #555; line-height: 1.4; }
+    .action-click { font-size: 12px; font-weight: 700; color: #333; margin-top: 12px; display: inline-flex; align-items: center; gap: 5px; }
+    .linea-vertical-decorativa { position: absolute; top: 15px; left: 14px; bottom: 15px; width: 4px; border-radius: 4px; }
+
+    .visor-pantalla { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 10000; align-items: center; justify-content: center; }
+    .visor-contenido { background: #fff; border-radius: 16px; width: 90%; max-width: 850px; height: 80vh; position: relative; display: flex; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.3); overflow: hidden; }
+    .visor-header { padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+    .btn-cerrar-visor { background: none; border: none; font-size: 24px; cursor: pointer; color: #999; }
+    .visor-body { flex: 1; padding: 30px; overflow-y: scroll; }
+    .iframe-enlace-full { width: 100%; height: 100%; border: none; background: #fff; }
+    .btn-descargar { background-color: #222; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+
+    @media (max-width: 900px) { .grid-publicaciones { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html#top"><img src="logo-juanjo.png" alt="Logo"></a>
+  <div class="menu-hamburguesa" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  <nav id="nav-escritorio">
+    <a href="index.html#acerca-de-mi" class="nav-button">Acerca de mí</a>
+    <a href="formacion.html" class="nav-button">Formación</a>
+    <a href="index.html#publicaciones" class="nav-button">Publicaciones</a>
+    <a href="index.html#contacto" class="nav-button">Contacto</a>
+  </nav>
+</header>
+
+<div class="main-container">
+  <div class="header-seccion">
+    <h1>Libros <span class="rojo-tit">· Artículos</span></h1>
+  </div>
+  <div class="grid-publicaciones">
+    <div><h3 class="columna-titulo">Libros</h3><div class="lista-fichas" id="col-libros"></div></div>
+    <div><h3 class="columna-titulo">Artículos</h3><div class="lista-fichas" id="col-articulos"></div></div>
+    <div><h3 class="columna-titulo">Lecturas</h3><div class="lista-fichas" id="col-lecturas"></div></div>
+  </div>
+</div>
+
+<div class="visor-pantalla" id="visor-dinamico">
+  <div class="visor-contenido">
+    <div class="visor-header"><h3 id="visor-titulo"></h3><button class="btn-cerrar-visor" onclick="cerrarVisor()">&times;</button></div>
+    <div class="visor-body" id="visor-cuerpo-dinamico"></div>
+    <div class="visor-footer" id="visor-pie" style="display:none; padding:15px; justify-content:flex-end;">
+      <a href="#" id="link-descarga" class="btn-descargar"><i class="fas fa-download"></i> Descargar</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const paleta = ['#d65a47', '#5d6b59', '#bfa37a', '#4a6b82', '#8c756c'];
+
+  async function cargarPublicaciones() {
+    try {
+      const respuesta = await fetch('./mis-publicaciones.json');
+      const datos = await respuesta.json();
+      
+      datos.forEach((item, index) => {
+        const tarjeta = document.createElement('div');
+        
+        if(item.tipo === "libro") {
+          tarjeta.className = 'ficha-card tipo-libro';
+          tarjeta.onclick = () => abrirLibro(item);
+          tarjeta.innerHTML = `<div class="linea-vertical-decorativa" style="background-color:${paleta[index%paleta.length]}"></div><h4>${item.titulo}</h4><div class="autor-meta">${item.editorial}</div>`;
+          document.getElementById('col-libros').appendChild(tarjeta);
+        } else if(item.tipo === "articulo") {
+          tarjeta.className = 'ficha-card tipo-articulo';
+          tarjeta.onclick = () => {
+            if(item.enlace.startsWith('http')) window.open(item.enlace, '_blank');
+            else abrirArticulo(item);
+          };
+          tarjeta.innerHTML = `<h4>${item.titulo}</h4><p>${item.resumen || ''}</p>`;
+          document.getElementById('col-articulos').appendChild(tarjeta);
+        } else if(item.tipo === "lectura") {
+          tarjeta.className = 'ficha-card tipo-lectura';
+          tarjeta.onclick = () => abrirEnlaceExterno(item);
+          tarjeta.innerHTML = `<h4>${item.titulo}</h4>`;
+          document.getElementById('col-lecturas').appendChild(tarjeta);
+        }
+      });
+    } catch(e) { console.error("Error:", e); }
+  }
+
+  function abrirLibro(item) {
+    document.getElementById('visor-titulo').innerText = item.titulo;
+    document.getElementById('visor-cuerpo-dinamico').innerHTML = `<img src="${item.imagen}" style="width:100%">`;
+    document.getElementById('visor-dinamico').style.display = 'flex';
+  }
+
+  function abrirArticulo(item) {
+    document.getElementById('visor-titulo').innerText = item.titulo;
+    document.getElementById('visor-cuerpo-dinamico').innerHTML = `<iframe src="${item.enlace}" class="iframe-enlace-full"></iframe>`;
+    document.getElementById('link-descarga').href = item.enlace;
+    document.getElementById('visor-pie').style.display = 'flex';
+    document.getElementById('visor-dinamico').style.display = 'flex';
+  }
+
+  function abrirEnlaceExterno(item) {
+    document.getElementById('visor-titulo').innerText = item.titulo;
+    document.getElementById('visor-cuerpo-dinamico').innerHTML = `<iframe src="${item.enlace}" class="iframe-enlace-full"></iframe>`;
+    document.getElementById('visor-dinamico').style.display = 'flex';
+  }
+
+  function cerrarVisor() { document.getElementById('visor-dinamico').style.display = 'none'; }
+  window.onload = cargarPublicaciones;
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+[
+  {
+    "tipo": "libro",
+    "titulo": "Aprendo porque quiero",
+    "editorial": "Narcea",
+    "año": "2015",
+    "imagen": "img-libros/aprendo-porque-quiero.jpg",
+    "enlace": "https://drive.google.com/file/d/ejemplo1"
+  },
+  {
+    "tipo": "articulo",
+    "tag": "Innovación",
+    "titulo": "La performance como recursos didáctico: una experiencia sobre género",
+    "revista": "Cuadernos de Pedagogía",
+    "resumen": "El elefante está enamorado del milímetro. Hans Arp",
+    "enlace": "articulos/10-claves.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "tag": "Innovación",
+    "titulo": "10 claves para trabajar la educación para el desarrollo por el método de proyectos (ABP)",
+    "revista": "Revista internacional sobre investigación educativa en educación global y para el desarrollo",
+    "resumen": "Un proyecto educativo no dibuja una línea contínua, tampoco siempre es previsible. Pero se compromete con vivir el aprendizaje",
+    "enlace": "articulos/Norte-Sur-Este-Oeste-Aqui.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "tag": "Innovación",
+    "titulo": "Las tareas escolares después de la escuela",
+    "revista": "Revista Debatates. Comunidad de Madrid ",
+    "resumen": "Los deberes escolares a debate en el Consejo Escolar de la Comunidad de Madrid",
+    "enlace": "articulos/las-tareas-escolares-despues-de-la-escuela.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "tag": "Innovación",
+    "titulo": "1Norte, Sur, Este Oeste y Aquí: El péndulo de Ifoulou. Educar en la era de la convergencia",
+    "revista": "Cuadernos de Pedagogía",
+    "resumen": "La sociedad ha acercado la realidad hasta alojarla en los bolsillos. Tanto que queda depositada allí hasta que la educación la despierta",
+    "enlace": "articulos/performance.pdf"
+  },
+  {
+    "tipo": "lectura",
+    "tag": "Pedagogía",
+    "titulo": "Libros sobre ABP en castellano",
+    "autor": "Educacion 3.0",
+    "resumen": "Libros para descubrirlo todo sobre el ABP. Funcionan a modo de guía y en ellos se explica cómo aplicar esta metodología en el aula, paso a paso.",
+    "enlace": "https://www.educaciontrespuntocero.com/libros/libros-abp/"
+  },
+  {
+    "tipo": "lectura",
+    "tag": "Pedagogía",
+    "titulo": "Investigación-acción y aprendizaje basado en proyectos. Una revisión bibliográfica",
+    "autor": "Ana María Botella Nicolás y Pablo Ramos Ramos",
+    "resumen": "En el aprendizaje basado en proyectos (ABP) el alumnado construye un artefacto final mediante el empleo de estrategias de investigación.",
+    "enlace": "https://www.scielo.org.mx/scielo.php?pid=S0185-26982019000100127&script=sci_arttext"
+  },
+  {
+    "tipo": "lectura",
+    "tag": "Pedagogía",
+    "titulo": "Paolo Freire",
+    "autor": "Wikipedia",
+    "resumen": "Freire elaboró una propuesta de alfabetización cuyo principio básico era: La lectura del mundo precede a la lectura de la palabra.",
+    "enlace": "https://es.wikipedia.org/wiki/Paulo_Freire#Alfabetizaci%C3%B3n_cr%C3%ADtica"
+  },
+  {
+    "tipo": "lectura",
+    "tag": ["Pedagogía", "Tecnología"],
+    "titulo": "Ciencia postdigital y educación",
+    "autor": "Jandric, P et al.",
+    "resumen": "Hemos dejado de pertenecer a un mundo donde la tecnología digital y los medios de comunicación están separados. Este hecho ha inspirado el surgimiento de un nuevo concepto: ‘lo postdigital’",
+    "enlace": "https://revistascientificas.us.es/index.php/Communiars/article/view/12727"
+  }
+]

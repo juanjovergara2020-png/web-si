@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formación | Juanjo Vergara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-text: #1a1a1a;
+      --color-accent: #e60000;
+      --header-height: 90px; 
+      --font-principal: 'Roboto', sans-serif;
+      --max-width-content: 1000px; 
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-principal);
+      background: #fff;
+      color: var(--color-text);
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    /* --- CABECERA --- */
+    .site-header { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 0 50px; 
+      background: #fff; 
+      position: sticky; 
+      top: 0; 
+      z-index: 2000; 
+      height: var(--header-height); 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      width: 100%;
+    }
+
+    .site-header a img { height: 55px; display: block; }
+    
+    nav#nav-escritorio { 
+      display: flex; 
+      gap: 15px; 
+      align-items: center; 
+      height: 100%;
+      white-space: nowrap; 
+    }
+
+    .nav-button {
+      text-decoration: none;
+      color: #333;
+      font-size: 11.5px;
+      font-weight: 500;
+      text-transform: uppercase; 
+      letter-spacing: 1px;      
+      transition: color 0.3s ease;
+      padding: 5px 2px;
+    }
+    
+    .nav-button:hover { color: var(--color-accent); }
+
+    .menu-hamburguesa {
+      display: none;
+      font-size: 28px;
+      color: var(--color-accent);
+      cursor: pointer;
+    }
+
+    /* --- ESTRUCTURA --- */
+    .page {
+      max-width: var(--max-width-content);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-container {
+      border-top: 1px solid #e8e8e8;
+      padding: 50px 0; 
+    }
+
+    .hero { padding: 70px 0 50px; }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 52px; 
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 25px;
+    }
+
+    .hero-title em { font-style: italic; color: var(--color-accent); }
+
+    .hero-sub {
+      font-size: 18px;
+      color: #666;
+      width: 100%;
+    }
+
+    /* --- LÍNEAS FORMATIVAS --- */
+    .courses-header { margin-bottom: 35px; }
+    .courses-header h2 {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .course-item {
+      border-top: 1px solid #e8e8e8;
+      padding: 35px 0;
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      gap: 0 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .course-item:last-child { border-bottom: 1px solid #e8e8e8; }
+
+    .course-num { font-size: 12px; color: #ccc; font-weight: 500; padding-top: 4px; }
+    .course-tag { font-size: 10px; text-transform: uppercase; color: var(--color-accent); margin-bottom: 10px; font-weight: 700; }
+    .course-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .course-desc { font-size: 15px; color: #555; }
+
+    /* Estilo de la flecha: Limpio y solo color */
+    .course-arrow {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      transition: color 0.3s ease;
+      font-size: 24px;
+      text-decoration: none; /* Evita que la flecha se subraye al ser un enlace */
+    }
+
+    .course-item:hover .course-arrow { 
+      color: var(--color-accent); 
+    }
+
+    /* --- MODALIDADES --- */
+    .modalities { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .modality-card { background: #f7f7f7; padding: 40px; border-radius: 8px; }
+    .modality-icon { width: 40px; height: 40px; background: var(--color-accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .modality-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; }
+
+    /* --- QUOTE --- */
+    .quote-band { background: #1a1a1a; padding: 60px 40px; margin: 0 -40px; }
+    .quote-band blockquote { font-size: 26px; color: #fff; font-style: italic; border-left: 3px solid var(--color-accent); padding-left: 30px; }
+    .quote-band cite { display: block; margin-top: 18px; font-size: 12px; color: #888; text-transform: uppercase; padding-left: 30px; }
+
+    /* --- CTA --- */
+    .cta-section { padding: 60px 0 80px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #e8e8e8; }
+    .cta-btn { background: var(--color-accent); color: #fff; padding: 15px 35px; font-size: 13px; font-weight: 700; text-decoration: none; border-radius: 4px; text-transform: uppercase; }
+
+    .footer { padding: 25px 0; border-top: 1px solid #e8e8e8; display: flex; justify-content: space-between; font-size: 11px; color: #bbb; }
+
+    @media (max-width: 768px) {
+      .menu-hamburguesa { 
+        display: block !important; 
+        position: absolute; 
+        right: 20px; 
+        top: 15px; 
+        background-color: #e0e0e0; 
+        padding: 8px 12px; 
+        border-radius: 4px; 
+        z-index: 2100;
+        cursor: pointer;
+      }
+      .menu-hamburguesa i.fa-bars { 
+        color: #000000 !important; 
+      }
+      nav#nav-escritorio { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: var(--header-height); 
+        left: 0; 
+        width: 100%; 
+        background: white; 
+        padding: 20px; 
+        gap: 15px;
+        align-items: flex-start;
+      }
+      nav#nav-escritorio.show { 
+        display: flex; 
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <a href="index.html#top"><img src="logo-juanjo.png" alt="Juanjo Vergara"></a>
+    <div class="menu-hamburguesa" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <nav id="nav-escritorio">
+      <a href="index.html#acerca-de-mi" class="nav-button">Acerca de mí</a>
+      <a href="index.html#publicaciones" class="nav-button">Publicaciones</a>
+      <a href="index.html#videos" class="nav-button">Vídeos</a>
+      <a href="index.html#imagenes" class="nav-button">Algunas imágenes</a>
+      <a href="proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
+      <a href="mas-de-mi.html" class="nav-button">Saber más</a>
+      <a href="index.html#contacto" class="nav-button">Contacto</a>
+    </nav>
+  </header>
+
+<div class="page">
+  <section class="hero">
+    <div class="hero-label">Formación</div>
+    <h1 class="hero-title">Aprende a <em>transformar</em> tu práctica docente</h1>
+    <p class="hero-sub">Programas y cursos en Aprendizaje Basado en Proyectos, evaluación auténtica y metodologías activas para educadores que quieren hacer el cambio desde la realidad de sus aulas.</p>
+  </section>
+
+  <section class="section-container">
+    <div class="courses-header"><h2>Líneas formativas</h2></div>
+    
+    <article class="course-item">
+      <span class="course-num">01</span>
+      <div class="course-body">
+        <div class="course-tag">ABP</div>
+        <div class="course-title">Aprendizaje Basado en Proyectos</div>
+        <p class="course-desc">El ABP como marco de pensamiento para un aprendizaje activo y creación de Situaciones Reales de Aprendizaje integradas en el currículo. El enfoque de proyectos debe armonizar los interes de aprendizaje del alumnado, las exigencias del currículo y su capacidad para impactar en las Escuelas y ls comunidades que las habitan de forma natural. Por eso solo tiene sentido hablar de ABP cuando lo entendemos como un Servicio a la Comunidad. La formación debe adaptarse a las necesdiades de cada centro y dotarles de herramientas par ello</p>
+      </div>
+      <a href="index.html#contacto" class="course-arrow">→</a>
+    </article>
+
+    <article class="course-item">
+      <span class="course-num">02</span>
+      <div class="course-body">
+        <div class="course-tag">Evaluación</div>
+        <div class="course-title">Modelos de evaluación auténtica y formativa</div>
+        <p class="course-desc">Herramientas prácticas para evaluar: portafolios, rúbricas y rutinas de pensamiento aplicadas al aula. ¿Qué puede aportar la tecnología a la evaluación? ¿Cómo integrar la Inteligencia ASrtificial en los procesos humanos de evaluación docente? ¿Cómo integrar la evaluación en el proyecto educativo?. La evaluación debe ser un eje que recorre todo el proyecto: los docentes necesitan evaluar, el alumnado que esta sea una herramienta de aprendizaje y mejora contínua</p>
+      </div>
+      <a href="index.html#contacto" class="course-arrow">→</a>
+    </article>
+
+    <article class="course-item">
+      <span class="course-num">03</span>
+      <div class="course-body">
+        <div class="course-tag">Programación</div>
+        <div class="course-title">Cómo pronarrar tus clases. La programación didáctica al servicio del aprendizaje activo. </div>
+        <p class="course-desc">Aprendemos gracias a las historias. La humanidad comenzó aprendiendo al calor de historias narradas frente a una hoguera. ¿Cómo programar un diseño didáctico comprometido con los intereses y necesidades de tu alumnado? ¿Cómo adaptar la programación didáctica a un modelo narrativo de la enseñanza? La clave de un proyecto educativo no está en motivar a tu alumnado, sino en convertirles en protagonistas de la aventura de aprender.</p>
+      </div>
+      <a href="index.html#contacto" class="course-arrow">→</a>
+    </article>
+
+    <article class="course-item">
+      <span class="course-num">04</span>
+      <div class="course-body">
+        <div class="course-tag">Metodología</div>
+        <div class="course-title">Herramientas prácticas para la enseñanza: tecnología y creatividad</div>
+        <p class="course-desc">Cómo llenar la mochila de recursos para disparar tu proyecto educativo. ¿Qué aporta la Inteligencia Artificial a cada Fase de un proyecto educativo?. El día a día del cambio en tus clases exige que te ofrezcan herramientas sencillas para hacerlo: recursos técnicos, uso de la creatividad, dinámicas grupales y estructuras cooperativas sencillas de aprender y usar en tus clases. Cada fase de un proyecto educativo debe empzar con la mochila llena de actividades, recursos y materiales </p>
+      </div>
+      <a href="index.html#contacto" class="course-arrow">→</a>
+    </article>
+
+    <article class="course-item">
+      <span class="course-num">05</span>
+      <div class="course-body">
+        <div class="course-tag">Estrategia</div>
+        <div class="course-title">Dirección de proyectos de innovación educativa</div>
+        <p class="course-desc">Formación destinada a equipos directivos y de coordinación pedagógica. Herramientas de liderazgo y gestión del cambio para implementar de forma sostenible proyectos de innovación, coordinar las diferentes etapas del centro y movilizar al claustro hacia un marco educativo común. Impulsar la innovación en un centro exige hacer equilibrios entre docentes, familias, alumnado, entidades y asociaciones. Supone demostrar que sumarse al cambio es sencillo y gratificante. La gestión de la ilusión, la red de relaciones personales e institucionales, la organización de funciones, la rendición de cuentas son tareas fundamentales para impulsar la gestión de tu centro.</p>
+      </div>
+      <a href="index.html#contacto" class="course-arrow">→</a>
+    </article>
+
+    <article class="course-item">
+      <span class="course-num">06</span>
+      <div class="course-body">
+        <div class="course-tag">Ponencias</div>
+        <div class="course-title">Conferencias y Encuentros pedagógicos</div>
+        <p class="course-desc">Espacios de inspiración y reflexión colectiva sobre los nuevos retos de la educación del presente y el futuro. El ABP como motor de cambio en las escuelas que se comprometen con la inclusión. Charlas dinámicas orientadas a congresos, instituciones, familias y centros educativos, enfocadas en ofrecer razones, marcos teóricos claros y ejemplos reales para impulsar el cambio escolar. A lo largo de los años he tenido ocasión de participar en cursos y eventos en distintos países. En ellos he aprendido que es posible crear un espacio de reflexión y emoción compartida en torno a la educación que nos mueve </p>
+      </div>
+      <a href="index.html#contacto" class="course-arrow">→</a>
+    </article>
+  </section>
+
+  <section class="section-container">
+    <div class="modalities">
+      <div class="modality-card">
+        <div class="modality-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Online y semipresencial</h3>
+        <p>Formaciones diseñadas a medida para centros educativos, adaptadas a sus necesidades y contextos específicos.</p>
+      </div>
+      <div class="modality-card">
+        <div class="modality-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <h3>Formación a la carta</h3>
+        <p>Programas disponibles para centros, congresos o instituciones. Los cursos y conferencias deben adaptarse a tus necesidades.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <blockquote>Los docentes no necesitan razones para el cambio, lo que precisan son herramientas sencillas para llevarlo a cabo.</blockquote>
+    <cite>— Juanjo Vergara</cite>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-text">
+      <h3>¿Hablamos de tu proyecto?</h3>
+      <p>Diseño programas de formación ajustados a cada centro y equipo docente.</p>
+    </div>
+    <a href="index.html#contacto" class="cta-btn">Contactar</a>
+  </section>
+
+  <footer class="footer">
+    <span>juanjo vergara</span>
+    <span>© Juanjo Vergara</span>
+  </footer>
+</div>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-escritorio');
+    nav.classList.toggle('show');
+  }
+</script>
+</body>
+</html>

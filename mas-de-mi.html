@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Más de mí | Juanjo Vergara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --color-text: #333;
+      --color-accent: #e60000;
+      --header-height: 80px; 
+      /* Nueva fuente global */
+      --font-principal: 'Roboto', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body { 
+      margin: 0; 
+      font-family: var(--font-principal); 
+      color: var(--color-text); 
+      overflow-x: hidden; 
+      line-height: 1.8; 
+    }
+
+    /* --- CABECERA (Menú limpio sin óvalos ni iconos) --- */
+    .site-header { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 0 40px; 
+      background: #fff; 
+      position: sticky; 
+      top: 0; 
+      z-index: 2000; 
+      height: var(--header-height); 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    }
+
+    .site-header a img { 
+      height: 60px; 
+      display: block;
+    }
+    
+    nav#nav-escritorio { 
+      display: flex; 
+      gap: 20px; 
+      align-items: center; 
+      height: 100%;        
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #555;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase; 
+      letter-spacing: 1.2px;      
+      transition: color 0.3s ease;
+      background: none;
+      border: none;
+      padding: 0 5px;
+    }
+    
+    .nav-button:hover {
+      color: var(--color-accent); 
+    }
+
+    /* Ocultamos los iconos antiguos */
+    .nav-button img { display: none; }
+
+    .menu-hamburguesa {
+      display: none;
+      font-size: 28px;
+      color: var(--color-accent);
+      cursor: pointer;
+      z-index: 2100;
+    }
+
+    /* --- CONTENIDO --- */
+    .contenedor-bio {
+      max-width: 900px;
+      margin: 60px auto 20px;
+      padding: 0 40px;
+    }
+
+    .titulo-rojo-fino {
+      color: var(--color-accent);
+      font-family: var(--font-principal);
+      font-weight: 700;
+      font-size: 38px;
+      margin-bottom: 40px;
+      font-style: normal;
+    }
+
+    .texto-bio {
+      font-size: 17px;
+      text-align: justify;
+    }
+
+    .foto-perfil-derecha {
+      float: right;
+      width: 380px;
+      margin: 10px 0 30px 40px;
+      border-radius: 8px;
+      opacity: 0.85;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4); 
+      transition: all 0.3s ease;
+    }
+
+    .foto-perfil-derecha:hover {
+      opacity: 1;
+      transform: translateY(-5px); 
+    }
+
+    /* --- PREMIOS --- */
+    .premios-contenedor {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 0 40px;
+    }
+
+    .premios-contenedor img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .menu-hamburguesa { display: block; position: absolute; right: 20px; top: 25px; }
+      nav#nav-escritorio { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: var(--header-height); 
+        left: 0; 
+        width: 100%; 
+        background: white; 
+        padding: 20px; 
+        gap: 15px;
+        align-items: flex-start;
+      }
+      nav#nav-escritorio.show { display: flex; }
+      .foto-perfil-derecha {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px 0;
+      }
+      .contenedor-bio, .premios-contenedor { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <a href="index.html#top"><img src="logo-juanjo.png" alt="Logo"></a>
+  
+  <div class="menu-hamburguesa" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav id="nav-escritorio">
+    <a href="#acerca-de-mi" class="nav-button">Acerca de mí</a>
+    <a href="formacion.html" class="nav-button">Formación</a>
+    <a href="#publicaciones" class="nav-button">Publicaciones</a>
+    <a href="#videos" class="nav-button">Vídeos</a>
+    <a href="#imagenes" class="nav-button">Algunas imágenes</a>
+    <a href="proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
+    <a href="#" class="nav-button">Saber más</a>
+    <a href="#contacto" class="nav-button">Contacto</a>
+  </nav>
+</header>
+
+<main class="contenedor-bio">
+  <h1 class="titulo-rojo-fino">... un currículum en dos palabras</h1>
+  
+  <div class="texto-bio">
+    <img src="foto-juanjo-mas.jpg" class="foto-perfil-derecha" alt="Juanjo Vergara">
+    
+    <p>Soy especialista en innovación educativa y metodologías activas, Profesor de Intervención Sociocomunitaria (nº 1 en las pruebas selectivas), Maestro de la Comunidad de Madrid (nº1 de su especialidad en las pruebas selectivas) y experto formador de IMEFE en tecnologías de la educación orientadas a la enfermedad mental (nº1 en la totalidad de las especialidades realizadas en la promoción de referencia). Formador y docente. He trabajado en muchos contextos educativos: educación primaria, secundaria, formación profesional, adultos, educación en prisiones, educación comunitaria. Presidente del Laboratorio de Innovación educativa (Labine). Gran parte de mi tiempo lo dedico a impartir cursos de formación a docentes o impartir conferencias.</p>
+
+    <p>Me especialicé en gestión y dirección de centros educativos. Luego cursé estudios de postgrado en animación sociocultural y en educación de adultos. También soy Maestro.</p>
+ 
+    <p>Centro mi interés en el Aprendizaje Basado en Proyectos y Problemas (ABP), Aprendizaje Servicio (ApS), Emprendimiento Social, Técnicas Activas de Evaluación auténtica y formativa, así como Modelos de Programación por Proyectos y situaciones de aprendizaje. También sobre el uso de herramientas aplicables a las metodologías activas; tecnología, creatividad, dinámicas y estructuras cooperativas.</p>
+ 
+    <p>Cada día entro en las escuelas y compruebo que la innovación solo puede venir de quienes a diario emprenden proyectos comprometidos con su trabajo. Esta es la grasa que me invita -año tras año- a emprender proyectos ilusionantes en los que he aprendido de decenas de alumnos, alumnas y docentes con los que he tenido -y tengo- la ocasión de trabajar.</p>
+
+    <p>He tenido la suerte de participar como ponente en cursos y congresos sobre formación del profesorado sobre innovación educativa, mejora escolar y la aplicación del Enfoque de Proyectos en distintos países (España, Portugal, México, Colombia, Chile, Perú, Argentina, Puerto Rico). Así mismo colaboro con universidades nacionales e internacionales, colegios profesionales del ámbito educativo y redes de centros de formación públicos y privados en sus planes de formación. Compartir experiencias con tantos equipos y países me ha enriquecido mucho como profesional y como persona.</p>
+
+    <p>He formado parte del Consejo Asesor de la Cátedra para la Formación en la Práctica-Marchesi (INTEA), el Consejo Editorial de la Revista Internacional sobre Investigación en Educación Global y el Master en Educación para la Justicia Social de la Universidad Autónoma de Madrid y la Cátedra UNESCO de educación para la Justicia Social UAM (2018-2020). Soy he aprendido mucho siendo miembro del consejo asesor de FUHEM ecosocial.</p>
+ 
+    <p>Soy Autor de los libros 'Aprendo porque Quiero. 'El Aprendizaje Basado en Proyectos (ABP) paso a paso' (BIE, S.M, 2015.), 'Un aula un proyecto. El ABP y la nueva educación a partir de 2020' (Narcea, 2021), 'Narrar el aprendizaje. La fuerza del relato en el aprendizaje basado en proyectos' (Biblioteca de Innovación Educativa, S.M, 2018). 'Aprendo porque Quiero. 'El Aprendizaje Basado en Proyectos (ABP) paso a paso' (BIE, S.M, 2015.), "Herramientas para la educación formal y no formal: El enfoque de proyectos" (INTEF, 2017) y he participado en obras colectivas como 'Expresión y comunicación en educación infantil' (McGraw Hill, 2010), 'Hablemos de educación infantil´(Wolter Kluwer, 2012), 'Buenas prácticas de Educación para el desarrollo. Vicente Ferrer' (AECID, 2015), 'Las tareas escolares después de la escuela' (Consejo Escolar de la Comunidad de Madrid, 2016) y ''Desing for change. Un movimiento educativo para cambiar el mundo' (BIE.SM, 2017), 'Pacto educativo global' (OIEC, SM, 2020). Coordinador y autor del libro "Miradas que educan. Diálogos sobre educación para la Justicia Social" (Baladre, 2021). También he prologado diversos libros para Elizondo (2020), Riquelme et. al. (2019), Basurto (2021), Sánchez y Ariza (2026), etc.</p>
+ 
+    <p>También soy autor de distintos cursos online como "El Aprendizaje Basado en Proyectos la metodología ideal para educar a los nuevos ciudadanos globales". (OEI Mexico), Detonantes en "Situaciones de Aprendizaje" (Junta de Andalucía), "Metodologías Activas" (Cátedra para la formación en la práctica-Marchesi) y el de "Herramientas para la educación formal y no formal: El enfoque de proyectos" (INTEF-Aula Mentor). Así como múltiples colaboraciones en obras colectivas sobre innovación y metodologías activas como el realizado para Escuelas Católicas de Madrid sobre Educación Global para la ciudadanía en el marco del ABP y la metodología Oasis. También el dedicado a la implementación de los Objetivos de Desarrollo Sostenible (ODS) realizado para la Organización de Estados Iberoamericanos (OEI) en Mexico o la formación para la elaboration de Situaciones de Aprendizaje en el marco de la LOMLOE para la Comunidad Autónoma de Andalucía de España (en curso).</p> 
+ 
+    <p>Escribo habitualmente en Cuadernos de Pedagogía y en distintos blogs educativos como BlogCanalEduación, Revista de educación, INED21 y en distintas publicaciones especializadas: Cuadernos de Pedagogía, Revista de Innovación Educativa, Materiales de Educación de Wolter Kluwer, Revista de la Sociedad Nacional de Pedagogía 'Bordón', Mc Graw Hill, S.M., Revista Internacional sobre investigación en Educación Global y para el Desarrollo, Revista Debates (Consejo Asesor de la Comunidad de Madrid), etc. También se han publicado numerosas entrevistas y podcast en diversos medios de comunicación.</p> 
+ 
+    <p>En 2022 fui nombrado Parlamentario en el Parlamento Mundial de la Educación, he recibido la insignia de plata por la labor educativa en la función pública en la Comunidad de Madrid (España), la medalla de plata al mérito penitenciario por la labor educativa en estos centros. He sido reconocido como un de los tres docentes más innovadores de España. Premio Vicente Ferrer por proyectos de cooperación internacional por los cuales he obtenidos varios premios a la mejor práctica educativa internacional. Empleo de los recursos tecnológicos en educación para el Ministerio de Educación en España, sello buenas prácticas o dos premios internacionales por proyectos educativos internacionales entre otros premios por mi actividad docente que me invitan a seguir animando y apoyando el cambio en la educación.</p>
+  </div>
+</main>
+
+<div class="premios-contenedor">
+  <img src="premios.jpg" alt="Premios">
+</div>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-escritorio');
+    if(nav) nav.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>

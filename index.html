@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juanjo Vergara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --color-text: #333;
+      --color-accent: #e60000;
+      --header-height: 80px; 
+      /* Cambio a la nueva fuente */
+      --font-principal: 'Roboto', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    section { scroll-margin-top: var(--header-height); }
+
+    body { 
+      margin: 0; 
+      font-family: var(--font-principal); 
+      color: var(--color-text); 
+      overflow-x: hidden; 
+      line-height: 1.6; 
+    }
+
+    .titulo-seccion { 
+      font-family: var(--font-principal); 
+      font-weight: 700; 
+      font-size: 42px; 
+      color: var(--color-accent); 
+      margin: 0 0 30px 40px; 
+      text-align: left;
+    }
+
+    /* --- CABECERA (Menú sin óvalos, iconos ni fondos) --- */
+    .site-header { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 0 40px; 
+      background: #fff; 
+      position: sticky; 
+      top: 0; 
+      z-index: 2000; 
+      height: var(--header-height); 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    }
+
+    .site-header a img { 
+      height: 60px; 
+      display: block;
+    }
+    
+    nav#nav-escritorio { 
+      display: flex; 
+      gap: 20px; 
+      align-items: center; 
+      height: 100%;        
+    }
+
+    /* ESTILO PROFESIONAL DEL MENÚ */
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #555;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase; /* MAYÚSCULAS */
+      letter-spacing: 1.2px;      /* ESPACIADO PROFESIONAL */
+      transition: color 0.3s ease;
+      background: none;
+      border: none;
+      padding: 0 5px;
+    }
+    
+    .nav-button:hover {
+      color: var(--color-accent); /* Rojo al pasar el ratón */
+    }
+
+    /* Ocultamos los iconos que antes estaban dentro de los enlaces */
+    .nav-button img { display: none; }
+
+    .menu-hamburguesa {
+      display: none;
+      font-size: 28px;
+      color: var(--color-accent);
+      cursor: pointer;
+      z-index: 2100;
+    }
+
+    /* --- HERO --- */
+    .hero-inicio { position: relative; width: 100%; margin-top: 20px; }
+    .carrusel-full { height: 60vh; background: #000; overflow: hidden; position: relative; }
+    .hero-retrato { 
+      position: absolute; top: -30px; left: 50px; z-index: 1001; width: 240px; 
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hero-retrato img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    .link-contacto-rojo {
+      display: block;
+      width: 240px;
+      background: rgba(255, 255, 255, 0.25);
+      color: #333333;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 11px;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 6px;
+      border-radius: 4px;
+      backdrop-filter: blur(2px);
+      z-index: 1002;
+      letter-spacing: 1px;
+      transition: background 0.3s ease;
+    }
+
+    .link-contacto-rojo:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .carrusel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s; }
+    .carrusel-slide.activa { opacity: 1; }
+    .carrusel-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* --- ACERCA DE MÍ --- */
+    .seccion-acerca { padding: 80px 40px; display: flex; gap: 40px; align-items: flex-start; }
+    .acerca-info { flex: 1; display: flex; flex-direction: column; min-height: 100%; }    .acerca-video { flex: 1; margin-top: 50px; }
+    .video-thumb-wrapper { position: relative; padding-bottom: 56.25%; background: #000; border-radius: 10px; overflow: hidden; }
+    .video-thumb-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .tu-clase-del-boton {
+        margin-top: 120px;
+    }
+    /* --- PUBLICACIONES --- */
+    #publicaciones { padding: 60px 40px; background: #fff; max-width: 1200px; margin: 0 auto; }
+    .pub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px; }
+    
+    .pub-card { 
+      display: flex; flex-direction: column; border: 1px solid #e8e8e8; border-radius: 12px; 
+      overflow: hidden; text-decoration: none; color: inherit; background: #fff; 
+      transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    
+    /* Efecto hover refinado y elegante sin deformación por escala */
+    .pub-card:hover { 
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); 
+      border-color: #d65a47; /* Sintonizado con el rojo claro de publicaciones.html */
+    }
+    
+    .pub-card-img { aspect-ratio: 4 / 3; overflow: hidden; background: #f0eeeb; }
+    .pub-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s ease; }
+    
+    /* Indicador visual clicable sutil */
+    .pub-card:hover .pub-card-img img { opacity: 0.88; }
+    
+    .pub-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .pub-card-body h3 { margin: 0 0 10px; font-weight: 700; font-size: 20px; color: #111; }
+    .pub-card-body p { margin: 0 0 15px; font-size: 14px; line-height: 1.5; color: #555; flex: 1; }
+    .pub-card-link { color: #d65a47; font-weight: 600; font-size: 14px; }
+
+    /* --- VÍDEOS --- */
+    #videos { padding: 80px 40px; background: #fcfcfc; position: relative; }
+    .video-carousel-container { display: flex; align-items: center; justify-content: center; gap: 0px; margin-top: 80px; }
+    .video-card { flex: 1; transition: all 0.5s ease; opacity: 0.4; transform: scale(1); }
+    .video-card.active { transform: scale(1.5); opacity: 1; z-index: 10; }
+
+    /* --- IMÁGENES --- */
+    #imagenes { padding: 40px 0; background: #fff; }
+    .grid-instagram { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+    .insta-item { aspect-ratio: 1/1; cursor: pointer; overflow: hidden; }
+    .insta-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .insta-item:hover img { transform: scale(1.1); }
+
+    /* --- MODAL --- */
+    #modal-img { 
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+      background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center; cursor: zoom-out;
+    }
+    #modal-img img { max-width: 90%; max-height: 90%; object-fit: contain; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+
+    /* --- CONTACTO --- */
+    .seccion-contacto { 
+      position: relative; padding: 100px 20px; display: flex; flex-direction: column; align-items: center;
+      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('foto-juanjo.jpeg');
+      background-size: cover; background-position: center; background-attachment: fixed;
+      min-height: 100vh; justify-content: center;
+    }
+    .form-box { background: rgba(255,255,255,0.95); padding: 40px; border-radius: 15px; width: 100%; max-width: 500px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); z-index: 2; }
+    .btn-enviar { width: 100%; padding: 15px; background: var(--color-accent); color: #fff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px; transition: background 0.3s; }
+    .btn-enviar:hover { background: #b30000; }
+    .btn-personalizado { padding: 12px 20px; border-radius: 8px; border: 1px solid #eee; background: #fff; color: #333; text-decoration: none; font-size: 13px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; font-weight: 600; display: inline-block; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .menu-hamburguesa {
+        display: block !important;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        background-color: #e0e0e0;
+        padding: 8px 12px;
+        border-radius: 4px;
+        z-index: 2100;
+      }
+
+      .menu-hamburguesa i.fa-bars {
+        color: #000000 !important;
+      }
+      nav#nav-escritorio { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: var(--header-height); 
+        left: 0; width: 100%; 
+        background: white; 
+        padding: 20px; 
+        gap: 15px;
+        align-items: flex-start;
+      }
+      nav#nav-escritorio.show { display: flex; }
+      .titulo-seccion { font-size: 28px; margin: 0 0 20px 20px; }
+      .hero-retrato { width: 180px; left: 20px; top: -20px; }
+      .seccion-acerca { flex-direction: column; padding: 40px 20px; }
+      .pub-grid { grid-template-columns: 1fr; }
+      .grid-instagram { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <a href="#top"><img src="logo-juanjo.png" alt="Logo"></a>
+  
+  <div class="menu-hamburguesa" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav id="nav-escritorio">
+    <a href="#acerca-de-mi" class="nav-button">Acerca de mí</a>
+    <a href="formacion.html" class="nav-button">Formación</a>
+    <a href="#publicaciones" class="nav-button">Publicaciones</a>
+    <a href="#videos" class="nav-button">Vídeos</a>
+    <a href="#imagenes" class="nav-button">Algunas imágenes</a>
+    <a href="proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
+    <a href="#" class="nav-button">Saber más</a>
+    <a href="#contacto" class="nav-button">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero-inicio">
+  <div class="carrusel-full" id="carrusel-hero"></div>
+  <div class="hero-retrato">
+    <img src="foto-juanjo.jpeg">
+    <a href="#contacto" class="link-contacto-rojo">ESCRIBEME</a>
+    <a href="formacion.html" class="link-contacto-rojo">FÓRMATE CONMIGO</a>
+  </div>
+</section>
+
+<section id="acerca-de-mi" class="seccion-acerca">
+  <div class="acerca-info">
+    <h2 class="titulo-seccion" style="margin-left:0;">Acerca de mí</h2>
+    <p>En mis años de escolar disfruté de un maestro que me hacía vivir cada moment como un instante de preguntas, respuestas y acciones.</p>
+    <p>Aprendo porque quiero, porque habla de mi realidad, me invita a reflexionar, actuar y comprometerme.</p>
+    <div style="display: flex; gap: 10px; margin-top: 30px;">
+      <a href="mas-de-mi.html" class="btn-personalizado">SABER MÁS DE MÍ</a>
+      <a href="formacion.html" class="btn-personalizado">FÓRMATE CONMIGO</a>
+    </div>
+  </div>
+  <div class="acerca-video">
+    <div class="video-thumb-wrapper">
+      <iframe src="https://player.vimeo.com/video/1191624450" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="publicaciones">
+  <h2 class="titulo-seccion" style="margin-left:0;">Publicaciones</h2>
+  <div class="pub-grid">
+    
+    <a href="publicaciones.html" class="pub-card">
+      <div class="pub-card-img"><img src="img-publicaciones.png" alt="Publicaciones"></div>
+      <div class="pub-card-body">
+        <h3>Publicaciones</h3>
+        <p>Libros y materiales sobre ABP y creatividad en el aula.</p>
+        <span class="pub-card-link">Ver todo →</span>
+      </div>
+    </a>
+    
+    <a href="#" class="pub-card">
+      <div class="pub-card-img"><img src="img-blog.png" alt="Blog"></div>
+      <div class="pub-card-body">
+        <h3>Blog</h3>
+        <p>Reflexiones sobre educación, aprendizaje y proyectos.</p>
+        <span class="pub-card-link">Leer →</span>
+      </div>
+    </a>
+  <a href="https://abpproyectosparaeducar.substack.com" class="pub-card" target="_blank" rel="noopener noreferrer">
+      <div class="pub-card-img"><img src="img-substack.png" alt="Substack"></div>
+      <div class="pub-card-body">
+        <h3>Substack</h3>
+        <p>Newsletter periódica. Suscríbete para no perderte nada.</p>
+        <span class="pub-card-link">Suscribirse →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="videos">
+  <h2 class="titulo-seccion">Vídeos</h2>
+  <div class="video-carousel-container">
+    <button onclick="moveV(-1, true)" class="btn-personalizado"><i class="fas fa-chevron-left"></i></button>
+    <div id="v-1" class="video-card"></div>
+    <div id="v-2" class="video-card active"></div>
+    <div id="v-3" class="video-card"></div>
+    <button onclick="moveV(1, true)" class="btn-personalizado"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<section id="imagenes">
+  <h2 class="titulo-seccion">Algunas imágenes</h2>
+  <div class="grid-instagram" id="insta-grid"></div>
+</section>
+
+<div id="modal-img" onclick="cerrarModal()">
+  <img id="img-full" src="">
+</div>
+
+<section id="contacto" class="seccion-contacto">
+    <div class="form-box">
+        <h2 class="titulo-seccion" style="font-size: 28px; text-align: center; margin: 0 0 20px 0;">Contacto</h2>
+       <form action="https://formspree.io/f/mjgdynrz" method="POST">
+<input type="hidden" name="_next" value="https://tu-dominio-final.vercel.app/gracias.html" />
+            <input type="text" name="nombre" placeholder="Tu nombre" required style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ddd; border-radius:6px;">
+            <input type="email" name="email" placeholder="Tu email" required style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ddd; border-radius:6px;">
+            <textarea name="mensaje" rows="4" placeholder="Mensaje" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:6px; margin-bottom:12px; font-family:inherit;"></textarea>
+            <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+        </form>
+    </div>
+</section>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-escritorio');
+    if(nav) nav.classList.toggle('show');
+  }
+
+const fotosHero = [
+  'img-inicio/fanzine_1.jpg', 
+  'img-inicio/gnro_6.jpg', 
+  'img-inicio/hop_1.jpg', 
+  'img-inicio/ifoulou_12.jpg', 
+  'img-inicio/india_1.jpg'
+];
+  const heroCont = document.getElementById('carrusel-hero');
+  if(heroCont){
+    fotosHero.forEach((img, i) => {
+      heroCont.innerHTML += `<div class="carrusel-slide ${i===0?'activa':''}"><img src="${img}"></div>`;
+    });
+    let hIdx = 0;
+    setInterval(() => {
+      const s = document.querySelectorAll('.carrusel-slide');
+      if(s.length){
+        s[hIdx].classList.remove('activa');
+        hIdx = (hIdx + 1) % s.length;
+        s[hIdx].classList.add('activa');
+      }
+    }, 4000);
+  }
+
+  let vData = [];
+  let vOffset = 0;
+  let autoMoveV = null;
+
+  async function initVideos() {
+    try {
+      const res = await fetch('mis-videos.json');
+      vData = await res.json();
+      renderV();
+      startAutoV();
+    } catch (e) { console.error("Error cargando mis-videos.json:", e); }
+  }
+
+  function renderV() {
+    if(vData.length === 0) return;
+    ['v-1', 'v-2', 'v-3'].forEach((id, i) => {
+      const idx = (vOffset + i) % vData.length;
+      const card = document.getElementById(id);
+      if(card){
+        card.innerHTML = `<div class="video-thumb-wrapper"><iframe src="${vData[idx].url}" allowfullscreen></iframe></div>`;
+        card.onmouseenter = () => stopAutoV();
+      }
+    });
+  }
+
+  function moveV(d, manual = false) {
+    if(vData.length === 0) return;
+    vOffset = (vOffset + d + vData.length) % vData.length;
+    renderV();
+    if(manual) startAutoV();
+  }
+
+  function startAutoV() {
+    stopAutoV();
+    autoMoveV = setInterval(() => moveV(1), 3000);
+  }
+
+  function stopAutoV() {
+    if(autoMoveV) clearInterval(autoMoveV);
+    autoMoveV = null;
+  }
+
+  async function initInsta() {
+    try {
+      const res = await fetch('fotos-web/listado.json');
+      const files = await res.json();
+      const grid = document.getElementById('insta-grid');
+      if(grid){
+        files.forEach(f => {
+          grid.innerHTML += `<div class="insta-item" onclick="abrirModal('${f}')"><img src="fotos-web/thumbs/${f}"></div>`;
+        });
+        
+        // CORRECCIÓN: Si el usuario viene desde formacion.html directo a #contacto
+        if (window.location.hash === '#contacto') {
+          setTimeout(() => {
+            const contactoSec = document.getElementById('contacto');
+            if (contactoSec) {
+              contactoSec.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 700); // Pequeña espera para asegurar que el navegador ha dibujado las fotos
+        }
+      }
+    } catch (e) { console.error("Error cargando listado.json:", e); }
+  }
+
+  function abrirModal(f) {
+    const modalImg = document.getElementById('img-full');
+    const modal = document.getElementById('modal-img');
+    if(modalImg && modal) {
+        modalImg.src = `fotos-web/full/${f}`;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function cerrarModal() {
+    const modal = document.getElementById('modal-img');
+    if(modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+  }
+
+  window.onload = () => { initVideos(); initInsta(); };
+</script>
+
+</body>
+</html>

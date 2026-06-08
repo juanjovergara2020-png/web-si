@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos | Juanjo Vergara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --color-text: #333;
+      --color-accent: #e60000;
+      --header-height: 80px; 
+      /* Cambio a la nueva fuente */
+      --font-principal: 'Roboto', sans-serif;
+      
+      /* Mantengo variables originales de proyectos para la cuadricula */
+      --rojo: #c0392b;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --border: rgba(0,0,0,0.08);
+      --bg: #ffffff;
+      --shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    section { scroll-margin-top: var(--header-height); }
+
+    body { 
+      margin: 0; 
+      font-family: var(--font-principal); 
+      color: var(--color-text); 
+      overflow-x: hidden; 
+      line-height: 1.6; 
+      background: var(--bg);
+      min-height: 100vh;
+    }
+
+    .titulo-seccion { 
+      font-family: var(--font-principal); 
+      font-weight: 700; 
+      font-size: 42px; 
+      color: var(--color-accent); 
+      margin: 0 0 30px 40px; 
+      text-align: left;
+    }
+
+    /* --- CABECERA (Menú sin óvalos, iconos ni fondos) --- */
+    .site-header { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 0 40px; 
+      background: #fff; 
+      position: sticky; 
+      top: 0; 
+      z-index: 2000; 
+      height: var(--header-height); 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    }
+
+    .site-header a img { 
+      height: 60px; 
+      display: block;
+    }
+    
+    nav#nav-escritorio { 
+      display: flex; 
+      gap: 20px; 
+      align-items: center; 
+      height: 100%;        
+    }
+
+    /* ESTILO PROFESIONAL DEL MENÚ */
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #555;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase; /* MAYÚSCULAS */
+      letter-spacing: 1.2px;      /* ESPACIADO PROFESIONAL */
+      transition: color 0.3s ease;
+      background: none;
+      border: none;
+      padding: 0 5px;
+    }
+    
+    .nav-button:hover {
+      color: var(--color-accent); /* Rojo al pasar el ratón */
+    }
+
+    /* Ocultamos los iconos que antes estaban dentro de los enlaces */
+    .nav-button img { display: none; }
+
+    .menu-hamburguesa {
+      display: none;
+      font-size: 28px;
+      color: var(--color-accent);
+      cursor: pointer;
+      z-index: 2100;
+    }
+
+    /* --- ESTILOS ESPECÍFICOS DE LA SECCIÓN PROYECTOS --- */
+    .hero { max-width: 860px; margin: 3.5rem auto 2rem; padding: 0 2rem; }
+    .hero-title { font-size: clamp(32px, 5vw, 48px); color: var(--rojo); margin-bottom: 1.5rem; }
+
+    .filters-wrap { max-width: 860px; margin: 0 auto 2.5rem; padding: 0 2rem; display: flex; gap: 10px; flex-wrap: wrap; }
+    .chip { font-size: 12px; padding: 8px 18px; border-radius: 50px; border: 1px solid rgba(0,0,0,0.12); cursor: pointer; background: white; transition: all 0.3s ease; color: var(--muted); font-family: var(--font-principal); }
+    .chip:hover { border-color: var(--rojo); color: var(--rojo); }
+    .chip.active { background: var(--rojo); color: #fff; border-color: var(--rojo); }
+
+    .grid-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 5rem; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+    .card { background: #fff; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform .22s; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; position: relative; height: 410px; color: var(--text); }
+    .card:hover { transform: scale(1.05); }
+
+    .card-img { width: 100%; height: 110px; flex-shrink: 0; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .card-body { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; overflow: hidden; padding-bottom: 50px; }
+    .card-title { font-size: 13px; font-weight: 700; line-height: 1.3; margin-bottom: 4px; color: #111; }
+    
+    .card-cats-box { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+    .card-cat-tag { font-size: 9px; color: var(--rojo); font-style: italic; }
+    .card-cat-tag:not(:last-child)::after { content: " •"; }
+
+    .card-desc { font-size: 11.5px; color: var(--muted); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+
+    .card-footer, .modal-footer { position: absolute; bottom: 0; left: 0; width: 100%; background: white; border-top: 1px solid var(--border); display: flex; align-items: center; padding: 0 12px; gap: 8px; }
+    .card-footer { height: 45px; }
+    .modal-footer { height: 60px; }
+
+    .label-saber { color: var(--rojo); font-size: 10px; font-weight: 700; letter-spacing: 0.5px; margin-right: 4px; }
+    .icon-link { height: 22px; width: auto; vertical-align: middle; transition: transform 0.2s; }
+    .icon-link:hover { transform: scale(1.2); }
+
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 10000; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: #fff; border-radius: 16px; width: 500px; height: 85vh; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+    .modal-img { width: 100%; height: 300px; flex-shrink: 0; }
+    .modal-img img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-content { flex-grow: 1; padding: 25px; padding-bottom: 80px; display: flex; flex-direction: column; min-height: 0; position: relative; }
+    .modal-header { flex-shrink: 0; display: flex; justify-content: space-between; margin-bottom: 15px; }
+    .modal-title { font-size: 22px; font-weight: 700; line-height: 1.2; color: #111; }
+    .modal-cats-list { font-size: 13px; color: var(--rojo); font-style: italic; }
+    .modal-close { cursor: pointer; font-size: 26px; color: var(--muted); line-height: 1; }
+    .modal-scroll-area { overflow-y: auto; flex-grow: 1; padding-right: 10px; }
+    .modal-scroll-area::-webkit-scrollbar { width: 4px; }
+    .modal-scroll-area::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
+    .modal-desc { font-size: 14.5px; line-height: 1.7; color: var(--muted); }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .menu-hamburguesa { display: block; position: absolute; right: 20px; top: 25px; }
+      nav#nav-escritorio { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: var(--header-height); 
+        left: 0; width: 100%; 
+        background: white; 
+        padding: 20px; 
+        gap: 15px;
+        align-items: flex-start;
+      }
+      nav#nav-escritorio.show { display: flex; }
+      .grid { grid-template-columns: 1fr; }
+      .modal { width: 90%; height: 90vh; }
+    }
+  </style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <a href="../index.html#top"><img src="../logo-juanjo.png" alt="Logo"></a>
+  
+  <div class="menu-hamburguesa" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav id="nav-escritorio">
+    <a href="../index.html#acerca-de-mi" class="nav-button">Acerca de mí</a>
+    <a href="../formacion.html" class="nav-button">Formación</a>
+    <a href="../index.html#publicaciones" class="nav-button">Publicaciones</a>
+    <a href="../index.html#videos" class="nav-button">Vídeos</a>
+    <a href="../index.html#imagenes" class="nav-button">Algunas imágenes</a>
+    <a href="index-proyectos.html" class="nav-button">Proyectos</a>
+    <a href="../mas-de-mi.html" class="nav-button">Saber más</a>
+    <a href="../index.html#contacto" class="nav-button">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 class="hero-title">Proyectos Educativos</h1>
+</section>
+
+<div class="filters-wrap" id="filters">
+  <span class="chip active" data-cat="Todas">Todas</span>
+  <span class="chip" data-cat="Innovación">Innovación</span>
+  <span class="chip" data-cat="Viaje y territorio">Viaje y territorio</span>
+  <span class="chip" data-cat="Género">Género</span>
+  <span class="chip" data-cat="Acción Social">Acción Social</span>
+</div>
+
+<div class="grid-wrap">
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="modal-overlay" id="overlay">
+  <div class="modal">
+    <div id="m-img" class="modal-img"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title" id="m-title"></div>
+          <div class="modal-cats-list" id="m-cats"></div>
+        </div>
+        <div class="modal-close" onclick="closeModal()">✕</div>
+      </div>
+      <div class="modal-scroll-area">
+        <p class="modal-desc" id="m-desc"></p>
+      </div>
+      <div class="modal-footer" id="m-footer"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const projects = [
+  { 
+    id:"1", title:"India", categories:["Viaje y territorio", "Acción Social", "Innovación"], img:"imagenes-proyectos/india_10.jpg", 
+    resumen:"Este proyecto busca acercar al alumnado a una realidad culturalmente rica y compleja a través de la experiencia directa del viaje.", 
+    literal:"Desde 2018, viajamos con grupos de educadores y educadoras en formación a distintos proyectos educativos in India. Visitamos las escuelas de Jhajjar del proyecto Pasahaur que coordina Don Bosco...",
+    links: [{ type: "web", url: "https://estanciasformativas.wixsite.com/india" }]
+  },
+  { 
+    id:"2", title:"Labine", categories:["Innovación"], img:"imagenes-proyectos/clase_9.jpg", 
+    resumen:"El Laboratorio de Innovación Educativa (LABinE) es un espacio de formación y de encuentro.", 
+    literal:"La innovación educativa, o cambia las escuelas y la forma de provocar el aprendizaje, o solo es una moda más con escaso interés. LABinE está formado por docentes en ejercicio.",
+    links: [{ type: "web", url: "https://juanjovergara.wixsite.com/labine" }]
+  },
+  { 
+    id:"3", title:"Hermandades", categories:["Innovación", "Acción Social", "Género"], img:"imagenes-proyectos/ifoulou_17.jpg", 
+    resumen:"HxEpD crea una red estable de centros docentes que integren la Ciudadanía Global en sus currículos.", 
+    literal:"Hermanadas por la Educación para el Desarrollo es un proyecto que -con el apoyo de la AECID- desarrollará un encuentro con especialistas en educación.",
+    links: [{ type: "web", url: "https://juanjovergara.wixsite.com/labine" }, { type: "video", url: "https://www.youtube.com/watch?v=LlShHeU2qU4" }]
+  },
+  { 
+    id:"4", title:"El péndulo de Ifoulou", categories:["Innovación", "Acción Social", "Viaje y territorio"], img:"imagenes-proyectos/ifoulou_2.jpg", 
+    resumen:"Proyecto de aprendizaje-servicio en el Atlas donde la cooperación y el encuentro transforman.", 
+    literal:"El primer día de clase los alumnos reciben la noticia de que van a vivir un proyecto singular: El péndulo de Ifoulou, investigando sobre la población amazigth.",
+    links: [{ type: "web", url: "https://www.juanjovergara.com/pendulo" }, { type: "video", url: "https://www.youtube.com/watch?v=MRrHIi3EhgU" }]
+  },
+  { 
+    id:"5", title:"Hop!", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/hop_5.jpg", 
+    resumen:"Dinamización de patios que utiliza el juego y el movimiento como motor de convivencia.", 
+    literal:"Este es el motivo que dibuja un proyecto con un grupo de alumnos enamorados del break pero desapegados de la escuela.",
+    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/s8qkzgugy58iu54h6j3qn/HOP.pdf?rlkey=mxxcl6hh7uk8y5w42owjsqooh&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/1724363" }]
+  },
+  { 
+    id:"6", title:"El Muro de la Diversidad", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/muro_1.jpg", 
+    resumen:"Intervención plástica que denuncia fronteras invisibles y reflexiona sobre la acogida.", 
+    literal:"¿Es posible deconstruir el concepto de 'muro' y utilizarlo como eje de un proyecto para unir a las personas?",
+    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/fx6j478rfewhqjw7ty5r7/El-muro-de-la-diversidad.pdf?rlkey=mudpk29mf2eeqiago2mdrfzwa&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/1724363" }]
+  },
+  { 
+    id:"7", title:"Gnro Mjr", categories:["Innovación", "Acción Social", "Género"], img:"imagenes-proyectos/gnro_5.jpg", 
+    resumen:"Propuesta para identificar y romper estereotipos de género en el aula desde la acción.", 
+    literal:"El arte contemporáneo sirve como eje a este proyecto. Se investigan medios de comunicación para construir la obra Gnro Mr.",
+    links: [
+        { type: "blog", url: "https://www.dropbox.com/scl/fi/s8qkzgugy58iu54h6j3qn/HOP.pdf?rlkey=mxxcl6hh7uk8y5w42owjsqooh&e=1&dl=0" }, 
+        { type: "video", url: "https://vimeo.com/1724363" },
+        { type: "video", url: "https://vimeo.com/159929177" },
+        { type: "video", url: "https://vimeo.com/21254476" }
+    ]
+  },
+  { 
+    id:"8", title:"Festival de arte y acción social", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/festival_5.jpg", 
+    resumen:"Festival que aúne a artistas y expertos conectado con el currículo escolar de la F.P.", 
+    literal:"Proyecto que trabaja decenas de contenidos de módulos de F.P. con enfoque ABP.",
+    links: [
+        { type: "blog", url: "https://www.dropbox.com/scl/fi/eum8le3qdv8a04ngvix7v/Festival-de-arte-memoria.pdf?rlkey=px6clmb5e6gcxegl4zkymnfbd&e=1&dl=0" }
+    ]
+  },
+  { 
+    id:"9", title:"Z_oma", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/zoma_6.jpg", 
+    resumen:"Intervención comunitaria para transformar el entorno urbano más cercano.", 
+    literal:"Inspirado en el Bosque de Oma de Agustín Ibarrola, busca la renaturalización de jardines escolares.",
+    links: [{ type: "blog", url: "https://www.portalvallecas.es/proyecto-z_oma-recuperacion-de-jardines-del-ceip-manuel-nunez-de-arenas-de-vallecas/" }, { type: "video", url: "https://vimeo.com/113219637" }]
+  },
+  { 
+    id:"10", title:"InterActúa", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/clase_10.jpg", 
+    resumen:"Jornadas anuales que reúnen centros de FP para compartir formación.", 
+    literal:"Formar educadores para la intervención social aconseja utilizar los espacios reales.",
+    links: [] 
+  },
+  { 
+    id:"11", title:"I.A.P.", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/silla.jpg", 
+    resumen:"Investigación social como herramienta de cambio desde la escuela.", 
+    literal:"Proyecto de intervención en centros que quieran actuar sobre sus espacios o prácticas cotidianas.",
+    links: [{ type: "web", url: "https://juanjovergara.wixsite.com/ieap" }]
+  },
+  { 
+    id:"12", title:"El día a día", categories:["Innovación"], img:"imagenes-proyectos/clase_9.jpg", 
+    resumen:"Diario visual y narrativo de los procesos de aprendizaje cotidianos.", 
+    literal:"Documentar lo que ocurre en el aula para hacerlo visible y reflexionar sobre el aprendizaje.",
+    links: [
+        { type: "video", url: "https://vimeo.com/147017081" },
+        { type: "video", url: "https://vimeo.com/2345409" },
+        { type: "video", url: "https://vimeo.com/1955156" },
+        { type: "video", url: "https://vimeo.com/147553221" }
+    ]
+  },
+  { 
+    id:"13", title:"Escuelas viajeras", categories:["Innovación", "Viaje y territorio", "Acción Social"], img:"imagenes-proyectos/IFOULOU_4.jpg", 
+    resumen:"Programa para descubrir otras formas de aprender y vivir a través del viaje.", 
+    literal:"Escuelas Viajeras acompaña la formación docente desde la emoción del aprendizaje.",
+    links: [{ type: "web", url: "https://juanjovergara.wixsite.com/escuelasviajeras" }]
+  },
+  { 
+    id:"14", title:"Colectivo en Acción", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/ifoulou_12.jpg", 
+    resumen:"Espacio de encuentro docente para compartir y crear innovación.", 
+    literal:"Nace en 2004 buscando romper fronteras entre lo formal y no-formal.",
+    links: [] 
+  },
+  { 
+    id:"15", title:"Escuela Emprende_21", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/clase_8.jpg", 
+    resumen:"Desarrollar la competencia en el emprendimiento social.", 
+    literal:"Reúne a docentes interesados en construir una escuela comprometida.",
+    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/0nfhxs9pdf5o9hvie3hor/Es-posible-aprender-sin-emprender.pdf?rlkey=n6w0k9fdr896f9uojxjdoe0sr&e=1&dl=0" }]
+  },
+  { 
+    id:"16", title:"Trabajar en Terreno", categories:["Innovación", "Viaje y territorio"], img:"imagenes-proyectos/fanzine_1.jpg", 
+    resumen:"Conecta la investigación sobre una ciudad con la experiencia real de habitarla.", 
+    literal:"No es posible educar para el mundo sin vivir en él y comprometerse.",
+    links: [{ type: "web", url: "https://www.juanjovergara.com/aprender-en-terreno" }]
+  },
+  { 
+    id:"17", title:"Mii Zambete", categories:["Innovación"], img:"imagenes-proyectos/clase_1.jpg", 
+    resumen:"Trabaja la diferencia y utiliza recursos plásticos como la instalación artística.", 
+    literal:"Nace de una anécdota para trabajar la multiculturalidad y la luz.",
+    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/sjaxjmm6zm2v3avk3mbgo/De-mii-de-Zambete-De-la-oscuridad-a-la-luz.pdf?rlkey=ozkkggqby12s18k72c6wkttyy&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/159925747" }]
+  },
+  { 
+    id:"18", title:"La Mosca del Bilbao", categories:["Innovación"], img:"imagenes-proyectos/mosca.jpg", 
+    resumen:"Radio y podcast como recurso educativo para dar voz a la comunidad.", 
+    literal:"Proyecto desarrollado durante años integrando a todos los niveles del IES.",
+    links: [{ type: "podcast", url: "https://open.spotify.com/show/1t837Ey95jOJuWstmSYrs8" }]
+  },
+  { 
+    id:"19", title:"¿Consumo? ... te resumo", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/atrapasueños.jpg", 
+    resumen:"Investigación sobre la sociedad de consumo y las preocupaciones del alumnado.", 
+    literal:"Ejemplifica las fases del ABP trabajando contenidos valiosos.",
+    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/euppilsoutz2rvuveqcz2/consumo_te_resumo.pdf?rlkey=bogs4sn574c0xo5gmm4wcpz9t&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/1697202" }]
+  },
+  { 
+    id:"20", title:"Intervención en espacios públicos", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/clase_1.jpg", 
+    resumen:"El espacio público como lienzo para proyectos en plazas y museos.", 
+    literal:"Colaboración interviniendo en el entorno físico de la comunidad.",
+    links: [
+        { type: "blog", url: "https://www.dropbox.com/scl/fi/euppilsoutz2rvuveqcz2/consumo_te_resumo.pdf?rlkey=bogs4sn574c0xo5gmm4wcpz9t&e=1&dl=0" },
+        { type: "video", url: "https://vimeo.com/1697202" },
+        { type: "video", url: "https://vimeo.com/106043677" },
+        { type: "video", url: "https://vimeo.com/169414067" }
+    ]
+  }
+];
+
+function getLinksHtml(links) {
+  if (!links || links.length === 0) return '';
+  let html = '<span class="label-saber">SABER MÁS:</span>';
+  links.forEach(link => {
+    const icon = link.type === 'blog' ? 'icon-blog' : `icon-${link.type}`;
+    html += `<a href="${link.url}" target="_blank" onclick="event.stopPropagation()">
+               <img src="./${icon}.png" class="icon-link">
+             </a>`;
+  });
+  return html;
+}
+
+function renderCards(filterCat = "Todas") {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  const filtered = projects.filter(p => filterCat === "Todas" || p.categories.includes(filterCat));
+  
+  filtered.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-img"><img src="${p.img}"></div>
+      <div class="card-body">
+        <div class="card-title">${p.title}</div>
+        <div class="card-cats-box">${p.categories.map(c => `<span class="card-cat-tag">${c}</span>`).join('')}</div>
+        <div class="card-desc">${p.resumen}</div>
+      </div>
+      <div class="card-footer">${getLinksHtml(p.links)}</div>
+    `;
+    card.onclick = () => openModal(p);
+    grid.appendChild(card);
+  });
+}
+
+function openModal(p) {
+  document.getElementById('m-img').innerHTML = `<img src="${p.img}">`;
+  document.getElementById('m-title').innerText = p.title;
+  document.getElementById('m-cats').innerText = p.categories.join(' • ');
+  document.getElementById('m-desc').innerText = p.literal;
+  document.getElementById('m-footer').innerHTML = getLinksHtml(p.links);
+  document.getElementById('overlay').classList.add('open');
+}
+
+function closeModal() { document.getElementById('overlay').classList.remove('open'); }
+
+function toggleMenu() {
+  const nav = document.getElementById('nav-escritorio');
+  if(nav) nav.classList.toggle('show');
+}
+
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.onclick = function() {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    this.classList.add('active');
+    renderCards(this.dataset.cat);
+  }
+});
+
+document.getElementById('overlay').onclick = (e) => { if(e.target.id === 'overlay') closeModal(); };
+
+renderCards();
+</script>
+</body>
+</html>
