@@ -10,233 +10,537 @@
     :root {
       --color-text: #333;
       --color-accent: #e60000;
-      --header-height: 80px; 
-      /* Cambio a la nueva fuente */
+      --header-height: 70px;
       --font-principal: 'Roboto', sans-serif;
+      --max-width: 1280px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    
     section { scroll-margin-top: var(--header-height); }
 
-    body { 
-      margin: 0; 
-      font-family: var(--font-principal); 
-      color: var(--color-text); 
-      overflow-x: hidden; 
-      line-height: 1.6; 
+    body {
+      margin: 0;
+      font-family: var(--font-principal);
+      color: var(--color-text);
+      overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    .titulo-seccion { 
-      font-family: var(--font-principal); 
-      font-weight: 700; 
-      font-size: 42px; 
-      color: var(--color-accent); 
-      margin: 0 0 30px 40px; 
-      text-align: left;
+    .titulo-seccion {
+  font-family: var(--font-principal);
+  font-weight: 300;               /* Quita la negrita para hacerlo fino */
+  font-size: 42px;
+  color: var(--color-accent);     /* Mantiene tu color rojo actual */
+  margin: 0 0 30px 0;             
+  text-align: left;
+  text-transform: uppercase;      /* Fuerza las mayúsculas */
+  letter-spacing: 2px;            /* Espaciado base para pantallas pequeñas */
+}
+
+/* Efecto alargado y bien separado para pantallas grandes (ordenador) */
+@media (min-width: 768px) {
+  .titulo-seccion {
+    letter-spacing: 5px;
+    transform: scaleY(1.2);
+    display: inline-block;
+    transform-origin: left;
+  }
+
+
+    /* ── CABECERA ── */
+    .site-header {
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      height: var(--header-height);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.08);
     }
 
-    /* --- CABECERA (Menú sin óvalos, iconos ni fondos) --- */
-    .site-header { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      padding: 0 40px; 
-      background: #fff; 
-      position: sticky; 
-      top: 0; 
-      z-index: 2000; 
-      height: var(--header-height); 
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    .site-header a img { height: 52px; display: block; }
+
+    nav#nav-escritorio {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      height: 100%;
     }
 
-    .site-header a img { 
-      height: 60px; 
-      display: block;
-    }
-    
-    nav#nav-escritorio { 
-      display: flex; 
-      gap: 20px; 
-      align-items: center; 
-      height: 100%;        
-    }
-
-    /* ESTILO PROFESIONAL DEL MENÚ */
     .nav-button {
       display: inline-flex;
       align-items: center;
       text-decoration: none;
       color: #555;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      text-transform: uppercase; /* MAYÚSCULAS */
-      letter-spacing: 1.2px;      /* ESPACIADO PROFESIONAL */
-      transition: color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: color 0.2s ease, background 0.2s ease;
       background: none;
       border: none;
-      padding: 0 5px;
-    }
-    
-    .nav-button:hover {
-      color: var(--color-accent); /* Rojo al pasar el ratón */
+      cursor: pointer;
     }
 
-    /* Ocultamos los iconos que antes estaban dentro de los enlaces */
+    .nav-button:hover { color: var(--color-accent); background: #fdf0f0; }
     .nav-button img { display: none; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--color-accent);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      border: 1.5px solid var(--color-accent);
+      transition: background 0.2s ease, color 0.2s ease;
+      margin-left: 6px;
+    }
+    .nav-cta:hover { background: var(--color-accent); color: #fff; }
 
     .menu-hamburguesa {
       display: none;
-      font-size: 28px;
+      font-size: 26px;
       color: var(--color-accent);
       cursor: pointer;
       z-index: 2100;
     }
 
-    /* --- HERO --- */
-    .hero-inicio { position: relative; width: 100%; margin-top: 20px; }
-    .carrusel-full { height: 60vh; background: #000; overflow: hidden; position: relative; }
-    .hero-retrato { 
-      position: absolute; top: -30px; left: 50px; z-index: 1001; width: 240px; 
-      display: flex; flex-direction: column; align-items: center;
+    /* ── HERO ── */
+    .hero-inicio { position: relative; width: 100%; }
+
+    .carrusel-full {
+      height: 78vh;
+      min-height: 500px;
+      background: #000;
+      overflow: hidden;
+      position: relative;
     }
-    .hero-retrato img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    
+
+    .hero-retrato {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      z-index: 1001;
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-retrato img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
     .link-contacto-rojo {
       display: block;
-      width: 240px;
-      background: rgba(255, 255, 255, 0.25);
-      color: #333333;
+      width: 100%;
+      background: rgba(255,255,255,0.22);
+      color: #fff;
       text-decoration: none;
       font-weight: 700;
       font-size: 11px;
       text-align: center;
       padding: 10px 0;
-      margin-top: 6px;
       border-radius: 4px;
-      backdrop-filter: blur(2px);
-      z-index: 1002;
-      letter-spacing: 1px;
+      backdrop-filter: blur(6px);
+      letter-spacing: 1.5px;
+      border: 1px solid rgba(255,255,255,0.35);
       transition: background 0.3s ease;
     }
+    .link-contacto-rojo:hover { background: rgba(255,255,255,0.38); }
 
-    .link-contacto-rojo:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-
-    .carrusel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s; }
+    .carrusel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s; }
     .carrusel-slide.activa { opacity: 1; }
     .carrusel-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* --- ACERCA DE MÍ --- */
-    .seccion-acerca { padding: 80px 40px; display: flex; gap: 40px; align-items: flex-start; }
-    .acerca-info { flex: 1; display: flex; flex-direction: column; min-height: 100%; }    .acerca-video { flex: 1; margin-top: 50px; }
-    .video-thumb-wrapper { position: relative; padding-bottom: 56.25%; background: #000; border-radius: 10px; overflow: hidden; }
+    /* ── ACERCA DE MÍ ── */
+    .seccion-acerca {
+      padding: 100px 60px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .acerca-info { flex: 1; }
+    .acerca-info p { font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 16px; }
+
+    .acerca-video { flex: 1; }
+    .video-thumb-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
     .video-thumb-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .tu-clase-del-boton {
-        margin-top: 120px;
+
+    /* ── PUBLICACIONES ── */
+    #publicaciones {
+      padding: 100px 60px;
+      background: #f9f9f9;
     }
-    /* --- PUBLICACIONES --- */
-    #publicaciones { padding: 60px 40px; background: #fff; max-width: 1200px; margin: 0 auto; }
-    .pub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px; }
-    
-    .pub-card { 
-      display: flex; flex-direction: column; border: 1px solid #e8e8e8; border-radius: 12px; 
-      overflow: hidden; text-decoration: none; color: inherit; background: #fff; 
-      transition: border-color 0.35s ease, box-shadow 0.35s ease;
+
+    .publicaciones-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
     }
-    
-    /* Efecto hover refinado y elegante sin deformación por escala */
-    .pub-card:hover { 
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); 
-      border-color: #d65a47; /* Sintonizado con el rojo claro de publicaciones.html */
+
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 10px;
     }
-    
-    .pub-card-img { aspect-ratio: 4 / 3; overflow: hidden; background: #f0eeeb; }
-    .pub-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s ease; }
-    
-    /* Indicador visual clicable sutil */
-    .pub-card:hover .pub-card-img img { opacity: 0.88; }
-    
-    .pub-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+    .pub-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .pub-card:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+      border-color: #d65a47;
+      transform: translateY(-3px);
+    }
+
+    .pub-card-img { aspect-ratio: 4/3; overflow: hidden; background: #f0eeeb; }
+    .pub-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .pub-card:hover .pub-card-img img { transform: scale(1.04); }
+
+    .pub-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
     .pub-card-body h3 { margin: 0 0 10px; font-weight: 700; font-size: 20px; color: #111; }
-    .pub-card-body p { margin: 0 0 15px; font-size: 14px; line-height: 1.5; color: #555; flex: 1; }
+    .pub-card-body p { margin: 0 0 16px; font-size: 14px; line-height: 1.6; color: #666; flex: 1; }
     .pub-card-link { color: #d65a47; font-weight: 600; font-size: 14px; }
 
-    /* --- VÍDEOS --- */
-    #videos { padding: 80px 40px; background: #fcfcfc; position: relative; }
-    .video-carousel-container { display: flex; align-items: center; justify-content: center; gap: 0px; margin-top: 80px; }
-    .video-card { flex: 1; transition: all 0.5s ease; opacity: 0.4; transform: scale(1); }
-    .video-card.active { transform: scale(1.5); opacity: 1; z-index: 10; }
-
-    /* --- IMÁGENES --- */
-    #imagenes { padding: 40px 0; background: #fff; }
-    .grid-instagram { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
-    .insta-item { aspect-ratio: 1/1; cursor: pointer; overflow: hidden; }
-    .insta-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .insta-item:hover img { transform: scale(1.1); }
-
-    /* --- MODAL --- */
-    #modal-img { 
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-      background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center; cursor: zoom-out;
+    /* ── VÍDEOS ── */
+    #videos {
+      padding: 100px 60px;
+      background: #fff;
     }
-    #modal-img img { max-width: 90%; max-height: 90%; object-fit: contain; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
 
-    /* --- CONTACTO --- */
-    .seccion-contacto { 
-      position: relative; padding: 100px 20px; display: flex; flex-direction: column; align-items: center;
-      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('foto-juanjo.jpeg');
-      background-size: cover; background-position: center; background-attachment: fixed;
-      min-height: 100vh; justify-content: center;
+    .videos-inner { max-width: var(--max-width); margin: 0 auto; }
+
+    .video-carousel-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+      overflow: hidden;
     }
-    .form-box { background: rgba(255,255,255,0.95); padding: 40px; border-radius: 15px; width: 100%; max-width: 500px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); z-index: 2; }
-    .btn-enviar { width: 100%; padding: 15px; background: var(--color-accent); color: #fff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px; transition: background 0.3s; }
+
+    .video-card {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      transition: box-shadow 0.4s ease, opacity 0.4s ease;
+      opacity: 0.55;
+      min-width: 0;
+      position: relative;
+    }
+
+    .video-card.active {
+      flex: 2;
+      opacity: 1;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+      z-index: 10;
+      position: relative;
+      margin: 0 -15%;
+    }
+
+    .video-card:hover { opacity: 1; }
+
+    .btn-nav-video {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid #ddd;
+      background: #fff;
+      color: #555;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      z-index: 20;
+      position: relative;
+    }
+    .btn-nav-video:hover { border-color: var(--color-accent); color: var(--color-accent); box-shadow: 0 4px 14px rgba(230,0,0,0.12); }
+
+    /* ── IMÁGENES ── */
+    #imagenes { padding: 60px 0 0; background: #fff; }
+    .imagenes-header { padding: 0 60px 30px; max-width: var(--max-width); margin: 0 auto; }
+h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 768px) {
+h2 {
+    letter-spacing: 5px;
+    transform: scaleY(1.2);
+    display: inline-block;
+    transform-origin: left;
+  }
+}
+   .grid-instagram {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+}
+
+.grid-instagram img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+    /* ── MODAL ── */
+    #modal-img {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    #modal-img img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 4px; }
+
+    /* ── CONTACTO ── */
+    .seccion-contacto {
+      position: relative;
+      padding: 120px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)), url('foto-juanjo.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    .form-box {
+      background: rgba(255,255,255,0.97);
+      padding: 50px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    .form-box input,
+    .form-box textarea {
+      width: 100%;
+      padding: 13px 15px;
+      margin-bottom: 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: var(--font-principal);
+      font-size: 15px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-box input:focus,
+    .form-box textarea:focus { border-color: var(--color-accent); }
+    .form-box textarea { font-family: inherit; resize: vertical; }
+
+    .btn-enviar {
+      width: 100%;
+      padding: 15px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      transition: background 0.3s;
+    }
     .btn-enviar:hover { background: #b30000; }
-    .btn-personalizado { padding: 12px 20px; border-radius: 8px; border: 1px solid #eee; background: #fff; color: #333; text-decoration: none; font-size: 13px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; font-weight: 600; display: inline-block; }
 
-    /* --- RESPONSIVE --- */
-    @media (max-width: 768px) {
+    .btn-personalizado {
+      padding: 11px 20px;
+      border-radius: 6px;
+      border: 1.5px solid #ddd;
+      background: #fff;
+      color: #333;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-personalizado:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .seccion-acerca { padding: 80px 40px; gap: 50px; }
+      #publicaciones, #videos { padding: 80px 40px; }
+      .grid-instagram { grid-template-columns: repeat(4, 1fr); }
+      .imagenes-header { padding: 0 40px 30px; }
+    }
+
+    @media (max-width: 900px) {
+      .site-header { padding: 0 20px; }
+
       .menu-hamburguesa {
         display: block !important;
-        position: absolute;
-        right: 20px;
-        top: 15px;
-        background-color: #e0e0e0;
-        padding: 8px 12px;
+        background: #eee;
+        padding: 7px 11px;
         border-radius: 4px;
-        z-index: 2100;
       }
-
-      .menu-hamburguesa i.fa-bars {
-        color: #000000 !important;
-      }
-      nav#nav-escritorio { 
+      .menu-hamburguesa i { color: #000 !important; }
+nav#nav-escritorio {
         display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: var(--header-height); 
-        left: 0; width: 100%; 
-        background: white; 
-        padding: 20px; 
-        gap: 15px;
+        flex-direction: column;
+        position: fixed;        /* CAMBIA absolute POR fixed */
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: #ffffff;    /* blanco sólido, sin transparencias */
+        padding: 20px;
+        gap: 12px;
         align-items: flex-start;
-      }
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        z-index: 9999;
+    } /* En las llaves correctas que envuelven las propiedades */
       nav#nav-escritorio.show { display: flex; }
-      .titulo-seccion { font-size: 28px; margin: 0 0 20px 20px; }
-      .hero-retrato { width: 180px; left: 20px; top: -20px; }
-      .seccion-acerca { flex-direction: column; padding: 40px 20px; }
+
+      .titulo-seccion { font-size: 28px; }
+
+      .carrusel-full { height: 55vw; min-height: 260px; }
+      .hero-retrato { width: 150px; left: 16px; top: 16px; }
+
+      .seccion-acerca { flex-direction: column; padding: 50px 20px; gap: 30px; }
+      #publicaciones, #videos { padding: 60px 20px; }
       .pub-grid { grid-template-columns: 1fr; }
       .grid-instagram { grid-template-columns: repeat(2, 1fr); }
+      .imagenes-header { padding: 0 20px 20px; }
+      /* --- OPTIMIZACIÓN DE VIDEOS PARA MÓVIL --- */
+      .video-carousel-container { 
+        gap: 0; 
+        position: relative;
+        justify-content: center;renderV()
+      }
+      
+      /* Ocultamos los bloques de video anteriores y posteriores (#v-1 y #v-3) */
+      #v-1, #v-3 { 
+        display: none !important; 
+      }
+
+      /* Hacemos que los botones de navegación floten a los lados sobre el video */
+      .btn-nav-video {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 30;
+        background: rgba(255, 255, 255, 0.8); /* Un toque translúcido */
+      }
+      .btn-nav-video[onclick*="-1"] { left: 10px; }  /* Botón izquierdo */
+      .btn-nav-video[onclick*="1"] { right: 10px; }   /* Botón derecho */
+
+      /* El video activo (#v-2) toma todo el ancho de la pantalla */
+      .video-card.active { 
+        flex: none;
+        width: 100%; 
+        margin: 0; 
+        opacity: 1;
+        box-shadow: none;
+      }
+      
+      /* Asegura que el contenedor interno mantenga las proporciones */
+      .video-card .video-thumb-wrapper iframe {
+        width: 100% !important;
+        aspect-ratio: 16 / 9;
+        height: auto !important;
+      }
+      .form-box { padding: 30px 20px; }
+    }
+    
+  /* ... tus estilos anteriores se quedan igual aquí arriba ... */
+
+  /* 1. Ajuste automático para fotos */
+  img {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    display: block;
+  }
+
+  /* 2. Ajuste automático para videos de YouTube y Vimeo */
+  iframe[src*="youtube.com"], 
+  iframe[src*="vimeo.com"] {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9; /* Mantiene el formato del video al girar el móvil */
+  }
+  /* --- VISTA MÓVIL OPTIMIZADA --- */
+    @media (max-width: 900px) {
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        /* Esto aplica tanto si usas la etiqueta <section> como la clase .seccion */
+        section, .seccion {
+            min-height: 100vh; 
+            box-sizing: border-box;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            background-color: #ffffff; 
+            padding-bottom: 60px; 
+            width: 100%;
+            position: relative;
+        }
     }
   </style>
 </head>
 <body id="top">
 
 <header class="site-header">
-  <a href="#top"><img src="logo-juanjo.png" alt="Logo"></a>
-  
+  <a href="#top"><img src="logo-juanjo.png" alt="Logo Juanjo Vergara"></a>
+
   <div class="menu-hamburguesa" onclick="toggleMenu()">
     <i class="fas fa-bars"></i>
   </div>
@@ -246,30 +550,30 @@
     <a href="formacion.html" class="nav-button">Formación</a>
     <a href="#publicaciones" class="nav-button">Publicaciones</a>
     <a href="#videos" class="nav-button">Vídeos</a>
-    <a href="#imagenes" class="nav-button">Algunas imágenes</a>
+    <a href="#imagenes" class="nav-button">Imágenes</a>
     <a href="proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
-    <a href="#" class="nav-button">Saber más</a>
-    <a href="#contacto" class="nav-button">Contacto</a>
+    <a href="https://juanjovergara.com" target="_blank" class="nav-button">Saber más</a>
+    <a href="#contacto" class="nav-cta">Contacto</a>
   </nav>
 </header>
 
 <section class="hero-inicio">
   <div class="carrusel-full" id="carrusel-hero"></div>
   <div class="hero-retrato">
-    <img src="foto-juanjo.jpeg">
-    <a href="#contacto" class="link-contacto-rojo">ESCRIBEME</a>
+    <img src="foto-juanjo.jpeg" alt="Juanjo Vergara">
+    <a href="#contacto" class="link-contacto-rojo">ESCRÍBEME</a>
     <a href="formacion.html" class="link-contacto-rojo">FÓRMATE CONMIGO</a>
   </div>
 </section>
 
 <section id="acerca-de-mi" class="seccion-acerca">
   <div class="acerca-info">
-    <h2 class="titulo-seccion" style="margin-left:0;">Acerca de mí</h2>
-    <p>En mis años de escolar disfruté de un maestro que me hacía vivir cada moment como un instante de preguntas, respuestas y acciones.</p>
+    <h2 class="titulo-seccion">Acerca de mí</h2>
+    <p>En mis años de escolar disfruté de un maestro que me hacía vivir cada momento como un instante de preguntas, respuestas y acciones.</p>
     <p>Aprendo porque quiero, porque habla de mi realidad, me invita a reflexionar, actuar y comprometerme.</p>
-    <div style="display: flex; gap: 10px; margin-top: 30px;">
-      <a href="mas-de-mi.html" class="btn-personalizado">SABER MÁS DE MÍ</a>
-      <a href="formacion.html" class="btn-personalizado">FÓRMATE CONMIGO</a>
+    <div style="display:flex; gap:12px; margin-top:32px; flex-wrap:wrap;">
+      <a href="mas-de-mi.html" class="btn-personalizado">Saber más de mí</a>
+      <a href="formacion.html" class="btn-personalizado">Fórmate conmigo</a>
     </div>
   </div>
   <div class="acerca-video">
@@ -280,92 +584,113 @@
 </section>
 
 <section id="publicaciones">
-  <h2 class="titulo-seccion" style="margin-left:0;">Publicaciones</h2>
-  <div class="pub-grid">
-    
-    <a href="publicaciones.html" class="pub-card">
-      <div class="pub-card-img"><img src="img-publicaciones.png" alt="Publicaciones"></div>
-      <div class="pub-card-body">
-        <h3>Publicaciones</h3>
-        <p>Libros y materiales sobre ABP y creatividad en el aula.</p>
-        <span class="pub-card-link">Ver todo →</span>
-      </div>
-    </a>
-    
-    <a href="#" class="pub-card">
-      <div class="pub-card-img"><img src="img-blog.png" alt="Blog"></div>
-      <div class="pub-card-body">
-        <h3>Blog</h3>
-        <p>Reflexiones sobre educación, aprendizaje y proyectos.</p>
-        <span class="pub-card-link">Leer →</span>
-      </div>
-    </a>
-  <a href="https://abpproyectosparaeducar.substack.com" class="pub-card" target="_blank" rel="noopener noreferrer">
-      <div class="pub-card-img"><img src="img-substack.png" alt="Substack"></div>
-      <div class="pub-card-body">
-        <h3>Substack</h3>
-        <p>Newsletter periódica. Suscríbete para no perderte nada.</p>
-        <span class="pub-card-link">Suscribirse →</span>
-      </div>
-    </a>
+  <div class="publicaciones-inner">
+    <h2 class="titulo-seccion">Publicaciones</h2>
+    <div class="pub-grid">
+      <a href="publicaciones.html" class="pub-card">
+        <div class="pub-card-img"><img src="img-publicaciones.png" alt="Publicaciones"></div>
+        <div class="pub-card-body">
+          <h3>Publicaciones</h3>
+          <p>Libros y materiales sobre ABP y creatividad en el aula.</p>
+          <span class="pub-card-link">Ver todo →</span>
+        </div>
+      </a>
+      <a href="#" class="pub-card">
+        <div class="pub-card-img"><img src="img-blog.png" alt="Blog"></div>
+        <div class="pub-card-body">
+          <h3>Blog</h3>
+          <p>Reflexiones sobre educación, aprendizaje y proyectos.</p>
+          <span class="pub-card-link">Leer →</span>
+        </div>
+      </a>
+      <a href="https://abpproyectosparaeducar.substack.com" class="pub-card" target="_blank" rel="noopener noreferrer">
+        <div class="pub-card-img"><img src="img-substack.png" alt="Substack"></div>
+        <div class="pub-card-body">
+          <h3>Substack</h3>
+          <p>Newsletter periódica. Suscríbete para no perderte nada.</p>
+          <span class="pub-card-link">Suscribirse →</span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
 <section id="videos">
-  <h2 class="titulo-seccion">Vídeos</h2>
-  <div class="video-carousel-container">
-    <button onclick="moveV(-1, true)" class="btn-personalizado"><i class="fas fa-chevron-left"></i></button>
-    <div id="v-1" class="video-card"></div>
-    <div id="v-2" class="video-card active"></div>
-    <div id="v-3" class="video-card"></div>
-    <button onclick="moveV(1, true)" class="btn-personalizado"><i class="fas fa-chevron-right"></i></button>
+  <div class="videos-inner">
+    <h2 class="titulo-seccion">Vídeos</h2>
+    <div class="video-carousel-container">
+      <button onclick="moveV(-1, true)" class="btn-nav-video" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+      <div id="v-1" class="video-card"></div>
+      <div id="v-2" class="video-card active"></div>
+      <div id="v-3" class="video-card"></div>
+      <button onclick="moveV(1, true)" class="btn-nav-video" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+    </div>
   </div>
 </section>
 
 <section id="imagenes">
-  <h2 class="titulo-seccion">Algunas imágenes</h2>
+  <div class="imagenes-header">
+    <h2 class="titulo-seccion">Algunas imágenes</h2>
+  </div>
   <div class="grid-instagram" id="insta-grid"></div>
 </section>
 
 <div id="modal-img" onclick="cerrarModal()">
-  <img id="img-full" src="">
+  <img id="img-full" src="" alt="">
 </div>
 
 <section id="contacto" class="seccion-contacto">
-    <div class="form-box">
-        <h2 class="titulo-seccion" style="font-size: 28px; text-align: center; margin: 0 0 20px 0;">Contacto</h2>
-       <form action="https://formspree.io/f/mjgdynrz" method="POST">
-<input type="hidden" name="_next" value="https://tu-dominio-final.vercel.app/gracias.html" />
-            <input type="text" name="nombre" placeholder="Tu nombre" required style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ddd; border-radius:6px;">
-            <input type="email" name="email" placeholder="Tu email" required style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ddd; border-radius:6px;">
-            <textarea name="mensaje" rows="4" placeholder="Mensaje" required style="width:100%; padding:12px; border:1px solid #ddd; border-radius:6px; margin-bottom:12px; font-family:inherit;"></textarea>
-            <button type="submit" class="btn-enviar">Enviar Mensaje</button>
-        </form>
-    </div>
+  <div class="form-box">
+    <h2 class="titulo-seccion" style="font-size:28px; text-align:center; margin:0 0 24px;">Contacto</h2>
+    <form action="https://formspree.io/f/mjgdynrz" method="POST">
+      <input type="hidden" name="_next" value="./gracias.html">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu email" required>
+      <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+      <button type="submit" class="btn-enviar">Enviar mensaje</button>
+    </form>
+  </div>
 </section>
 
 <script>
   function toggleMenu() {
     const nav = document.getElementById('nav-escritorio');
-    if(nav) nav.classList.toggle('show');
+    if (nav) nav.classList.toggle('show');
   }
 
-const fotosHero = [
-  'img-inicio/fanzine_1.jpg', 
-  'img-inicio/gnro_6.jpg', 
-  'img-inicio/hop_1.jpg', 
-  'img-inicio/ifoulou_12.jpg', 
-  'img-inicio/india_1.jpg'
-];
+  // Cerrar menú automáticamente al hacer clic en una opción (móvil)
+  document.addEventListener('DOMContentLoaded', function() {
+    const navEscritorio = document.getElementById('nav-escritorio');
+    if (navEscritorio) {
+      // Buscamos todos los enlaces que van a secciones de la página dentro del menú
+      const enlaces = navEscritorio.querySelectorAll('a[href^="#"]');
+      
+      enlaces.forEach(enlace => {
+        enlace.addEventListener('click', () => {
+          // Quitamos la clase 'show' para que el menú se esconda inmediatamente
+          navEscritorio.classList.remove('show');
+        });
+      });
+    }
+  });
+
+  const fotosHero = [
+    'img-inicio/fanzine_1.jpg',
+    'img-inicio/gnro_6.jpg',
+    'img-inicio/hop_1.jpg',
+    'img-inicio/ifoulou_12.jpg',
+    'img-inicio/india_1.jpg'
+  ];
+
   const heroCont = document.getElementById('carrusel-hero');
-  if(heroCont){
+  if (heroCont) {
     fotosHero.forEach((img, i) => {
-      heroCont.innerHTML += `<div class="carrusel-slide ${i===0?'activa':''}"><img src="${img}"></div>`;
+      heroCont.innerHTML += `<div class="carrusel-slide ${i===0?'activa':''}"><img src="${img}" alt=""></div>`;
     });
     let hIdx = 0;
     setInterval(() => {
       const s = document.querySelectorAll('.carrusel-slide');
-      if(s.length){
+      if (s.length) {
         s[hIdx].classList.remove('activa');
         hIdx = (hIdx + 1) % s.length;
         s[hIdx].classList.add('activa');
@@ -383,26 +708,41 @@ const fotosHero = [
       vData = await res.json();
       renderV();
       startAutoV();
-    } catch (e) { console.error("Error cargando mis-videos.json:", e); }
+    } catch (e) { console.error('Error cargando mis-videos.json:', e); }
   }
 
-  function renderV() {
-    if(vData.length === 0) return;
+ function renderV() {
+    if (vData.length === 0) return;
     ['v-1', 'v-2', 'v-3'].forEach((id, i) => {
       const idx = (vOffset + i) % vData.length;
       const card = document.getElementById(id);
-      if(card){
-        card.innerHTML = `<div class="video-thumb-wrapper"><iframe src="${vData[idx].url}" allowfullscreen></iframe></div>`;
+      if (card) {
+        card.innerHTML = `<div class="video-thumb-wrapper" style="border-radius:0"><iframe src="${vData[idx].url}" allowfullscreen></iframe></div>`;
         card.onmouseenter = () => stopAutoV();
+      }
+    });
+
+    // --- DETECTOR DE REPRODUCCIÓN EN MÓVIL/ESCRITORIO ---
+    // Escuchamos los mensajes que envían los reproductores incrustados (Vimeo/YouTube)
+    window.addEventListener('message', function(e) {
+      try {
+        const data = JSON.parse(e.data);
+        // Si es Vimeo y se le da a Play, o si es YouTube y cambia de estado a reproduciendo
+        if (data.event === 'play' || data.info?.playerState === 1) {
+          stopAutoV();
+          console.log('Carrusel pausado porque el usuario está viendo el video.');
+        }
+      } catch (err) {
+        // Ignorar mensajes que no sean JSON válidos de los reproductores
       }
     });
   }
 
   function moveV(d, manual = false) {
-    if(vData.length === 0) return;
+    if (vData.length === 0) return;
     vOffset = (vOffset + d + vData.length) % vData.length;
     renderV();
-    if(manual) startAutoV();
+    if (manual) startAutoV();
   }
 
   function startAutoV() {
@@ -411,7 +751,7 @@ const fotosHero = [
   }
 
   function stopAutoV() {
-    if(autoMoveV) clearInterval(autoMoveV);
+    if (autoMoveV) clearInterval(autoMoveV);
     autoMoveV = null;
   }
 
@@ -420,44 +760,39 @@ const fotosHero = [
       const res = await fetch('fotos-web/listado.json');
       const files = await res.json();
       const grid = document.getElementById('insta-grid');
-      if(grid){
+      if (grid) {
         files.forEach(f => {
-          grid.innerHTML += `<div class="insta-item" onclick="abrirModal('${f}')"><img src="fotos-web/thumbs/${f}"></div>`;
+          grid.innerHTML += `<div class="insta-item" onclick="abrirModal('${f}')"><img src="fotos-web/thumbs/${f}" alt=""></div>`;
         });
-        
-        // CORRECCIÓN: Si el usuario viene desde formacion.html directo a #contacto
         if (window.location.hash === '#contacto') {
           setTimeout(() => {
-            const contactoSec = document.getElementById('contacto');
-            if (contactoSec) {
-              contactoSec.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 700); // Pequeña espera para asegurar que el navegador ha dibujado las fotos
+            const sec = document.getElementById('contacto');
+            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+          }, 700);
         }
       }
-    } catch (e) { console.error("Error cargando listado.json:", e); }
+    } catch (e) { console.error('Error cargando listado.json:', e); }
   }
 
   function abrirModal(f) {
     const modalImg = document.getElementById('img-full');
     const modal = document.getElementById('modal-img');
-    if(modalImg && modal) {
-        modalImg.src = `fotos-web/full/${f}`;
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+    if (modalImg && modal) {
+      modalImg.src = `fotos-web/full/${f}`;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
   }
 
   function cerrarModal() {
     const modal = document.getElementById('modal-img');
-    if(modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+    if (modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
   }
 
   window.onload = () => { initVideos(); initInsta(); };
 </script>
-
 </body>
 </html>

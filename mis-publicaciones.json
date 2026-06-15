@@ -1,10 +1,10 @@
 [
   {
     "tipo": "libro",
-    "titulo": "Aprendo porque quiero",
-    "editorial": "Narcea",
-    "año": "2015",
-    "imagen": "img-libros/aprendo-porque-quiero.jpg",
+    "titulo": "Aprendo porque quiero (10 ed.)",
+    "editorial": "S.M.-Biblioteca de Innovación Educativa",
+    "año": "2016-1",
+    "imagen": "img-libros/aprendo.jpg",
     "enlace": "https://drive.google.com/file/d/ejemplo1"
   },
   {
