@@ -11,10 +11,7 @@
       --color-text: #333;
       --color-accent: #e60000;
       --header-height: 80px; 
-      /* Cambio a la nueva fuente */
       --font-principal: 'Roboto', sans-serif;
-      
-      /* Mantengo variables originales de proyectos para la cuadricula */
       --rojo: #c0392b;
       --text: #1a1a1a;
       --muted: #6b6b6b;
@@ -25,7 +22,6 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    
     section { scroll-margin-top: var(--header-height); }
 
     body { 
@@ -38,28 +34,26 @@
       min-height: 100vh;
     }
 
-h1, h2 {
-  font-family: var(--font-principal);
-  font-weight: 300;               /* Quita el grosor 700 y lo vuelve minimalista */
-  font-size: 42px;
-  color: var(--color-accent);     /* Mantiene tu color rojo corporativo */
-  margin: 0 0 30px 40px;          
-  text-align: left;
-  text-transform: uppercase;      /* Pasa el texto a mayúsculas automáticamente */
-  letter-spacing: 2px;            /* Espaciado limpio para que no se peguen las letras */
-}
+    h1, h2 {
+      font-family: var(--font-principal);
+      font-weight: 300;
+      font-size: 42px;
+      color: var(--color-accent);
+      margin: 0 0 30px 40px;          
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-/* El estirado vertical exclusivo para cuando lo mires en el ordenador */
-@media (min-width: 900px) {
-h1, h2 {
-    letter-spacing: 5px;          /* Más separación en pantallas grandes */
-    transform: scaleY(1.2);       /* Estira la tipografía hacia arriba */
-    display: inline-block;
-    transform-origin: left;       /* Evita que el texto se mueva de su sitio al estirarse */
-  }
-}
+    @media (min-width: 900px) {
+      h1, h2 {
+        letter-spacing: 5px;
+        transform: scaleY(1.2);
+        display: inline-block;
+        transform-origin: left;
+      }
+    }
 
-    /* --- CABECERA (Menú sin óvalos, iconos ni fondos) --- */
     .site-header { 
       display: flex; 
       align-items: center; 
@@ -85,7 +79,6 @@ h1, h2 {
       height: 100%;        
     }
 
-    /* ESTILO PROFESIONAL DEL MENÚ */
     .nav-button {
       display: inline-flex;
       align-items: center;
@@ -93,19 +86,15 @@ h1, h2 {
       color: #555;
       font-size: 13px;
       font-weight: 500;
-      text-transform: uppercase; /* MAYÚSCULAS */
-      letter-spacing: 1.2px;      /* ESPACIADO PROFESIONAL */
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
       transition: color 0.3s ease;
       background: none;
       border: none;
       padding: 0 5px;
     }
     
-    .nav-button:hover {
-      color: var(--color-accent); /* Rojo al pasar el ratón */
-    }
-
-    /* Ocultamos los iconos que antes estaban dentro de los enlaces */
+    .nav-button:hover { color: var(--color-accent); }
     .nav-button img { display: none; }
 
     .menu-hamburguesa {
@@ -116,7 +105,6 @@ h1, h2 {
       z-index: 2100;
     }
 
-    /* --- ESTILOS ESPECÍFICOS DE LA SECCIÓN PROYECTOS --- */
     .hero { max-width: 860px; margin: 3.5rem auto 2rem; padding: 0 2rem; }
     .hero-title { font-size: clamp(32px, 5vw, 48px); color: var(--rojo); margin-bottom: 1.5rem; }
 
@@ -166,33 +154,28 @@ h1, h2 {
     .modal-scroll-area::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
     .modal-desc { font-size: 14.5px; line-height: 1.7; color: var(--muted); }
 
-    /* --- RESPONSIVE --- */
-    /* --- RESPONSIVE --- */
-@media (max-width: 900px) {
-
-    .menu-hamburguesa { 
+    @media (max-width: 900px) {
+      .menu-hamburguesa { 
         display: block; 
         position: absolute; 
         right: 20px; 
         top: 25px; 
-    }
+      }
 
-    nav#nav-escritorio {
-        display: none; /* Ahora sí está dentro de la regla */
+      nav#nav-escritorio {
+        display: none;
         flex-direction: column;
-        position: fixed; /* CAMBIA absolute POR fixed */
+        position: fixed;
         top: var(--header-height);
         left: 0;
         width: 100%;
-        background: #ffffff; /* blanco sólido, sin transparencias */
+        background: #ffffff;
         padding: 20px;
         gap: 12px;
         align-items: flex-start;
         box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         z-index: 9999;
-    }
-
-} /* Fin de la Media Query */
+      }
 
       nav#nav-escritorio.show { display: flex; }
       .grid { grid-template-columns: 1fr; }
@@ -205,7 +188,7 @@ h1, h2 {
 <header class="site-header">
   <a href="../index.html#top"><img src="../logo-juanjo.png" alt="Logo"></a>
   
-  <div class="menu-hamburguesa" onclick="toggleMenu()">
+  <div class="menu-hamburguesa" id="btn-hamburguesa">
     <i class="fas fa-bars"></i>
   </div>
 
@@ -257,18 +240,15 @@ h1, h2 {
 </div>
 
 <script>
-// 1. Crear la función para abrir y cerrar el menú en esta página
-  function toggleMenu() {
+  document.getElementById('btn-hamburguesa').addEventListener('click', function() {
     const nav = document.getElementById('nav-escritorio');
     if (nav) nav.classList.toggle('show');
-  }
+  });
 
-  // 2. Hacer que el menú se cierre solo al pulsar una opción
   const navEscritorio = document.getElementById('nav-escritorio');
   if (navEscritorio) {
-    const enlaces = navEscritorio.querySelectorAll('.nav-button');
-    enlaces.forEach(enlace => {
-      enlace.addEventListener('click', () => {
+    navEscritorio.querySelectorAll('.nav-button').forEach(function(enlace) {
+      enlace.addEventListener('click', function() {
         navEscritorio.classList.remove('show');
       });
     });
@@ -278,64 +258,49 @@ const projects = [
   { 
     id:"1", title:"India", categories:["Viaje y territorio", "Acción Social", "Innovación"], img:"imagenes-proyectos/india_10.jpg", 
     resumen:"La India es un lugar que no deja indiferente a nadie. Un proyecto que busca acercar al alumnado a una realidad culturalmente rica y compleja a través de la experiencia directa del viaje.", 
-    literal:"Desde 2018, viajamos con grupos de educadores y educadoras en formación a distintos proyectos educativos in India. Visitamos las escuelas de Jhajjar del proyecto Pasahaur que coordina Don Bosco. Es una zona de decenas de empresas ladrilleras en las que las condiciones de trabajo son eternas para familias enteras. Los  niños y niñas no son ajenos al trabajo. Subidos en los ladrillos que secan al sol pasan los días. Cada mañana un autobus abre sus puertas y les invita a dejar su día a día para ir a la escuela. Aprender, juegan, comen y son tratados con cariño ",
+    literal:"Desde 2018, viajamos con grupos de educadores y educadoras en formación a distintos proyectos educativos in India. Visitamos las escuelas de Jhajjar del proyecto Pasahaur que coordina Don Bosco. Es una zona de decenas de empresas ladrilleras en las que las condiciones de trabajo son eternas para familias enteras. Los niños y niñas no son ajenos al trabajo. Subidos en los ladrillos que secan al sol pasan los días. Cada mañana un autobus abre sus puertas y les invita a dejar su día a día para ir a la escuela. Aprender, juegan, comen y son tratados con cariño.",
     links: [{ type: "web", url: "https://estanciasformativas.wixsite.com/india" }]
   },
   { 
-    id: "2", 
-    title: "Laboratorio de Innovación Educativa (LabInE)", 
-    categories: ["Innovación"], 
-    img: "imagenes-proyectos/clase_9.jpg", 
-    resumen: "El Laboratorio de Innovación Educativa (LABinE) es un espacio de formación y de encuentro de docentes que creen que la innovación debe comprometerse con las personas y el mundo que habitan.", 
-    literal: "La innovación educativa, o cambia las escuelas y la forma de provocar el aprendizaje, o solo es una moda más con escaso interés. LABinE es un espacio asociativo formado por docentes en ejercicio. Su objetivo es poner en relación a docentes, escuelas y expertos en educación",
+    id:"2", title:"Laboratorio de Innovación Educativa (LabInE)", categories:["Innovación"], img:"imagenes-proyectos/clase_9.jpg", 
+    resumen:"El Laboratorio de Innovación Educativa (LABinE) es un espacio de formación y de encuentro de docentes que creen que la innovación debe comprometerse con las personas y el mundo que habitan.", 
+    literal:"La innovación educativa, o cambia las escuelas y la forma de provocar el aprendizaje, o solo es una moda más con escaso interés. LABinE es un espacio asociativo formado por docentes en ejercicio. Su objetivo es poner en relación a docentes, escuelas y expertos en educación.",
     links: [
       { type: "web", url: "https://juanjovergara.wixsite.com/labine" },
       { type: "video", url: "https://vimeo.com/1724363" }
-    ] // <-- AQUÍ ESTÁ EL ARREGLO: Tenías ']]', ahora está correctamente cerrado con ']'
+    ]
   },
   { 
-    id: "3", 
-    title: "Hermanadas por la EpD", 
-    categories: ["Innovación", "Acción Social", "Género"], 
-    img: "imagenes-proyectos/ifoulou_17.jpg", 
-    resumen: "Hermanadas por la educación para el Desarrollo (HxEpD) crea una red estable de centros docentes que integren la Ciudadanía Global en sus currículos.", 
-    literal: "El proyecto nace en colaboración con la AECID y organiza una semana de actividades de formación, encuentro y aprendizaje renuniendo a diversos centrois educativos de formación profesional, educación infanil y primaria. La organización entera del evento corre a cargo del alumnado que contacta con expertos en educación, crean los espacios, diseñan y ejeutan las actividades educativas. A lo largo de la semana varios cientos de alumnos, alumnas, docentes, ponentes, autocares, juegos y mucha mucha ilusión.",
+    id:"3", title:"Hermanadas por la EpD", categories:["Innovación", "Acción Social", "Género"], img:"imagenes-proyectos/ifoulou_17.jpg", 
+    resumen:"Hermanadas por la educación para el Desarrollo (HxEpD) crea una red estable de centros docentes que integren la Ciudadanía Global en sus currículos.", 
+    literal:"El proyecto nace en colaboración con la AECID y organiza una semana de actividades de formación, encuentro y aprendizaje reuniendo a diversos centros educativos de formación profesional, educación infantil y primaria. La organización entera del evento corre a cargo del alumnado que contacta con expertos en educación, crean los espacios, diseñan y ejecutan las actividades educativas. A lo largo de la semana varios cientos de alumnos, alumnas, docentes, ponentes, autocares, juegos y mucha mucha ilusión.",
     links: [
       { type: "web", url: "https://www.juanjovergara.wixsite.com/hxepd" }, 
       { type: "video", url: "https://www.youtube.com/watch?v=LlShHeU2qU4" }
     ]
   },
   { 
-    id: "4", 
-    title: "El péndulo de Ifoulou", 
-    categories: ["Innovación", "Acción Social", "Viaje y territorio"], 
-    img: "imagenes-proyectos/ifoulou_2.jpg", 
-    resumen: "El péndulo de Ifoulou es un proyecto de aprendizaje-servicio en el Atlas donde la cooperación y el encuentro transforman las miradas de queienes los protagonizan. Un proyecto que recorre varias décadas de planificación, viajes, actividades, contenidos y reflexiones sobre el papel de la educación en nuestro mundo.", 
-    literal: "El primer día de clase el alumnado recibe la noticia de que va a vivir un proyecto singular: El péndulo de Ifoulou. Tras meses de preparación viajarán al Atlas para poner en práctica todo lo diseñado. Al principio no saben qué es Ifoulou, luego descubren que es una pequeña aldea del Átlas de población amazig. Al terminar descubirán que los puntos cardinales son cinco: Nert, Sur, Este, Oeste y Aquí",
+    id:"4", title:"El péndulo de Ifoulou", categories:["Innovación", "Acción Social", "Viaje y territorio"], img:"imagenes-proyectos/ifoulou_2.jpg", 
+    resumen:"El péndulo de Ifoulou es un proyecto de aprendizaje-servicio en el Atlas donde la cooperación y el encuentro transforman las miradas de quienes los protagonizan.", 
+    literal:"El primer día de clase el alumnado recibe la noticia de que va a vivir un proyecto singular: El péndulo de Ifoulou. Tras meses de preparación viajarán al Atlas para poner en práctica todo lo diseñado. Al principio no saben qué es Ifoulou, luego descubren que es una pequeña aldea del Atlas de población amazig. Al terminar descubrirán que los puntos cardinales son cinco: Norte, Sur, Este, Oeste y Aquí.",
     links: [
       { type: "web", url: "https://www.juanjovergara.com/pendulo" }, 
       { type: "video", url: "https://www.youtube.com/watch?v=MRrHIi3EhgU" }
     ]
   },
-{ 
-    id: "5", 
-    title: "Gnro Mjr", 
-    categories: ["Innovación", "Género"], 
-    img: "imagenes-proyectos/gnro_5.jpg", 
-    resumen: "Gnro Mjr fué un proyecto organzizado en el marco de Colectivo en Acción que construyó una obra escéncia a partir de la suma de distintas propuestas", 
-    literal: "El análisis de las imágenes de las revistas y diarios, el papel de la manzana y sus mordicos en los mitos, las entrevistas sobre 'el día de la mujer' a adolescentes, la lectura del texto de Sony Laboy Tansi (las 7 soledades de Lorsa López), los silencios, las máscaras y su conotación de género. Todo ello aderezado con la búsqeuda de un lenguaje performativo que permita la construcción del significado en el expectador.",
+  { 
+    id:"5", title:"Gnro Mjr", categories:["Innovación", "Género"], img:"imagenes-proyectos/gnro_5.jpg", 
+    resumen:"Gnro Mjr fué un proyecto organizado en el marco de Colectivo en Acción que construyó una obra escénica a partir de la suma de distintas propuestas.", 
+    literal:"El análisis de las imágenes de las revistas y diarios, el papel de la manzana y sus mordiscos en los mitos, las entrevistas sobre 'el día de la mujer' a adolescentes, la lectura del texto de Sony Laboy Tansi (las 7 soledades de Lorsa López), los silencios, las máscaras y su connotación de género. Todo ello aderezado con la búsqueda de un lenguaje performativo que permita la construcción del significado en el espectador.",
     links: [
       { type: "blog", url: "https://www.dropbox.com/scl/fi/fx6j478rfewhqjw7ty5r7/El-muro-de-la-diversidad.pdf?rlkey=mudpk29mf2eeqiago2mdrfzwa&e=1&dl=0" }, 
       { type: "video", url: "https://vimeo.com/1724363" }
     ]
   },
   { 
-    id: "6", 
-    title: "El Muro de la Diversidad", 
-    categories: ["Innovación", "Acción Social"], 
-    img: "imagenes-proyectos/muro_1.jpg", 
-    resumen: "El Muro de la Diversidad es una intervención plástica que denuncia fronteras invisibles y reflexiona sobre la acogida. La prueba de que es posible proyectar la educación desde la singularidad de los que la protagonizan.", 
-    literal: "¿Es posible deconstruir el concepto de 'muro' y utilizarlo como eje de un proyecto para unir a las personas?. Esta fué la pregunta que disparó un proyecto que invitaba a recoger la singualidad que protagonzamos y regalarla al resto. En una imágen tu rostro; en la otra, una parte de tí que quieres regalar a otra compañera. El resultado: la construcción de un Muro que nos une. Por el camino decenas de contenidos valiosos para comprendernos en la diversidad.",
+    id:"6", title:"El Muro de la Diversidad", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/muro_1.jpg", 
+    resumen:"El Muro de la Diversidad es una intervención plástica que denuncia fronteras invisibles y reflexiona sobre la acogida.", 
+    literal:"¿Es posible deconstruir el concepto de 'muro' y utilizarlo como eje de un proyecto para unir a las personas? Esta fue la pregunta que disparó un proyecto que invitaba a recoger la singularidad que protagonizamos y regalarla al resto. En una imagen tu rostro; en la otra, una parte de ti que quieres regalar a otra compañera. El resultado: la construcción de un Muro que nos une.",
     links: [
       { type: "blog", url: "https://www.dropbox.com/scl/fi/fx6j478rfewhqjw7ty5r7/El-muro-de-la-diversidad.pdf?rlkey=mudpk29mf2eeqiago2mdrfzwa&e=1&dl=0" }, 
       { type: "video", url: "https://vimeo.com/1724363" }
@@ -343,136 +308,137 @@ const projects = [
   },
   { 
     id:"8", title:"Festival de educación, arte y acción social", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/festival_4.jpg", 
-    resumen:"El desafío era organziar un Festival que aúne a artistas y expertos conectado con el currículo escolar de la F.P.", 
-    literal:"A lo largo de todo el curso se diseñan todas las actividades necesarias para realizar un festival. Secciones de vídeo a concrso, imagen, teatro, danza, etc. Actividades para financiar los espacios, los premios y todo aquello necesario para cumplir con éxito el desafío. A lo largo del curso, cada módulo profesional piensa qué contenidos curriculares se pueden poner al servicio de este proyecto.",
-    links: [
-        { type: "blog", url: "https://www.dropbox.com/scl/fi/eum8le3qdv8a04ngvix7v/Festival-de-arte-memoria.pdf?rlkey=px6clmb5e6gcxegl4zkymnfbd&e=1&dl=0" }
-    ]
+    resumen:"El desafío era organizar un Festival que aúne a artistas y expertos conectado con el currículo escolar de la F.P.", 
+    literal:"A lo largo de todo el curso se diseñan todas las actividades necesarias para realizar un festival. Secciones de vídeo a concurso, imagen, teatro, danza, etc. Actividades para financiar los espacios, los premios y todo aquello necesario para cumplir con éxito el desafío.",
+    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/eum8le3qdv8a04ngvix7v/Festival-de-arte-memoria.pdf?rlkey=px6clmb5e6gcxegl4zkymnfbd&e=1&dl=0" }]
   },
   { 
     id:"9", title:"El bosque de Z_oma", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/zoma_6.jpg", 
     resumen:"Un proyecto al que nos sumamos entusiasmados: la Intervención comunitaria para transformar el entorno urbano más cercano.", 
-    literal:"Inspirado en el Bosque de Oma de Agustín Ibarrola, busca la renaturalización del espacio escolar de un centro escolar en la periferia de la ciudad de Madrid: El CEIP Manuel Núñez de Arenas. El bosque de Z_Oma es un proyecto de este centro al que nos sumamos con entusiasmo descurbirendo que el ABP es una herramienta perfecta para hacer posible el trabajo conjunto entre alumnado y profesorado de todos los ciclos y niveles educaitvos. Incluso, centros distintos.",
+    literal:"Inspirado en el Bosque de Oma de Agustín Ibarrola, busca la renaturalización del espacio escolar de un centro en la periferia de Madrid: El CEIP Manuel Núñez de Arenas. El bosque de Z_Oma es un proyecto al que nos sumamos con entusiasmo descubriendo que el ABP es una herramienta perfecta para el trabajo conjunto entre alumnado y profesorado de todos los ciclos.",
     links: [{ type: "blog", url: "https://www.portalvallecas.es/proyecto-z_oma-recuperacion-de-jardines-del-ceip-manuel-nunez-de-arenas-de-vallecas/" }, { type: "video", url: "https://vimeo.com/113219637" }]
   },
   { 
     id:"10", title:"InterActúa", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/clase_10.jpg", 
     resumen:"Jornadas anuales que reúnen centros de FP para compartir formación sobre los ciclos de Animación Sociocultural.", 
-    literal:"Formar educadores para la intervención social aconseja utilizar los espacios reales. Una buena forma de hacerlo es reunir a todos los centros de la Comunidad de Madrid que imparten estudios de Animación Sociocultural y reunirlos en unas jornadas en las que los protagonistas sean ellos y ellas mismas. Esta fué la idea alocada que nos rondó hace bastanes años ya a un grupo de cuatro docentes. Nos pusimos manos a la obra y año tras año InterActúa se repite. Es un momento en el que el aliumnado de los distintos centros protagonizan la educación.",
+    literal:"Formar educadores para la intervención social aconseja utilizar los espacios reales. Una buena forma de hacerlo es reunir a todos los centros de la Comunidad de Madrid que imparten estudios de Animación Sociocultural en unas jornadas en las que los protagonistas sean ellos y ellas mismas.",
     links: [] 
   },
   { 
     id:"11", title:"Intervención en Aulario Público (I.A.P.)", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/silla.jpg", 
-    resumen:"El estrañamiento es un ejercicio que debería protagonizar el pensamiento crítico. IAP es una herramienta para que los centros lo hagan.", 
-    literal:"El proyecto consisten en la elaboración y puesta en práctica de propuestas disruptivas en relación a conceptos tradicionales de la enseñanza: las puertas cerradas de las aulas, la construcción de espacios alternativos, la utlidad de las mesas del profesorado, etc. El grupo recoge el encargo a demada del centro y crea una acción disruptiva que altera la cotidianeidad del centro. Luego dinamiza una reflexión en relación a ello y las aternativas que ofrece.",
+    resumen:"El extrañamiento es un ejercicio que debería protagonizar el pensamiento crítico. IAP es una herramienta para que los centros lo hagan.", 
+    literal:"El proyecto consiste en la elaboración y puesta en práctica de propuestas disruptivas en relación a conceptos tradicionales de la enseñanza: las puertas cerradas de las aulas, la construcción de espacios alternativos, la utilidad de las mesas del profesorado, etc.",
     links: [{ type: "web", url: "https://juanjovergara.wixsite.com/ieap" }]
   },
   { 
     id:"12", title:"El día a día", categories:["Innovación"], img:"imagenes-proyectos/clase_1.jpg", 
     resumen:"Diario visual y narrativo de los procesos de aprendizaje cotidianos.", 
-    literal:"La evaluación debe superar la función calificadora y comprometerse con el aprendizaje. Esta frase se escucha a diario en las actividades de formación docente, pero se ofrecen pocas herramientas para llevarlas a cabo. Crear un binomio provocar-documentar el día a día de lo que ocurre en el aula para hacerlo visible y reflexionar sobre el aprendizaje.",
+    literal:"La evaluación debe superar la función calificadora y comprometerse con el aprendizaje. Esta frase se escucha a diario en las actividades de formación docente, pero se ofrecen pocas herramientas para llevarlas a cabo. Crear un binomio provocar-documentar el día a día del aula para hacerlo visible y reflexionar sobre el aprendizaje.",
     links: [
-        { type: "video", url: "https://vimeo.com/147017081" },
-        { type: "video", url: "https://vimeo.com/2345409" },
-        { type: "video", url: "https://vimeo.com/1955156" },
-        { type: "video", url: "https://vimeo.com/147553221" }] 
+      { type: "video", url: "https://vimeo.com/147017081" },
+      { type: "video", url: "https://vimeo.com/2345409" },
+      { type: "video", url: "https://vimeo.com/1955156" },
+      { type: "video", url: "https://vimeo.com/147553221" }
+    ] 
   },
   { 
     id:"13", title:"Escuelas viajeras", categories:["Innovación", "Viaje y territorio", "Acción Social"], img:"imagenes-proyectos/IFOULOU_4.jpg", 
     resumen:"Solo se puede aprender a vivir viviendo. Hacerlo invita a descubrir otras formas de aprender y vivir a través del viaje.", 
-    literal:"El mapa es una representación de la realidad. Escuelas Viajeras se compromete con una idea: Solo es posible construir la reflexión y el análisis de la realidad desde la realidad misma. Mucho más en el caso de la formación de los docentes del presente y el futuro",
+    literal:"El mapa es una representación de la realidad. Escuelas Viajeras se compromete con una idea: Solo es posible construir la reflexión y el análisis de la realidad desde la realidad misma. Mucho más en el caso de la formación de los docentes del presente y el futuro.",
     links: [{ type: "web", url: "https://juanjovergara.wixsite.com/escuelasviajeras" }]
   },
   { 
     id:"14", title:"Colectivo en Acción", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/ifoulou_12.jpg", 
     resumen:"Espacio de encuentro docente para compartir y crear innovación.", 
-    literal:"Nació en 2004 buscando romper fronteras entre lo formal y no-formal. En aquellos años hacía falta defender que la educación es un ejercicio de búsqueda de significado compartido y no la transmisión alienada de contenidos. Así surge la idea de crear un colectivo-en-Acción protagonizado por alumnado que establece relaciones amistosas con el aprendizaje. El arte, la acción social, el juego, las intervención comunitarias, las relaciones con colectivos de todo tipo debujan este proyecto",
+    literal:"Nació en 2004 buscando romper fronteras entre lo formal y no-formal. En aquellos años hacía falta defender que la educación es un ejercicio de búsqueda de significado compartido y no la transmisión alienada de contenidos. El arte, la acción social, el juego, las intervenciones comunitarias dibujan este proyecto.",
     links: [] 
   },
   { 
     id:"15", title:"Escuela Emprende_21", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/clase_8.jpg", 
-    resumen:"El emprendimiento parece estar asociado inexusblemente al mundo de la economía de mercado. Sin embargo, este proyecto nace de una pregunta: ¿es posible aprender sin emprender?.", 
-    literal:"Este proyecto está dirigido a docentes y vehiculado a través de la asociación Psi. Reúne a docentes interesados en construir una escuela comprometida con el entorno y dibuja las acciones a emprender como profesionales de la educación. Nos negamos a que la sociedad de consumo rapte el concepto emprendimiento como algo alejado a la acción directa sobre la realidad que vivimos en los barrios y las familias.",
+    resumen:"¿Es posible aprender sin emprender? Este proyecto redefine el emprendimiento alejándolo de la lógica de mercado.", 
+    literal:"Este proyecto está dirigido a docentes y vehiculado a través de la asociación Psi. Reúne a docentes interesados en construir una escuela comprometida con el entorno. Nos negamos a que la sociedad de consumo rapte el concepto emprendimiento como algo alejado a la acción directa sobre la realidad que vivimos en los barrios y las familias.",
     links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/0nfhxs9pdf5o9hvie3hor/Es-posible-aprender-sin-emprender.pdf?rlkey=n6w0k9fdr896f9uojxjdoe0sr&e=1&dl=0" }]
   },
   { 
     id:"16", title:"Trabajar en Terreno", categories:["Innovación", "Viaje y territorio"], img:"imagenes-proyectos/fanzine_1.jpg", 
     resumen:"Conecta la investigación sobre una ciudad con la experiencia real de habitarla.", 
-    literal:"No es posible educar para el mundo sin vivir en él y comprometerse. Conectado con las Escuelas Viajeras, cada año un grupo de educadores y educadoras en formación visitan un barrio especial que puede dibujar las miraas que protagonizarán su profesión. La Palmilla de Málaga, La Horta de Valencia o Entrevías en Madrid son algunos de los protagonistas de estas historias.",
+    literal:"No es posible educar para el mundo sin vivir en él y comprometerse. Conectado con las Escuelas Viajeras, cada año un grupo de educadores en formación visitan un barrio especial. La Palmilla de Málaga, La Horta de Valencia o Entrevías en Madrid son algunos de los protagonistas.",
     links: [{ type: "web", url: "https://www.juanjovergara.com/aprender-en-terreno" }]
   },
   { 
     id:"17", title:"Mii Zambete", categories:["Innovación"], img:"imagenes-proyectos/clase_1.jpg", 
     resumen:"Trabaja la diferencia y utiliza recursos plásticos como la instalación artística.", 
-    literal:"Un día llegué a clase y puse en la pizarra 'Mii Zambete' solo una personas sabía que significaba. Era Laura, una alumna rumana. La única qeu conocía ese idioma. A partir de ahí asumimos un desafío que nos llevó a organizar actiivdades en distintos centros para trabajar la multiculturalidad, las sonrisas y la luz.",
+    literal:"Un día llegué a clase y puse en la pizarra 'Mii Zambete'. Solo una persona sabía qué significaba. Era Laura, una alumna rumana. A partir de ahí asumimos un desafío que nos llevó a organizar actividades en distintos centros para trabajar la multiculturalidad, las sonrisas y la luz.",
     links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/sjaxjmm6zm2v3avk3mbgo/De-mii-de-Zambete-De-la-oscuridad-a-la-luz.pdf?rlkey=ozkkggqby12s18k72c6wkttyy&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/159925747" }]
   },
   { 
     id:"18", title:"La Mosca del Bilbao", categories:["Innovación"], img:"imagenes-proyectos/mosca.jpg", 
     resumen:"El podcast como recurso educativo para dar voz a la comunidad.", 
-    literal:"La Mosca del Bilbao nace como un proyecto maravilloso que no neceista más que las voces y las historias de los que lo protagonizan. Este podcast albergó las historias de docentes, y alumnado de forma libre. En la actualidad el proyecto ha cambiado con los tiempos pero no en la idea central: la palabra es una herramienta valosísima. Escucha: 'Aprobadas por los pelos'",
+    literal:"La Mosca del Bilbao nace como un proyecto que no necesita más que las voces y las historias de los que lo protagonizan. Este podcast albergó las historias de docentes y alumnado de forma libre. La palabra es una herramienta valiosísima.",
     links: [{ type: "podcast", url: "https://open.spotify.com/show/1t837Ey95jOJuWstmSYrs8" }]
   },
   { 
     id:"19", title:"¿Consumo? ... te resumo", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/atrapasueños.jpg", 
     resumen:"Investigación sobre la sociedad de consumo y las preocupaciones del alumnado.", 
-    literal:"El consumo está en el centro de muchas de las preocupaciones que nos rodean. La sociedad de consumo modela las relaciones, la actividad, los medios de comunicación y la mayoría de los espacios dónde nos movemos. El desafío era crear un espacio de reflexión vivencial sobre el consumo como fenómeno ligado a los distintos espacios de la juventud. Para hacerlo, tomamos un centro educativo, transformamos sus aulas, sus actividades y alteramos sus horarios: comenzamos a las 9 de la mañana y terminamos a las 2 de la madrugada del día siguiente.",
-    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/euppilsoutz2rvuveqcz2/consumo_te_resumo.pdf?rlkey=bogs4sn574c0xo5gmm4wcpz9t&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/1697202" }]
+    literal:"El consumo está en el centro de muchas de las preocupaciones que nos rodean. El desafío era crear un espacio de reflexión vivencial sobre el consumo. Para hacerlo, tomamos un centro educativo, transformamos sus aulas y alteramos sus horarios: comenzamos a las 9 de la mañana y terminamos a las 2 de la madrugada del día siguiente.",
+    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/euppilsoutz2rvuveqcz2/consumo_te_resumo.pdf?rlkey=bogs4sn574c0txo5gmm4wcpz9t&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/1697202" }]
   },
   { 
     id:"20", title:"Intervención en espacios públicos", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/festival_5.jpg", 
     resumen:"Las plazas, los jardines, las calles, los barrios: El espacio público como lienzo para proyectos en plazas y museos.", 
-    literal:"La educación debe salir de las aulas e invadir las calles. El territorio urbano se ha convertido en un no-lugar (que diría Augé). Es necesario habitar los espacios públicos como lugares humanos. Trabjar fuera de las aulas y con entidades sociales de todo tipo es una gran idea",
+    literal:"La educación debe salir de las aulas e invadir las calles. El territorio urbano se ha convertido en un no-lugar (que diría Augé). Es necesario habitar los espacios públicos como lugares humanos.",
     links: [
-        { type: "blog", url: "https://www.dropbox.com/scl/fi/euppilsoutz2rvuveqcz2/consumo_te_resumo.pdf?rlkey=bogs4sn574c0xo5gmm4wcpz9t&e=1&dl=0" },
-        { type: "video", url: "https://vimeo.com/1697202" },
-        { type: "video", url: "https://vimeo.com/106043677" },
-        { type: "video", url: "https://vimeo.com/169414067" }] 
+      { type: "blog", url: "https://www.dropbox.com/scl/fi/euppilsoutz2rvuveqcz2/consumo_te_resumo.pdf?rlkey=bogs4sn574c0txo5gmm4wcpz9t&e=1&dl=0" },
+      { type: "video", url: "https://vimeo.com/1697202" },
+      { type: "video", url: "https://vimeo.com/106043677" },
+      { type: "video", url: "https://vimeo.com/169414067" }
+    ] 
   },
-    { 
+  { 
     id:"21", title:"Ho!", categories:["Innovación", "Acción Social"], img:"imagenes-proyectos/hop_5.jpg", 
     resumen:"El Hip-Hop se bailaba en el patio de la escuela ¿por qué no convertirlo en un proyecto educativo?", 
-    literal:"Mirar lo que hacen los adolescentes en el patio escolar puede ser muy provechoso. Allí un grupo de chicos hacen acrobacias al ritmo de la música. Son auténticos protagosnistas. Sin embargo en sus aulas suspedían una y otra vez. Pensamos que era buena idea hacerles protagosnistas del proyecto",
-    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/euppilsoutz2rvuveqcz2/consumo_te_resumo.pdf?rlkey=bogs4sn574c0xo5gmm4wcpz9t&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/1697202" }]
+    literal:"Mirar lo que hacen los adolescentes en el patio escolar puede ser muy provechoso. Allí un grupo de chicos hacen acrobacias al ritmo de la música. Son auténticos protagonistas. Sin embargo en sus aulas suspendían una y otra vez. Pensamos que era buena idea hacerles protagonistas del proyecto.",
+    links: [{ type: "blog", url: "https://www.dropbox.com/scl/fi/euppilsoutz2rvuveqcz2/consumo_te_resumo.pdf?rlkey=bogs4sn574c0txo5gmm4wcpz9t&e=1&dl=0" }, { type: "video", url: "https://vimeo.com/1697202" }]
   }
 ];
 
 function getLinksHtml(links) {
   if (!links || links.length === 0) return '';
   let html = '<span class="label-saber">SABER MÁS:</span>';
-  links.forEach(link => {
-    const icon = link.type === 'blog' ? 'icon-blog' : `icon-${link.type}`;
-    html += `<a href="${link.url}" target="_blank" onclick="event.stopPropagation()">
-               <img src="./${icon}.png" class="icon-link">
-             </a>`;
+  links.forEach(function(link) {
+    const icon = link.type === 'blog' ? 'icon-blog' : 'icon-' + link.type;
+    html += '<a href="' + link.url + '" target="_blank" onclick="event.stopPropagation()">' +
+            '<img src="./' + icon + '.png" class="icon-link">' +
+            '</a>';
   });
   return html;
 }
 
-function renderCards(filterCat = "Todas") {
+function renderCards(filterCat) {
+  filterCat = filterCat || "Todas";
   const grid = document.getElementById('grid');
   grid.innerHTML = '';
-  const filtered = projects.filter(p => filterCat === "Todas" || p.categories.includes(filterCat));
-  
-  filtered.forEach(p => {
+  const filtered = projects.filter(function(p) {
+    return filterCat === "Todas" || p.categories.includes(filterCat);
+  });
+  filtered.forEach(function(p) {
     const card = document.createElement('div');
     card.className = 'card';
-    card.innerHTML = `
-      <div class="card-img"><img src="${p.img}"></div>
-      <div class="card-body">
-        <div class="card-title">${p.title}</div>
-        <div class="card-cats-box">${p.categories.map(c => `<span class="card-cat-tag">${c}</span>`).join('')}</div>
-        <div class="card-desc">${p.resumen}</div>
-      </div>
-      <div class="card-footer">${getLinksHtml(p.links)}</div>
-    `;
-    card.onclick = () => openModal(p);
+    card.innerHTML =
+      '<div class="card-img"><img src="' + p.img + '"></div>' +
+      '<div class="card-body">' +
+        '<div class="card-title">' + p.title + '</div>' +
+        '<div class="card-cats-box">' + p.categories.map(function(c) { return '<span class="card-cat-tag">' + c + '</span>'; }).join('') + '</div>' +
+        '<div class="card-desc">' + p.resumen + '</div>' +
+      '</div>' +
+      '<div class="card-footer">' + getLinksHtml(p.links) + '</div>';
+    card.onclick = function() { openModal(p); };
     grid.appendChild(card);
   });
 }
 
 function openModal(p) {
-  document.getElementById('m-img').innerHTML = `<img src="${p.img}">`;
+  document.getElementById('m-img').innerHTML = '<img src="' + p.img + '">';
   document.getElementById('m-title').innerText = p.title;
   document.getElementById('m-cats').innerText = p.categories.join(' • ');
   document.getElementById('m-desc').innerText = p.literal;
@@ -480,22 +446,21 @@ function openModal(p) {
   document.getElementById('overlay').classList.add('open');
 }
 
-function closeModal() { document.getElementById('overlay').classList.remove('open'); }
-
-function toggleMenu() {
-  const nav = document.getElementById('nav-escritorio');
-  if(nav) nav.classList.toggle('show');
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
 }
 
-document.querySelectorAll('.chip').forEach(chip => {
+document.querySelectorAll('.chip').forEach(function(chip) {
   chip.onclick = function() {
-    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
     this.classList.add('active');
     renderCards(this.dataset.cat);
-  }
+  };
 });
 
-document.getElementById('overlay').onclick = (e) => { if(e.target.id === 'overlay') closeModal(); };
+document.getElementById('overlay').onclick = function(e) {
+  if (e.target.id === 'overlay') closeModal();
+};
 
 renderCards();
 </script>
