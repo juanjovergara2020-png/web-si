@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Juanjo Vergara</title>
+    <style>
+        /* Estilos base */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #fcfcfc;
+            color: #555555;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* CONTENEDOR DE BOTONES CORREGIDO */
+        .banner-botones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+            background-color: #fcfcfc;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            width: 100%;
+        }
+
+        /* Estilo exacto de tus botones semitransparentes */
+        .banner-botones a {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.25); /* Gris semitransparente */
+            color: #333333 !important;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background-color 0.2s ease;
+        }
+
+        .banner-botones a:hover {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        /* Estructura del listado de posts */
+        .blog-wrapper {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #333333;
+            font-weight: 500;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        .post-card {
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 30px;
+        }
+        .post-card h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            margin: 10px 0;
+            line-height: 1.3;
+        }
+        .post-card h2 a {
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .post-card h2 a:hover {
+            color: #e06666;
+        }
+        .post-meta {
+            font-size: 0.8rem;
+            color: #e06666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner-botones">
+        <a href="https://juanjovergara.com/blog-antiguo" target="_blank">Visitar blog anterior</a>
+        <a href="#anteriores">Ver post anteriores</a>
+    </div>
+
+    <div class="blog-wrapper">
+        <h1>Blog</h1>
+        <div id="posts-list">Cargando publicaciones...</div>
+    </div>
+
+    <script>
+        // MOTOR DEL BLOG: Mapea tu archivo real de los sentidos
+        async function cargarBlog() {
+            try {
+                const posts = [
+                    'por-qué-hablan-de-los-cinco-sentidos-si-al-menos-tenemos-doce.md'
+                ];
+
+                const listaContenedor = document.getElementById('posts-list');
+                listaContenedor.innerHTML = '';
+
+                posts.forEach(postUrl => {
+                    // Quitamos guiones y ponemos formato título elegante
+                    const tituloLimpio = postUrl.replace('.md', '').replace(/-/g, ' ');
+                    
+                    const card = document.createElement('div');
+                    card.className = 'post-card';
+                    card.innerHTML = `
+                        <div class="post-meta">Artículo</div>
+                        <h2><a href="template.html?post=${postUrl}" style="text-transform: capitalize;">${tituloLimpio}</a></h2>
+                    `;
+                    listaContenedor.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById('posts-list').innerHTML = '<p>Error al cargar las publicaciones.</p>';
+            }
+        }
+
+        cargarBlog();
+    </script>
+</body>
+</html>

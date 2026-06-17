@@ -3,271 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <title>{{title}} | Blog Juanjo Vergara</title>
     <style>
-        /* ==========================================================================
-           1. ESTILOS BASE
-           ========================================================================= */
+        /* ESTILOS BASE */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #fcfcfc; 
-            color: #555555; 
-            line-height: 1.8;
-            letter-spacing: 0.5px;
+            background-color: #fcfcfc;
+            color: #333333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
+        /* BANNER SUPERIOR: Botones grises semitransparentes */
+        .banner-botones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+            background-color: #fcfcfc;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            width: 100%;
+        }
+
+        .banner-botones a {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.25);
+            color: #333333 !important;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* CONTENEDOR DEL ARTÍCULO */
         .post-container {
             max-width: 650px;
-            margin: 60px auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
 
-        .post-header {
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 40px;
-        }
-
-        /* Tus categorías en el color rojo claro/coral que elegiste */
         .post-category {
+            font-size: 0.85rem;
+            color: #e06666;
             text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            color: #e06666; 
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
-        .post-title {
-            font-size: 2.4rem;
-            font-weight: 500;
-            line-height: 1.3;
-            margin: 10px 0 20px 0;
-            color: #333333;
-            letter-spacing: 1px;
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: #111111;
+            margin-top: 0;
+            margin-bottom: 15px;
+            line-height: 1.2;
         }
 
         .post-date {
-            font-size: 0.85rem;
-            color: #777777;
-        }
-
-        .post-content p {
-            font-size: 1.15rem;
-            font-weight: 300;
+            font-size: 0.9rem;
+            color: #888888;
             margin-bottom: 30px;
-            text-align: left;
         }
 
-        /* ==========================================================================
-           2. INTERACCIÓN DE LA IMAGEN (Efecto Levantar)
-           ========================================================================= */
-        .interactive-image-wrapper {
-            float: right;
-            width: 280px;
-            margin: 10px 0 20px 25px;
-            position: relative;
+        /* CUERPO DEL POST: Texto perfectamente justificado */
+        .post-body {
+            font-size: 1.1rem;
+            color: #444444;
+            text-align: justify;
         }
 
-        .interactive-image {
+        .post-body p {
+            margin-bottom: 20px;
+        }
+
+        /* DISEÑO DE LA IMAGEN DEL POST */
+        .post-image {
             width: 100%;
-            height: auto;
-            border-radius: 6px;
-            cursor: pointer;
-            opacity: 0.75;
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-                        opacity 0.4s ease, 
-                        box-shadow 0.4s ease;
-        }
-
-        .interactive-image:hover {
-            opacity: 1;
-            transform: translateY(-10px) scale(1.04);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15), 
-                        0 8px 15px rgba(0, 0, 0, 0.10); 
-        }
-
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        /* ==========================================================================
-           3. EFECTO ZOOM CON TEXTO DIFUMINADO (0.6 de opacidad)
-           ========================================================================= */
-        .lightbox-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(252, 252, 252, 0.6); 
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            z-index: 999;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-            cursor: zoom-out;
-        }
-
-        .lightbox-card {
-            max-width: 90%; 
-            max-height: 90vh;
-            background: transparent; 
-            padding: 0; 
-            border-radius: 0; 
-            box-shadow: none; 
-            transform: scale(0.95); 
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-overlay.active .lightbox-card {
-            transform: scale(1);
-        }
-
-        .lightbox-card img {
-            max-width: 100%;
-            max-height: 90vh;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
             display: block;
-            border-radius: 0; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15); 
         }
 
-        /* ==========================================================================
-           4. ESTILOS DEL BANNER STICKY SEMITRANSPARENTE
-           ========================================================================= */
-        .banner-historico {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #fcfcfc; 
-            padding: 16px 0;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            z-index: 9999;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
-            box-sizing: border-box;
-        }
-
-        .btn-banner {
+        /* BOTÓN VOLVER ATRÁS */
+        .btn-volver {
             display: inline-block;
-            min-width: 210px;
-            text-align: center;
-            padding: 11px 24px;
-            background-color: rgba(60, 55, 50, 0.35); 
-            color: #555555; 
+            margin-top: 40px;
+            color: #e06666;
             text-decoration: none;
-            text-transform: uppercase;
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 1.5px;
-            border: 1px solid rgba(0, 0, 0, 0.15); 
-            border-radius: 6px;
-            box-sizing: border-box;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            transition: all 0.3s ease;
-        }
-
-        .btn-banner:hover {
-            background-color: rgba(60, 55, 50, 0.6);
-            color: #ffffff;
-            border-color: rgba(0, 0, 0, 0.3);
-        }
-
-        @media (max-width: 480px) {
-            .banner-historico {
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-                padding: 12px;
-            }
-            .btn-banner {
-                width: 85%;
-            }
         }
     </style>
 </head>
 <body>
 
-    <div class="banner-historico" id="banner-historico">
-        <a href="https://juanjovergara.wixsite.com/juanjo/blog-1" target="_blank" rel="noopener noreferrer" class="btn-banner">
-            Visitar blog anterior
-        </a>
-        <a href="https://socioculturalesbb.blogspot.com/" target="_blank" rel="noopener noreferrer" class="btn-banner">
-            Ver post anteriores
-        </a>
+    <div class="banner-botones">
+        <a href="https://juanjovergara.com/blog-antiguo" target="_blank">Visitar blog anterior</a>
+        <a href="/blog/">Ver post anteriores</a>
     </div>
 
-    <article class="post-container">
-        <header class="post-header">
-            <span class="post-category">{{categories}}</span>
-            <h1 class="post-title">{{title}}</h1>
-            <div class="post-date">{{date}}</div>
-        </header>
+    <div class="post-container">
+        <div class="post-category">{{category}}</div>
+        <h1>{{title}}</h1>
+        <div class="post-date">{{date}}</div>
+        
+        {{#if image}}
+        <img src="{{image}}" class="post-image" alt="{{title}}">
+        {{/if}}
 
-        <div class="post-content clearfix">
-            {{#if image}}
-            <div class="interactive-image-wrapper">
-                <img src="{{image}}" alt="{{title}}" class="interactive-image" id="zoomable-img">
-            </div>
-            {{/if}}
-
+        <div class="post-body">
             {{body}}
         </div>
-    </article>
 
-    <div class="lightbox-overlay" id="lightbox">
-        <div class="lightbox-card">
-            <img src="" alt="Imagen ampliada" id="lightbox-img">
-        </div>
+        <a href="/blog/" class="btn-volver">← Volver al listado del blog</a>
     </div>
 
-    <script>
-        const image = document.getElementById('zoomable-img');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        if (image) {
-            image.addEventListener('click', () => {
-                lightboxImg.src = image.src; 
-                lightbox.classList.add('active'); 
-            });
-        }
-
-        lightbox.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
-
-        // Ocultar el banner automáticamente si estamos leyendo un post individual
-        const postDate = document.querySelector('.post-date');
-        const banner = document.getElementById('banner-historico');
-        
-        if (postDate && postDate.textContent.trim() !== "" && postDate.textContent.trim() !== "{{date}}") {
-            banner.style.display = 'none';
-        }
-    </script>
 </body>
 </html>
