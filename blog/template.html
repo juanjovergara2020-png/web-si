@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <style>
         /* ==========================================================================
            1. ESTILOS BASE
-           ========================================================================== */
+           ========================================================================= */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #fcfcfc; 
@@ -66,7 +66,7 @@
 
         /* ==========================================================================
            2. INTERACCIÓN DE LA IMAGEN (Efecto Levantar)
-           ========================================================================== */
+           ========================================================================= */
         .interactive-image-wrapper {
             float: right;
             width: 280px;
@@ -100,7 +100,7 @@
 
         /* ==========================================================================
            3. EFECTO ZOOM CON TEXTO DIFUMINADO (0.6 de opacidad)
-           ========================================================================== */
+           ========================================================================= */
         .lightbox-overlay {
             position: fixed;
             top: 0;
@@ -150,9 +150,76 @@
             border-radius: 0; 
             box-shadow: 0 10px 40px rgba(0,0,0,0.15); 
         }
+
+        /* ==========================================================================
+           4. ESTILOS DEL BANNER STICKY SEMITRANSPARENTE
+           ========================================================================= */
+        .banner-historico {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fcfcfc; 
+            padding: 16px 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            z-index: 9999;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+            box-sizing: border-box;
+        }
+
+        .btn-banner {
+            display: inline-block;
+            min-width: 210px;
+            text-align: center;
+            padding: 11px 24px;
+            background-color: rgba(60, 55, 50, 0.35); 
+            color: #555555; 
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(0, 0, 0, 0.15); 
+            border-radius: 6px;
+            box-sizing: border-box;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-banner:hover {
+            background-color: rgba(60, 55, 50, 0.6);
+            color: #ffffff;
+            border-color: rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 480px) {
+            .banner-historico {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                padding: 12px;
+            }
+            .btn-banner {
+                width: 85%;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <div class="banner-historico" id="banner-historico">
+        <a href="https://juanjovergara.wixsite.com/juanjo/blog-1" target="_blank" rel="noopener noreferrer" class="btn-banner">
+            Visitar blog anterior
+        </a>
+        <a href="https://socioculturalesbb.blogspot.com/" target="_blank" rel="noopener noreferrer" class="btn-banner">
+            Ver post anteriores
+        </a>
+    </div>
 
     <article class="post-container">
         <header class="post-header">
@@ -193,6 +260,14 @@
         lightbox.addEventListener('click', () => {
             lightbox.classList.remove('active');
         });
+
+        // Ocultar el banner automáticamente si estamos leyendo un post individual
+        const postDate = document.querySelector('.post-date');
+        const banner = document.getElementById('banner-historico');
+        
+        if (postDate && postDate.textContent.trim() !== "" && postDate.textContent.trim() !== "{{date}}") {
+            banner.style.display = 'none';
+        }
     </script>
 </body>
 </html>
