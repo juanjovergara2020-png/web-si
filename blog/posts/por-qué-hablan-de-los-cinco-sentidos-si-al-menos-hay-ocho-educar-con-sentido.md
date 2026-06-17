@@ -1,7 +1,7 @@
 ---
 title: "Por qué hablan de los cinco sentidos si al menos hay ocho? Educar con
   sentido. "
-date: 2026-06-17T14:36:00.000+02:00
+date: 2026-06-14T14:45:00.000+02:00
 image: https://static.wixstatic.com/media/abe515_7190c401db034062941e9da86d4cd196~mv2.png
 ---
 <center>\[Para el C.D.L.]</center>
