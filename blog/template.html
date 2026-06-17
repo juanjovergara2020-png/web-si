@@ -38,6 +38,11 @@
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
+            transition: background-color 0.2s ease;
+        }
+
+        .banner-botones a:hover {
+            background-color: rgba(0, 0, 0, 0.35);
         }
 
         /* CONTENEDOR DEL ARTÍCULO */
@@ -105,8 +110,9 @@
 <body>
 
     <div class="banner-botones">
-        <a href="https://juanjovergara.com/blog-antiguo" target="_blank">Visitar blog anterior</a>
-        <a href="/blog/">Ver post anteriores</a>
+        <a href="https://juanjovergara.wixsite.com/juanjo/blog-1" target="_blank">Visitar blog anterior</a>
+        
+        <a href="https://socioculturalesbb.blogspot.com/">Ver post anteriores</a>
     </div>
 
     <div class="post-container">
@@ -115,11 +121,11 @@
         <div class="post-date">{{date}}</div>
         
         {{#if image}}
-        <img src="{{image}}" class="post-image" alt="{{title}}">
+        <img src=".{{image}}" class="post-image" alt="{{title}}">
         {{/if}}
 
         <div class="post-body">
-            {{body}}
+            {{{body}}}
         </div>
 
         <a href="/blog/" class="btn-volver">← Volver al listado del blog</a>
