@@ -136,8 +136,8 @@
 
     .hero-retrato {
       position: absolute;
-      top: 80%;
-      left: 160px;
+      top: 40px;
+      left: 80px;
       z-index: 1001;
       width: 440px;
       display: flex;
@@ -145,18 +145,6 @@
       align-items: center;
       gap: 8px;
     }
-/* 📱 ADAPTACIÓN PARA MÓVILES (Pantallas menores de 768px) */
-@media screen and (max-width: 768px) {
-    .hero-retrato {
-        position: relative; /* Dejamos de usar absolute para que fluya en la página */
-        top: auto;
-        left: auto;
-        width: 90%;         /* Ocupa casi todo el ancho de la pantalla del móvil */
-        max-width: 350px;   /* Un límite para que no crezca de más */
-        margin: 20px auto;  /* Se centra automáticamente */
-    }
-}
-
 
     .hero-retrato img {
       width: 100%;
