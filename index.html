@@ -139,7 +139,7 @@
       top: 40px;
       left: 80px;
       z-index: 1001;
-      width: 440px;
+      width: 220px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -670,6 +670,18 @@
 
   const heroCont = document.getElementById('carrusel-hero');
   if (heroCont) {
+    fotosHero.forEach((img, i) => {
+      heroCont.innerHTML += `<div class="carrusel-slide ${i===0?'activa':''}"><img src="${img}" alt=""></div>`;
+    });
+    let hIdx = 0;
+    setInterval(() => {
+      const s = document.querySelectorAll('.carrusel-slide');
+      if (s.length) {
+        s[hIdx].classList.remove('activa');
+        hIdx = (hIdx + 1) % s.length;
+        s[hIdx].classList.add('activa');
+      }
+    }, 4000);
   }
 
   let vData = [];
@@ -768,7 +780,5 @@
 
   window.onload = () => { initVideos(); initInsta(); };
 </script>
-<script src="https://cdn.userway.org/widget.js" data-account="2qyZWUhgBT"></script>
-
 </body>
 </html>
