@@ -387,35 +387,1368 @@
     "titulo": "La performance como recurso didáctico: una experiencia sobre género",
     "revista": "Cuadernos de Pedagogía",
     "resumen": "«El elefante está enamorado del milímetro». Hans Arp",
-    "pdf": "articulos/performance.pdf"
+    "pdf": "articulos/performance.pdf",
+    "grupo": "revistas",
+    "año": "2007"
   },
   {
     "tipo": "articulo",
     "titulo": "10 claves para trabajar la educación para el desarrollo por el método de proyectos (ABP)",
     "revista": "Revista Internacional sobre Investigación en Educación Global y para el Desarrollo",
     "resumen": "La sociedad ha acercado la realidad hasta alojarla en los bolsillos. Tanto que queda depositada allí hasta que la educación la despierta.",
-    "pdf": "articulos/10-claves.pdf"
+    "pdf": "articulos/10-claves.pdf",
+    "grupo": "revistas",
+    "año": "2014"
   },
   {
     "tipo": "articulo",
     "titulo": "Norte, Sur, Este, Oeste y Aquí: El péndulo de Ifoulou. Educar en la era de la convergencia",
     "revista": "Cuadernos de Pedagogía",
     "resumen": "Un proyecto educativo no dibuja una línea continua, tampoco siempre es previsible. Pero se compromete con vivir el aprendizaje.",
-    "pdf": "articulos/norte-sur-este-oeste-aqui.pdf"
+    "pdf": "articulos/norte-sur-este-oeste-aqui.pdf",
+    "grupo": "revistas",
+    "año": "2013"
   },
   {
     "tipo": "articulo",
     "titulo": "Las tareas escolares después de la escuela",
     "revista": "Revista Debates · Consejo Escolar de la Comunidad de Madrid",
     "resumen": "Los deberes escolares a debate en el Consejo Escolar de la Comunidad de Madrid.",
-    "pdf": "articulos/las-tareas-escolares-despues-de-la-escuela.pdf"
+    "pdf": "articulos/las-tareas-escolares-despues-de-la-escuela.pdf",
+    "grupo": "revistas",
+    "año": "2016"
   },
   {
     "tipo": "articulo",
     "titulo": "Las metodologías activas: ¿cómo llevar la innovación a tu aula?",
     "revista": "Cátedra de Formación en la Práctica Álvaro Marchesi · Dirigido por Álvaro Marchesi y Juan José Vergara",
     "resumen": "Por qué las metodologías activas, cuáles son sus características y qué herramientas necesitas para llevarlas a tu aula.",
-    "pdf": "articulos/las-metodologias-activas.pdf"
+    "pdf": "articulos/las-metodologias-activas.pdf",
+    "grupo": "revistas",
+    "año": "2017"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Tattoo education: vivir la educación, con-vivir la educación una década",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "La educación o se tatúa en la piel y el cerebro o no permanece década tras década en la memoria.",
+    "pdf": "articulos/tattoo-education-vivir-la-educacion-con-vivir-la-educacion-u-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Las evaluaciones del solsticio de invierno",
+    "revista": "Periódico Escuela",
+    "año": "2016",
+    "resumen": "Por estas fechas estamos protagonizando el final del primer trimestre del curso.",
+    "pdf": "articulos/las-evaluaciones-del-solsticio-de-invierno-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Los deberes escolares",
+    "revista": "Periódico Escuela",
+    "año": "2017",
+    "resumen": "Hace algunas semanas se ha publicado el informe del Consejo Escolar de la Comunidad de Madrid en torno al asunto de los deberes escolares.",
+    "pdf": "articulos/los-deberes-escolares-2017.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Cossío nos hizo un spoiler",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "El pasado 4 de junio participaba en una mesa a la que debo cariño y respeto.",
+    "pdf": "articulos/cossio-nos-hizo-un-spoiler-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "¿En qué cambia el relato del aprendizaje el nuevo curso?",
+    "revista": "Periódico Escuela",
+    "año": "2018",
+    "resumen": "Sumergirse en un nuevo curso debería ser una aventura emocionante.",
+    "pdf": "articulos/en-que-cambia-el-relato-del-aprendizaje-el-nuevo-curso-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Hacer transparente la tecnología y visible la innovación",
+    "revista": "Periódico Escuela",
+    "año": "2016",
+    "resumen": "Desde hace algunos años ha sucedido algo sorprendente. Cuando muestro la imagen de un sonriente joven delante de un ordenador y pregunto a un grupo de docentes “¿qué hace?” La respuesta es única:…",
+    "pdf": "articulos/hacer-transparente-la-tecnologia-y-visible-la-innovacion-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Aprender a escuchar",
+    "revista": "Periódico Escuela",
+    "año": "2017",
+    "resumen": "Hace pocas semanas hablaba de la Escucha como la gran olvidada en las herramientas que deberían formar parte de la formación del docente.",
+    "pdf": "articulos/aprender-a-escuchar-2017.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Manifiesto educativo para no enloquecer",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "Vivimos tiempos en que se escriben ríos de tinta sobre educación.",
+    "pdf": "articulos/manifiesto-educativo-para-no-enloquecer-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "A vueltas con los deberes, los problemas y el esfuerzo",
+    "revista": "Periódico Escuela",
+    "año": "2016",
+    "resumen": "Hace pocas semanas bromeaba con un compañero –profesor de matemáticas en ESO- a cuentas de la poca ilusión que sus alumnos mostraban con una materia tan apasionante como la suya.",
+    "pdf": "articulos/a-vueltas-con-los-deberes-los-problemas-y-el-esfuerzo-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Los deberes escolares: ¡No mandes deberes, diseña experiencias de aprendizaje!",
+    "revista": "Periódico Escuela",
+    "año": "2017",
+    "resumen": "Hace algunos meses me invitaban a opinar sobre el asunto de los Deberes Escolares en un debate que protagonizaba el Consejo Escolar de la Comunidad de Madrid.",
+    "pdf": "articulos/los-deberes-escolares-no-mandes-deberes-disena-experiencias-2017.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Proyectos que construyen aventuras de aprendizaje",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "Hace bastantes años que me asalta de forma recurrente una pregunta cuando planifico mis clases: ¿cómo hacer que el aprendizaje pueda contarse como una historia?.",
+    "pdf": "articulos/proyectos-que-construyen-aventuras-de-aprendizaje-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Nuevas narrativas para nuevos aprendices",
+    "revista": "Periódico Escuela",
+    "año": "2018",
+    "resumen": "Hace años que cientos de docentes y escuelas se zambullen ilusionados en las llamadas “nuevas metodologías” con la esperanza de que suponga un cambio radical en los resultados educativos.",
+    "pdf": "articulos/nuevas-narrativas-para-nuevos-aprendices-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Navidad, ¡dulce Navidad! Hablemos de inteligencia emocional",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "Miro por la ventana de mi piso en Madrid y veo iluminarse la calle.",
+    "pdf": "articulos/navidad-dulce-navidad-hablemos-de-inteligencia-emocional-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Viajar comprometidos con el aprendizaje",
+    "revista": "Periódico Escuela",
+    "año": "2018",
+    "resumen": "En las últimas semanas estoy apostando fuerte en mis clases por estabilizar el proyecto de las Escuelas Viajeras un proyecto que busca más aprender que enseñar.",
+    "pdf": "articulos/viajar-comprometidos-con-el-aprendizaje-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Del abandono escolar a abandonarse en el aprendizaje",
+    "revista": "Periódico Escuela",
+    "año": "2016",
+    "resumen": "Este verano tuve la ocasión de participar en un curso organizado en la UIMP sobre abandono escolar.",
+    "pdf": "articulos/del-abandono-escolar-a-abandonarse-en-el-aprendizaje-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Nuevos relatos para el aprendizaje en tiempos de cambio",
+    "revista": "Periódico Escuela",
+    "año": "2018",
+    "resumen": "Hace tiempo que investigo sobre los relatos que dibujan la innovación educativa.",
+    "pdf": "articulos/nuevos-relatos-para-el-aprendizaje-en-tiempos-de-cambio-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "La mejor escuela, el barrio",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "«Rompamos los muros de la clase». El barrio como el mejor espacio de aprendizaje.",
+    "pdf": "articulos/la-mejor-escuela-el-barrio-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "La sombra de un árbol",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "«El hombre educado no es el que sabe, sino el que sabe hacer». Aprender haciendo.",
+    "pdf": "articulos/la-sombra-de-un-arbol-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Lo intolerable como grasa del aprendizaje",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "Hace poco más de una semana regresé de un viaje de diez días en el que –como tantas veces- tuve la fortuna de aprender yo tanto –o más- que el grupo de educadores en formación al que acompañaba.",
+    "pdf": "articulos/lo-intolerable-como-grasa-del-aprendizaje-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "No pienses en un elefante",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "Hace alguna década me encontré con un libro cuyo título me sedujo especialmente: “No pienses en un elefante”.",
+    "pdf": "articulos/no-pienses-en-un-elefante-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Indignaos. ¿Hay motivo… para la esperanza?",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "Cada uno de septiembre son frecuentes los artículos y post que buscan contagiar el ánimo en busca de un nuevo curso escolar lleno de esperanzas de cambio.",
+    "pdf": "articulos/indignaos-hay-motivo-para-la-esperanza-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "De lo que no tiene culpa la COVID",
+    "revista": "Periódico Escuela",
+    "año": "2020",
+    "resumen": "El virus ha provocado directamente algunas cosas, otras no. Hace meses que hemos aprendido términos nuevos como ”grupo burbuja”, “confinamiento perimetral”, “rastreadores”, “nueva normalidad” y…",
+    "pdf": "articulos/de-lo-que-no-tiene-culpa-la-covid-2020.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "¿Cómo habitas la realidad? ¿Cómo habitas tus clases?",
+    "revista": "Periódico Escuela",
+    "año": "2019",
+    "resumen": "Cuando leo el periódico mis lágrimas se derraman. Así que solo lo hago los domingos.",
+    "pdf": "articulos/como-habitas-la-realidad-como-habitas-tus-clases-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Solo es posible educar para vivir, viviendo",
+    "revista": "Periódico Escuela",
+    "año": "2017",
+    "resumen": "Acabo de llegar de Marruecos junto a un grupo de educadores en formación con el que he convivido algo más de una semana de aprendizaje auténtico.",
+    "pdf": "articulos/solo-es-posible-educar-para-vivir-viviendo-2017.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Evaluar o etiquetar",
+    "revista": "Periódico Escuela",
+    "año": "2016",
+    "resumen": "Evaluar es reflexionar, calificar etiquetar. Me resulta incomprensible como es tan difícil hacer entender algo tan sencillo.",
+    "pdf": "articulos/evaluar-o-etiquetar-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Guía fácil para comenzar un curso innovando",
+    "revista": "Periódico Escuela",
+    "año": "2016",
+    "resumen": "Innovar no tiene nada que ver con seguir las modas, hacer malabarismos para introducir en tu clase lo que emerge como TT en las redes o llenar tu aula de cacharros con los que ni tus alumnos ni tu…",
+    "pdf": "articulos/guia-facil-para-comenzar-un-curso-innovando-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "Del MIR al MIRar",
+    "revista": "Periódico Escuela",
+    "año": "2018",
+    "resumen": "Las escuelas siguen sin ser espacios amigables para el aprendizaje.",
+    "pdf": "articulos/del-mir-al-mirar-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "La escuela 4.0 y la COVID-19: ¿nuevos escenarios educativos?",
+    "revista": "Periódico Escuela",
+    "año": "2020",
+    "resumen": "Hace unos días, el Consejero Delegado de Cellnex decía que “la crisis de la covid-19 ha supuesto una gran disrupción en términos de salud pública, económicos y sociales (…) pero a la vez hemos…",
+    "pdf": "articulos/la-escuela-4-0-y-la-covid-19-nuevos-escenarios-educativos-2020.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "escuela",
+    "titulo": "¿Aumenta la realidad o realidad aumentada?",
+    "revista": "Periódico Escuela",
+    "año": "2017",
+    "resumen": "Cuando tenía poco más de 12 años don Francisco –mi maestro- me pidió que me quedara al finalizar las clases.",
+    "pdf": "articulos/aumenta-la-realidad-o-realidad-aumentada-2017.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Las cifras no paran las guerras, lo hacen las personas que las habitan",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2022",
+    "resumen": "«Llega un punto en el que tenemos que dejar de sacar gente del río». Educar más allá de las cifras.",
+    "pdf": "articulos/las-cifras-no-paran-las-guerras-lo-hacen-las-personas-que-la-2022.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Educación, fake news e inteligencia artificial",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2025",
+    "resumen": "Desde hace algunos años y sobre todo tras la irrupción de la inteligencia artificial generativa, se ha extendido el terror ante la posibilidad de propagar de forma eficaz todo tipo de bulos y…",
+    "pdf": "articulos/educacion-fake-news-e-inteligencia-artificial-2025.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "El ABP como herramienta de cambio social",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2026",
+    "resumen": "El ABP como herramienta de cambio social en tiempos de incertidumbre.",
+    "pdf": "articulos/el-abp-como-herramienta-de-cambio-social-2026.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "El esfuerzo y el placer en el aprendizaje",
+    "revista": "Comunicación y Pedagogía",
+    "año": "2023",
+    "resumen": "La discusión sobre el valor del esfuerzo o la necesidad del placer a la hora de diseñar las clases, es una constante a lo largo de los años.",
+    "pdf": "articulos/el-esfuerzo-y-el-placer-en-el-aprendizaje-2023.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "¿Cuántas veces te ha pasado?",
+    "revista": "Artículo de opinión",
+    "año": "2022",
+    "resumen": "Un formulario para hacer examen de conciencia sobre lo que pasa en los claustros.",
+    "pdf": "articulos/cuantas-veces-te-ha-pasado-2022.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Escaparates, escuelas y educación",
+    "revista": "Artículo de opinión",
+    "año": "2022",
+    "resumen": "Hace pocas semanas viví algo que deseo compartir en este foro.",
+    "pdf": "articulos/escaparates-escuelas-y-educacion-2022.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Hartazgo de la pandemia",
+    "revista": "Artículo de opinión",
+    "año": "2022",
+    "resumen": "Recuerdo que hace décadas, decenas de empresas hicieron caja gracias a la venta extensiva de pizarras digitales en las escuelas.",
+    "pdf": "articulos/hartazgo-de-la-pandemia-2022.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Juanitooo… ¡A merendar!",
+    "revista": "Artículo de opinión",
+    "año": "2025",
+    "resumen": "En 1992 Marc Augé escribió un pequeño libro titulado Los no lugares, espacios del anonimato: una antropología de la sobremodernidad.",
+    "pdf": "articulos/juanitooo-a-merendar-2025.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "La escuela-burbuja",
+    "revista": "Artículo de opinión",
+    "año": "2024",
+    "resumen": "Cuando Nerea atraviesa el umbral de la escuela se sabe una persona importante.",
+    "pdf": "articulos/la-escuela-burbuja-2024.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Aprender en terreno: la DANA semanas después",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2025",
+    "resumen": "Hace algo más de un año viajaba a Valencia con un grupo de alumnos y alumnas a los que acompañaba en su formación de educadores.",
+    "pdf": "articulos/aprender-en-terreno-la-dana-semanas-despues-2025.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "A vueltas con las situaciones de aprendizaje",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2022",
+    "resumen": "La nueva ley educativa (LOMLOE) parece apostar por el aprendizaje competencial.",
+    "pdf": "articulos/a-vueltas-con-las-situaciones-de-aprendizaje-2022.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Es posible iniciar un curso como un proyecto colectivo",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2024",
+    "resumen": "El claustro de inicio de curso puede ser el arranque de un proyecto colectivo, no un trámite.",
+    "pdf": "articulos/es-posible-iniciar-un-curso-como-un-proyecto-colectivo-2024.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Lecciones aprendidas en este final de curso",
+    "revista": "Artículo de opinión",
+    "año": "2020",
+    "resumen": "Hemos tenido un último trimestre del curso que pasará a la historia como un desafío no conocido hasta la fecha tanto para los docentes, los centros, las administraciones educativas, las familias y…",
+    "pdf": "articulos/lecciones-aprendidas-en-este-final-de-curso-2020.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Algunos interrogantes que dibuja el nuevo escenario de aprendizaje con el COVID-19",
+    "revista": "El Diario de la Educación",
+    "año": "2020",
+    "resumen": "Un astrónomo que miraba a través de un telescopio de 5 metros declaró que iba a llover.",
+    "pdf": "articulos/algunos-interrogantes-que-dibuja-el-nuevo-escenario-de-apren-2020.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Competencia digital docente. Educar en el presente para el futuro",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2022",
+    "resumen": "Hace décadas DEseCO definió las competencias como aquellas destrezas que pueden ser demostradas en la práctica.",
+    "pdf": "articulos/competencia-digital-docente-educar-en-el-presente-para-el-fu-2022.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Provocar el aprendizaje",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2022",
+    "resumen": "Tras unas semanas de lejanía de mis clases por una baja médica, abrí la puerta del aula y me saludaron cariñosos mis alumnos con un bonito aplauso.",
+    "pdf": "articulos/provocar-el-aprendizaje-2022.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Lo esencial del Aprendizaje Basado en Proyectos (ABP)",
+    "revista": "Comunicación y Pedagogía",
+    "año": "2023",
+    "resumen": "Esta pregunta no es mía. Tampoco es muy actual. La hacía Wenger en un libro de 1998.",
+    "pdf": "articulos/lo-esencial-del-aprendizaje-basado-en-proyectos-abp-2023.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Vacunas para la inteligencia artificial",
+    "revista": "Artículo de opinión",
+    "año": "2023",
+    "resumen": "La IA es una realidad: el reto es educar para usarla con criterio.",
+    "pdf": "articulos/vacunas-para-la-inteligencia-artificial-2023.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "Huelga educativa y diálogo",
+    "revista": "Cuadernos de Pedagogía",
+    "año": "2026",
+    "resumen": "El 14 de octubre empezó en Madrid una huelga indefinida en la enseñanza pública no universitaria.",
+    "pdf": "articulos/huelga-educativa-y-dialogo-2026.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prensa",
+    "titulo": "¿Qué aprendizaje necesita más espacio en la escuela?",
+    "revista": "Artículo de opinión",
+    "año": "2026",
+    "resumen": "Necesitamos abrir espacios en la escuela a sentir con ocho sentidos y no solo con cinco.",
+    "pdf": "articulos/que-aprendizaje-necesita-mas-espacio-en-la-escuela-2026.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Las metodologías activas en educación y justicia social",
+    "revista": "Miradas que educan (Baladre)",
+    "año": "2021",
+    "resumen": "Las metodologías activas como respuesta a las necesidades educativas de un mundo global y complejo.",
+    "pdf": "articulos/las-metodologias-activas-en-educacion-y-justicia-social-2021.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "«Gnro Mjr». Género, cultura y nuevas formas expresivas en educación",
+    "revista": "Wolters Kluwer",
+    "año": "2005",
+    "resumen": "Una experiencia sobre género, cultura y nuevas formas expresivas en el ciclo de Animación Sociocultural.",
+    "pdf": "articulos/gnro-mjr-genero-cultura-y-nuevas-formas-expresivas-en-educac-2005.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "¿Consumo? Te resumo. Cuaderno de bitácora de una experiencia",
+    "revista": "Wolters Kluwer",
+    "año": "2007",
+    "resumen": "Cuaderno de bitácora de una jornada temática sobre consumo construida con el alumnado.",
+    "pdf": "articulos/consumo-te-resumo-cuaderno-de-bitacora-de-una-experiencia-2007.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Rap, ESO y cámaras de vídeo. Una experiencia de intervención de los ciclos formativos",
+    "revista": "Artículo",
+    "año": "2009",
+    "resumen": "Edison hace imposibles mortales hacia atrás. José Luis gira y gira como una peonza con la espalda en el suelo.",
+    "pdf": "articulos/rap-eso-y-camaras-de-video-una-experiencia-de-intervencion-d-2009.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Dos y dos veintidós, un tutú o una carrera de patos: los proyectos socioartísticos como método",
+    "revista": "Artículo",
+    "año": "2011",
+    "resumen": "Los modelos metodológicos tradicionales no responden a la forma en que las personas aprenden hoy.",
+    "pdf": "articulos/dos-y-dos-veintidos-un-tutu-o-una-carrera-de-patos-los-proye-2011.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "De las TIC a las TCC: herramientas para una comunicación creativa",
+    "revista": "Artículo",
+    "año": "2010",
+    "resumen": "Del uso de cacharros a las tecnologías para una comunicación creativa en el aula.",
+    "pdf": "articulos/de-las-tic-a-las-tcc-herramientas-para-una-comunicacion-crea-2010.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Formar profesionales. Desde y para la práctica",
+    "revista": "CRIF Las Acacias",
+    "año": "2011",
+    "resumen": "Cuando Vanessa llega al aula siente un traje que no se acomoda a su cuerpo.",
+    "pdf": "articulos/formar-profesionales-desde-y-para-la-practica-2011.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "La reforma educativa en centros penitenciarios. ¿Hacia un modelo de apertura a la comunidad?",
+    "revista": "Artículo",
+    "año": "",
+    "resumen": "El Reglamento de 1996 sienta las bases de una intervención educativa que abre las prisiones a la comunidad.",
+    "pdf": "articulos/la-reforma-educativa-en-centros-penitenciarios-hacia-un-mode.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Educación en centros penitenciarios y descentralización: ¿reconceptualizar los entornos penitenciarios?",
+    "revista": "Artículo",
+    "año": "",
+    "resumen": "El concepto de entorno penitenciario y la educación en prisiones ante la descentralización.",
+    "pdf": "articulos/educacion-en-centros-penitenciarios-y-descentralizacion-reco.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "¿De qué hablamos cuando decimos «metodologías activas»?",
+    "revista": "Consejo Escolar de la Comunidad de Madrid",
+    "año": "2016",
+    "resumen": "Ninguna metodología –presente, pasada o futura- es capaz, por si sola, de producir un cambio efectivo en la enseñanza.",
+    "pdf": "articulos/de-que-hablamos-cuando-decimos-metodologias-activas-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Educar para cambiar el mundo. Qué son y para qué sirven las softskills",
+    "revista": "Artículo",
+    "año": "2019",
+    "resumen": "Hace años llevo hablando de soft-skills en cuantos foros intervengo.",
+    "pdf": "articulos/educar-para-cambiar-el-mundo-que-son-y-para-que-sirven-las-s-2019.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "¿Y ahora qué? Es posible diseñar el aprendizaje desde la piel y la emoción",
+    "revista": "Artículo",
+    "año": "2018",
+    "resumen": "2018 dibuja un escenario educativo complejo; diseñar el aprendizaje desde la emoción es posible.",
+    "pdf": "articulos/y-ahora-que-es-posible-disenar-el-aprendizaje-desde-la-piel-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Proyectos que cambian el aprendizaje. DfC y el enfoque de proyectos (ABP)",
+    "revista": "Design for Change",
+    "año": "2017",
+    "resumen": "Como cada mañana Felipe llega a su colegio. Tiene 10 años y Marisa -su madre- le ha preparado un bocadillo para el recreo.",
+    "pdf": "articulos/proyectos-que-cambian-el-aprendizaje-dfc-y-el-enfoque-de-pro-2017.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "El espejo de la justicia social: el poder del ABP y el compromiso con la realidad",
+    "revista": "Artículo",
+    "año": "2016",
+    "resumen": "Puede que eduquemos para profesiones que aún no existen, pero educamos para un mundo que sí existe.",
+    "pdf": "articulos/el-espejo-de-la-justicia-social-el-poder-del-abp-y-el-compro-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "¿Cómo trabajar la educación para el desarrollo desde el aprendizaje basado en proyectos?",
+    "revista": "Wolters Kluwer",
+    "año": "2016",
+    "resumen": "La experiencia que se narra fue galardonada con el premio “Vicente Ferrer” concedido por la Agencia Internacional de Cooperación al Desarrollo (AECID) en su sexta edición.",
+    "pdf": "articulos/como-trabajar-la-educacion-para-el-desarrollo-desde-el-apren-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "La buena noticia: algo está cambiando en educación",
+    "revista": "Magisterio",
+    "año": "2016",
+    "resumen": "Algo está cambiando: cientos de docentes buscan cada sábado formas nuevas de enseñar.",
+    "pdf": "articulos/la-buena-noticia-algo-esta-cambiando-en-educacion-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "5 claves para el aprendizaje basado en problemas",
+    "revista": "Educación 3.0",
+    "año": "2018",
+    "resumen": "Hoy disponemos de un amplio conjunto de estrategias que buscan provocar aprendizajes adecuados a las necesidades de los aprendices del siglo que habitamos.",
+    "pdf": "articulos/5-claves-para-el-aprendizaje-basado-en-problemas-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Narrar el aprendizaje",
+    "revista": "Eduforics",
+    "año": "2018",
+    "resumen": "Aprendemos gracias a las historias: ¡Debemos regresar a ellas para diseñar nuestras clases!",
+    "pdf": "articulos/narrar-el-aprendizaje-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Narrar el aprendizaje. La fuerza del relato en el ABP",
+    "revista": "Artículo",
+    "año": "2018",
+    "resumen": "En 2015 escribí un libro sobre Aprendizaje Basado en Proyectos que ha tenido la fortuna de ser bien acogido por los lectores que más me interesaban: los docentes.",
+    "pdf": "articulos/narrar-el-aprendizaje-la-fuerza-del-relato-en-el-abp-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "El enfoque de proyectos como motor de cambio educativo",
+    "revista": "Artículo",
+    "año": "2018",
+    "resumen": "Vivimos un momento esperanzador en educación. Atravesar la frontera del año 2000 supuso para las escuelas entrar en un espacio inestable que ha invitado a todos buscar respuestas a nuevos…",
+    "pdf": "articulos/el-enfoque-de-proyectos-como-motor-de-cambio-educativo-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "El aprendizaje basado en proyectos (editorial)",
+    "revista": "Artículo",
+    "año": "2018",
+    "resumen": "El ABP es una estrategia con una larga historia y excelentes ejemplos en muy distintos contextos educativos.",
+    "pdf": "articulos/el-aprendizaje-basado-en-proyectos-editorial-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Un manifiesto para una metodología de proyectos socioeducativos",
+    "revista": "Artículo",
+    "año": "2012",
+    "resumen": "Un manifiesto para trabajar por proyectos socioeducativos en la era de la convergencia mediática.",
+    "pdf": "articulos/un-manifiesto-para-una-metodologia-de-proyectos-socioeducati-2012.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Un aula, un proyecto. El ABP y la nueva educación a partir de 2020",
+    "revista": "INED21",
+    "año": "2022",
+    "resumen": "El Aprendizaje Basado en Proyectos (ABP) es un marco metodológico que poco a poco va demostrando que puede dibujar una forma de crear experiencias de aprendizaje ricas en cooperación, adquisición de…",
+    "pdf": "articulos/un-aula-un-proyecto-el-abp-y-la-nueva-educacion-a-partir-de-2022.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Aprendizaje basado en proyectos: cómo construir una aventura para el aprendizaje comprometido con la realidad",
+    "revista": "Inspiratic",
+    "año": "2018",
+    "resumen": "Aprendemos gracias a las historias: cómo convertir los proyectos en aventuras comprometidas con el cambio social.",
+    "pdf": "articulos/aprendizaje-basado-en-proyectos-como-construir-una-aventura-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Reconocerse como un grupo inteligente: la interacción",
+    "revista": "SM",
+    "año": "2018",
+    "resumen": "Fragmento de «Aprendo porque quiero»: un proyecto empieza cuando el grupo se reconoce como tal.",
+    "pdf": "articulos/reconocerse-como-un-grupo-inteligente-la-interaccion-2018.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Pensamiento crítico en las aulas. ¿Es posible la educación en las escuelas?",
+    "revista": "Baladre",
+    "año": "2023",
+    "resumen": "Hay razones para decir que las escuelas no son los mejores espacios para que se produzca el aprendizaje.",
+    "pdf": "articulos/pensamiento-critico-en-las-aulas-es-posible-la-educacion-en-2023.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "El muro de la diversidad",
+    "revista": "Artículo",
+    "año": "2007",
+    "resumen": "Frente a las vallas que separan, un muro que une. Cientos de cajas con la fotografía de cada uno de los miembros de este colegio forman una pared que se puede cruzar y que al otro lado les permite…",
+    "pdf": "articulos/el-muro-de-la-diversidad-2007.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "«Cambia la mirada», un proyecto Madrid-Atlas",
+    "revista": "Periódico Escuela",
+    "año": "2011",
+    "resumen": "El pasado 8 de noviembre se celebraba una jornada a la que acudían en torno a 200 educadores en formación en el IES Barrio de Bilbao de Madrid.",
+    "pdf": "articulos/cambia-la-mirada-un-proyecto-madrid-atlas-2011.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "Cambia la mirada: el viaje",
+    "revista": "Educación 3.0",
+    "año": "2013",
+    "resumen": "A lo largo del 2011-12 se inicia un proyecto que implica a cerca de un centenar de alumnos y un par de profesores.",
+    "pdf": "articulos/cambia-la-mirada-el-viaje-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "El péndulo de Ifoulou. Educar en la era de la convergencia",
+    "revista": "Educared",
+    "año": "2011",
+    "resumen": "Un proyecto de aprendizaje-servicio en el Atlas pensado desde la convergencia mediática.",
+    "pdf": "articulos/el-pendulo-de-ifoulou-educar-en-la-era-de-la-convergencia-2011.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "revistas",
+    "titulo": "El péndulo de Ifoulou (memoria del Premio Vicente Ferrer)",
+    "revista": "Premio Vicente Ferrer",
+    "año": "2015",
+    "resumen": "El resultado de todo ello es un proyecto que forma a nuestros alumnos – que serán futuros educadores- en ciudadanos comprometidos y transformadores.",
+    "pdf": "articulos/el-pendulo-de-ifoulou-memoria-del-premio-vicente-ferrer-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prologos",
+    "titulo": "Prólogo a «Ámbitos para el aprendizaje», de Coral Elizondo",
+    "revista": "Prólogo",
+    "año": "2020",
+    "resumen": "Hace algunos milenios el centro de la educación era una hoguera.",
+    "pdf": "articulos/prologo-a-ambitos-para-el-aprendizaje-de-coral-elizondo-2020.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prologos",
+    "titulo": "Prólogo a «ABP. Preguntas reales, respuestas reales», de Cooper y Murphy",
+    "revista": "Prólogo",
+    "año": "2024",
+    "resumen": "Hace años sabemos que el aprendizaje basado en proyectos no es simplemente una moda educativa.",
+    "pdf": "articulos/prologo-a-abp-preguntas-reales-respuestas-reales-de-cooper-y-2024.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prologos",
+    "titulo": "Prólogo al libro de María Esther Basurto",
+    "revista": "Prólogo",
+    "año": "2021",
+    "resumen": "Leer el trabajo de la María Esther Basurto ha provocado en mi, decenas de imágenes que han recorrido mi vida como aprendiz y también como docente.",
+    "pdf": "articulos/prologo-al-libro-de-maria-esther-basurto-2021.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "prologos",
+    "titulo": "Prólogo sobre los Centros de Profesores",
+    "revista": "Prólogo",
+    "año": "2025",
+    "resumen": "En sus inicios, los Centros de Profesores eran espacios diseñados para el encuentro entre docentes pensados como “Plataformas estables para el trabajo en equipo de Profesores de todos los niveles…",
+    "pdf": "articulos/prologo-sobre-los-centros-de-profesores-2025.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "entrevistas",
+    "titulo": "«¿Cómo podríamos definir a Juanjo Vergara como profesor?»",
+    "revista": "Magisterio",
+    "año": "2021",
+    "resumen": "La respuesta a esta pregunta quizá no sea yo la mejor persona para contestarla.",
+    "pdf": "articulos/como-podriamos-definir-a-juanjo-vergara-como-profesor-2021.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "entrevistas",
+    "titulo": "La educación que nos mueve (Chile)",
+    "revista": "La educación que nos mueve (Chile)",
+    "año": "2017",
+    "resumen": "1 – ¿Qué sucede en el ámbito pedagógico, en el aula, que se vuelve tan necesario el cambio y la innovación en las prácticas pedagógicas?",
+    "pdf": "articulos/la-educacion-que-nos-mueve-chile-2017.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "entrevistas",
+    "titulo": "Los proyectos que he emprendido",
+    "revista": "Entrevista",
+    "año": "2016",
+    "resumen": "Antes de nada, ¿nos explicas brevemente los aspectos más importantes de los proyectos que has emprendido?",
+    "pdf": "articulos/los-proyectos-que-he-emprendido-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "entrevistas",
+    "titulo": "Metodologías activas y ABP",
+    "revista": "Entrevista",
+    "año": "2016",
+    "resumen": "Una de tus especialidades es el aprendizaje basado en proyectos o problemas (ABP).",
+    "pdf": "articulos/metodologias-activas-y-abp-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "entrevistas",
+    "titulo": "Juan José Vergara, profesor y pedagogo",
+    "revista": "Revista Aula (UGT)",
+    "año": "2016",
+    "resumen": "Entrevista sobre ABP para docentes que aún no saben qué es.",
+    "pdf": "articulos/juan-jose-vergara-profesor-y-pedagogo-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "entrevistas",
+    "titulo": "Entrevista con… Juanjo Vergara",
+    "revista": "Polygon Education",
+    "año": "2016",
+    "resumen": "Cuando doy ese dato en charlas a docentes que quieren formarse en ABP lo hago con una intención directa: el trabajo por proyectos no es una moda nueva en educación.",
+    "pdf": "articulos/entrevista-con-juanjo-vergara-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "entrevistas",
+    "titulo": "¿En qué consiste el aprendizaje basado en proyectos?",
+    "revista": "Entrevista",
+    "año": "",
+    "resumen": "Trabajar por proyectos compromete el aprendizaje como la respuesta del alumno a su necesidad de comprender la realidad que le rodea y actuar en ella.",
+    "pdf": "articulos/en-que-consiste-el-aprendizaje-basado-en-proyectos.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "La educación fragmentada",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2012",
+    "resumen": "Volver al instituto tras las vacaciones de verano inaugura un relato que se repite año tras año.",
+    "pdf": "articulos/la-educacion-fragmentada-2012.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Atrapar sueños y otros objetivos educativos",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Hace unos días entré en clase. Como es habitual a primera hora de la mañana, todos teníamos el recuerdo del calor de la cama recién abandonada y hacíamos esfuerzos por poner la mejor de nuestras…",
+    "pdf": "articulos/atrapar-suenos-y-otros-objetivos-educativos-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Aprender a prender. Una mirada ética",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Últimamente me está tocando hablar bastante de emprendimiento y competencias.",
+    "pdf": "articulos/aprender-a-prender-una-mirada-etica-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Aprendizajes viajeros",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Estos días estamos en unos de los más productivos en términos de aprendizaje para nuestros alumnos o al menos podría serlo; solo depende de cómo los adultos que les rodeamos –familia y escuela sobre…",
+    "pdf": "articulos/aprendizajes-viajeros-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Caminante no hay camino, se hace camino al andar",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Con un par de versos Machado pone la diana en los dos focos que deberían centrar el método en educación: la INTENCIÓN y la ACCIÓN.",
+    "pdf": "articulos/caminante-no-hay-camino-se-hace-camino-al-andar-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Comisariar arte y educación",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Hace algunas semanas el equipo educativo del Centro de Arte Dos de Mayo [CA2M] me hacía una inusual propuesta que acepté inmediatamente por lo fresca y…",
+    "pdf": "articulos/comisariar-arte-y-educacion-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Cuando el aprendizaje se escapa de la piel",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Ayer leía la columna de Kai-Ming Cheng en el último Escuela hablando sobre los MOOC en la enseñanza superior.",
+    "pdf": "articulos/cuando-el-aprendizaje-se-escapa-de-la-piel-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Desalojos y realojos de la educación. InterActúa una vez más",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "En la Comunidad de Madrid hay solo siete centros donde se puede obtener el título de técnico superior en animación sociocultural.",
+    "pdf": "articulos/desalojos-y-realojos-de-la-educacion-interactua-una-vez-mas-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El cafelito",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2012",
+    "resumen": "Desde hace años organizamos “el cafelito” una vez al mes. Este espacio es un cambio de formato en las clases de didáctica de educación infantil en el que pretendo demostrar en la práctica como…",
+    "pdf": "articulos/el-cafelito-2012.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El misterio de la educación: una terapia",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2012",
+    "resumen": "El título de este post es un guiño cómplice a una obra, de Marta de Gonzalo y Publio Pérez, de hace algunos años que –como tantas que viajan en las lindes de la educación- no se ha explorado como…",
+    "pdf": "articulos/el-misterio-de-la-educacion-una-terapia-2012.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El arte de la seducción",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "No recuerdo su nombre ni su cara. Lo que si recuerdo es que aquel artista y maestro llevaba el pelo un poco largo, su taller de plástica tenía un rincón en el que ordenaba materiales de desecho que…",
+    "pdf": "articulos/el-arte-de-la-seduccion-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El currículo móvil",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "El contexto era una reunión de profesores y los protagonistas un grupo de alumnos de entre 18 y 30 años.",
+    "pdf": "articulos/el-curriculo-movil-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El docente zarandeado",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Llevo una semana despidiéndome de compañeros que en los últimos años compartieron docencia conmigo en mi centro.",
+    "pdf": "articulos/el-docente-zarandeado-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El extrañamiento como terapia educativa",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "En mi personal historia del curso –ese periodo de tiempo que viaja de septiembre a junio-, estas fechas son días de maleta, cepillo de dientes y cámara de fotos.",
+    "pdf": "articulos/el-extranamiento-como-terapia-educativa-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El límite de tus sueños",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2016",
+    "resumen": "Cuando viajamos suceden algunas cosas que me interesan. Todas ellas tienen mucho que ver con el aprendizaje de nuestros alumnos y también con el papel que nosotros jugamos en él.",
+    "pdf": "articulos/el-limite-de-tus-suenos-2016.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El péndulo de Ifoulou",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Al llegar al centro, mis alumnos –futuros educadores- reciben la noticia que van a vivir un proyecto singular: “El péndulo de Ifoulou”.",
+    "pdf": "articulos/el-pendulo-de-ifoulou-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "El vómito como libro de texto",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Ayer estuve enfrentándome una vez más al maravilloso torbellino de las obras de Angélica Lidell.",
+    "pdf": "articulos/el-vomito-como-libro-de-texto-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Entre un salam y un sukran",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Hoy Rodrigo J. García publica un post en el blog de El País “Escuelas en Red” dedicado a un proyecto que lleva acompañándome los últimos años y ha servido de excusa para aglutinar propuestas de…",
+    "pdf": "articulos/entre-un-salam-y-un-sukran-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Esfuerzo, refuerzo y placer",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Aprender es una actividad costosa. Mucho de lo que aprendemos requiere un gran esfuerzo.",
+    "pdf": "articulos/esfuerzo-refuerzo-y-placer-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Espejos",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Hace algunas semanas, quizá meses, me contaba una compañera y amiga un cuento quizá conocido por muchos pero que viene ni pintado a muchos de los miedos, fobias y filias.",
+    "pdf": "articulos/espejos-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Evaluar no es calificar (2015)",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "La verdad es que cuando leí la noticia del compromiso de las escuelas jesuitas de abandonar los exámenes reconozco que mi actitud no fue de sorpresa.",
+    "pdf": "articulos/evaluar-no-es-calificar-2015-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Grafitis y lupas: “El día de …”",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2012",
+    "resumen": "Hoy es 20 de noviembre. El día internacional de los derechos de la infancia.",
+    "pdf": "articulos/grafitis-y-lupas-el-dia-de-2012.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Habitaciones, papeles pintados y fronteras",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2012",
+    "resumen": "Hace algunos días María Acaso me invitaba a un ciclo de encuentros que –organizado por el grupo de Pedagogías Invisibles- reúne en grupos de discusión a personas que intercambian sobre algunos…",
+    "pdf": "articulos/habitaciones-papeles-pintados-y-fronteras-2012.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "#HxEpD",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Hace algunos meses revoloteaba la idea en mi cabeza de hacer estable algo que ya funcionaba desde hace años: una red de escuelas hermanadas con las que compartimos formas de hacer educación.",
+    "pdf": "articulos/hxepd-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Inglés y cajas registradoras",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Cuando estudié magisterio no se llamaba así. Mi título de aquél entonces pone algo así como “Profesor de E.G.B.”.",
+    "pdf": "articulos/ingles-y-cajas-registradoras-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "La educación no cambia el mundo",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Me gusta especialmente esta famosa frase de Freire. Y me gusta lanzarla así.",
+    "pdf": "articulos/la-educacion-no-cambia-el-mundo-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "La ecuación del ABP: 5 + 2 = ABP (I)",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Hace varias décadas que trabajo en el marco del ABP. A lo largo de los año he identificado cinco momentos diferenciados en su desarrollo y dos elementos a tener en cuenta de forma especial: 5 + 2…",
+    "pdf": "articulos/la-ecuacion-del-abp-5-2-abp-i-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "La ecuación del ABP: 5 + 2 = ABP (II)",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "La Intención termina cuando el grupo decide emprender el proyecto.",
+    "pdf": "articulos/la-ecuacion-del-abp-5-2-abp-ii-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "La ecuación del ABP: 5 + 2 = ABP (y III)",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "En los dos post anteriores me dedicaba a los cinco primeros momentos del ABP: La Ocasión y La Intención (en el primer post) y La Mirada, La Estrategia y la Acción (en el segundo).",
+    "pdf": "articulos/la-ecuacion-del-abp-5-2-abp-y-iii-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Las narrativas del péndulo",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Hace unos meses titulábamos así un proyecto educativo que terminó desarrollándose paralelamente por una escuela infantil de Madrid, un instituto de la misma ciudad, un colegio de una ciudad marroquí…",
+    "pdf": "articulos/las-narrativas-del-pendulo-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "PBH",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Acabo de regresar de unas jornadas que merecen un espacio en este blog por el centenar de excepcionales docentes que las protagonizaban.",
+    "pdf": "articulos/pbh-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Qué no es aprendizaje basado en proyectos",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "En fechas recientes aparecía publicado mi último trabajo “Aprendo porque quiero.",
+    "pdf": "articulos/que-no-es-aprendizaje-basado-en-proyectos-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Qué pasa cuando un educador en formación sale de la zona de confort",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "El viaje como experiencia que saca al educador en formación de su zona de confort.",
+    "pdf": "articulos/que-pasa-cuando-un-educador-en-formacion-sale-de-la-zona-de-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Relaxing cup of café con leche in the plaza mayor",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Es más que posible que este post haga que los pocos que hasta ahora me leían dejen de hacerlo.",
+    "pdf": "articulos/relaxing-cup-of-cafe-con-leche-in-the-plaza-mayor-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Señor pedagogo, sea sincero",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Señor pedagogo, sea sincero ¿sabría usted ahora mismo hallar el común denominador de 2/5, 7/13 y 6/4?",
+    "pdf": "articulos/senor-pedagogo-sea-sincero-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Soñar no es hablar de sueños. Es construirlos",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "La conversación era entre una maestra de educación infantil y el inicio de un proyecto en su colegio y yo en mis clases de Didáctica de la Educación Infantil para educadorxs infantiles en formación.",
+    "pdf": "articulos/sonar-no-es-hablar-de-suenos-es-construirlos-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Spoiler y evaluadores",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Hay veces que cuando asisto a una reunión de programación en la que un grupo de docentes intentan escribir el documento de evaluación prescrito por las autoridades educativas, viene a mi cabeza la…",
+    "pdf": "articulos/spoiler-y-evaluadores-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Todo lo bueno es pecado o engorda",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Me gusta ir de camping. Es una fantástica forma de desconectar por unas semanas de algunas de las obligaciones del día a día del curso.",
+    "pdf": "articulos/todo-lo-bueno-es-pecado-o-engorda-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Test para un año nuevo",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Acabas de iniciar un nuevo trimestre y has vuelto al trabajo en el Centro.",
+    "pdf": "articulos/test-para-un-ano-nuevo-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Un segundo plato consistente",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Navegamos el segundo trimestre del curso. Es el momento de los platos fuertes, los que dejan satisfecho y saciado.",
+    "pdf": "articulos/un-segundo-plato-consistente-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Uñas “rojoputón”",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Con la diana del 8 de marzo, tenía comprometido con el equipo pedagógico del Centro de Arte Contemporáneo de la Comunidad de Madrid Dos de Mayo (CA2M), una actividad titulada “Taller de pintarse…",
+    "pdf": "articulos/unas-rojoputon-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Vamos allá",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Por estas fechas hace algunos años escribo un post obligado: “Encantado de conocerte”.",
+    "pdf": "articulos/vamos-alla-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Vicente Ferrer",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Esta mañana ocurría un suceso memorable. A eso de las dos de la tarde compartía unas cañas con mis compañeros celebrando que nuestra forma de hacer educación es una apuesta acertada.",
+    "pdf": "articulos/vicente-ferrer-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Apostillas a cerdos, bellotas y piensos",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Hace unos días escribía un post motivado por el artículo de Gerver en Escuela en el que denunciaba el afán por estandarizar las evaluaciones externas y lo absurdo de un modelo que pretendía mejorar…",
+    "pdf": "articulos/apostillas-a-cerdos-bellotas-y-piensos-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Cerdos, bellotas y piensos",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Hace poco he leído un puñado de párrafos excelentes. Era en el Escuela de 30 de mayo, lo firmaba en Opinión Richard Gerver y el título era un antídoto a la pereza de atreverme con…",
+    "pdf": "articulos/cerdos-bellotas-y-piensos-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Educar la mirada",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Cada año por estas fechas me dedico a recorrer calles de ciudades y pueblos europeos en bicicleta.",
+    "pdf": "articulos/educar-la-mirada-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Escobas, talismanes y cajas registradoras",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2012",
+    "resumen": "Abro mi participación en este blog de innovación educativa y tras un primer impulso de tirarme a la piscina y liarme a desmadejar experiencias y líneas de acción novedosas, se me ha ocurrido meter…",
+    "pdf": "articulos/escobas-talismanes-y-cajas-registradoras-2012.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Evaluar no es calificar (2014)",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Estos días, el cien por cien de los docentes y alumnos de este país anda a vueltas con la evaluación.",
+    "pdf": "articulos/evaluar-no-es-calificar-2014-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Construir organizaciones justas",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Hace poco más de una semana tuve ocasión de compartir algunos días de viaje con Javier Murillo.",
+    "pdf": "articulos/construir-organizaciones-justas-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Niños vs moda: la pedagogía del espejo",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Hace algunos años que estoy atento a las obras de Yolanda Domínguez .",
+    "pdf": "articulos/ninos-vs-moda-la-pedagogia-del-espejo-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "Aprendo porque quiero. El ABP paso a paso",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Aprender es un acto intencional. Nuestros alumnos –y nosotros mismos- aprendemos cuando queremos.",
+    "pdf": "articulos/aprendo-porque-quiero-el-abp-paso-a-paso-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "¡Ojalá viajáramos por el mismo camino!",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Cuando era niño recuerdo la sensación de que solo una de cada diez cosas que mi maestro quería enseñarme, me despertaba hasta el punto de hacerme enderezar la espalda y abrir los ojos como platos.",
+    "pdf": "articulos/ojala-viajaramos-por-el-mismo-camino-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "¿Campana o pitillos?",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Mi modesta experiencia con los equipos con los que he trabajado y en los que he participado en la formación de ‘metodologías activas’ me lleva –a veces- a recordar cómo pasamos de la moda de los…",
+    "pdf": "articulos/campana-o-pitillos-2014.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "¿Habitas, viajas o haces turismo?",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2015",
+    "resumen": "Viajar, desplazarse de un lugar a otro, habitar el mundo parecen la misma cosa.",
+    "pdf": "articulos/habitas-viajas-o-haces-turismo-2015.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "¿Las paredes laten?",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2013",
+    "resumen": "Hace una semana cerraba maleta y -junto con un grupo de alumnos- emprendíamos viaje a Málaga en busca de experiencias de las que nutrirnos.",
+    "pdf": "articulos/las-paredes-laten-2013.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "grupo": "blog",
+    "titulo": "¿Son mis alumnos violentos?",
+    "revista": "Blog de Escuela (Wolters Kluwer)",
+    "año": "2014",
+    "resumen": "Llevamos dos días de huelga de estudiantes y los coletazos de una masiva marcha el 22 de marzo.",
+    "pdf": "articulos/son-mis-alumnos-violentos-2014.pdf"
   },
   {
     "tipo": "lectura",

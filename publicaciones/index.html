@@ -47,6 +47,19 @@
   .contador { font-size: 12px; font-weight: 500; color: #999; letter-spacing: 0; }
   .lista-fichas { display: flex; flex-direction: column; gap: 16px; }
 
+  /* Filtros, buscador y «Ver más» de la columna Artículos */
+  .herramientas { display: flex; flex-direction: column; gap: 10px; margin: -6px 0 18px; }
+  .buscador { width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 22px; font: inherit; font-size: 14px; background: #fff; }
+  .buscador:focus { outline: none; border-color: var(--color-rojo-claro); box-shadow: 0 0 0 3px rgba(214,90,71,0.15); }
+  .filtros { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { border: 1px solid #ddd; background: #fff; color: #555; border-radius: 16px; padding: 5px 11px; font: inherit; font-size: 12px; cursor: pointer; transition: all .2s; }
+  .chip:hover { border-color: var(--color-rojo-claro); color: var(--color-rojo-claro); }
+  .chip.activo { background: var(--color-rojo-claro); border-color: var(--color-rojo-claro); color: #fff; }
+  .chip .num { opacity: .7; margin-left: 3px; }
+  .ver-mas { margin-top: 16px; width: 100%; padding: 11px; border: 1.5px dashed #ccc; border-radius: 10px; background: transparent; font: inherit; font-size: 13px; font-weight: 700; color: #666; cursor: pointer; }
+  .ver-mas:hover { border-color: var(--color-rojo-claro); color: var(--color-rojo-claro); }
+  .sin-resultados { font-size: 14px; color: #888; padding: 10px 2px; }
+
   /* Fichas: sombra suave y crecen un poco al pasar el ratón */
   .ficha { background: #fff; border-radius: 12px; padding: 18px; cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.08); transition: transform .25s ease, box-shadow .25s ease; border: none; text-align: left; font: inherit; color: inherit; width: 100%; }
   .ficha:hover, .ficha:focus-visible { transform: scale(1.03); box-shadow: 0 12px 28px rgba(0,0,0,0.14); outline: none; }
@@ -159,7 +172,14 @@
 
   <div class="grid-publicaciones">
     <section class="columna libros"><h2 class="columna-titulo">Libros <span class="contador" id="n-libro"></span></h2><div class="lista-fichas" id="col-libro"></div></section>
-    <section class="columna articulos"><h2 class="columna-titulo">Artículos <span class="contador" id="n-articulo"></span></h2><div class="lista-fichas" id="col-articulo"></div></section>
+    <section class="columna articulos"><h2 class="columna-titulo">Artículos <span class="contador" id="n-articulo"></span></h2>
+      <div class="herramientas">
+        <input type="search" class="buscador" id="buscar-articulo" placeholder="Buscar en los artículos…" aria-label="Buscar en los artículos">
+        <div class="filtros" id="filtros-articulo" role="group" aria-label="Filtrar artículos por tipo"></div>
+      </div>
+      <div class="lista-fichas" id="col-articulo"></div>
+      <button class="ver-mas" id="ver-mas-articulo" hidden></button>
+    </section>
     <section class="columna lecturas"><h2 class="columna-titulo">Lecturas <span class="contador" id="n-lectura"></span></h2><div class="lista-fichas" id="col-lectura"></div></section>
   </div>
 </main>
@@ -245,7 +265,7 @@ function crearFicha(item) {
       <div><h3>${esc(item.titulo)}</h3><div class="meta">${esc(item.editorial)} · ${esc(item.año)}</div><span class="accion">Ver libro →</span></div>`;
     f.onclick = () => abrirLibro(item);
   } else if (item.tipo === 'articulo') {
-    f.innerHTML = `<h3>${esc(item.titulo)}</h3><div class="meta">${esc(item.revista)}</div>${item.resumen ? `<p>${esc(item.resumen)}</p>` : ''}<span class="accion">Leer artículo →</span>`;
+    f.innerHTML = `<h3>${esc(item.titulo)}</h3><div class="meta">${esc([item.revista, item.año].filter(Boolean).join(' · '))}</div>${item.resumen ? `<p>${esc(item.resumen)}</p>` : ''}<span class="accion">Leer artículo →</span>`;
     f.onclick = () => abrirArticulo(item);
   } else {
     f.innerHTML = `<h3>${esc(item.titulo)}</h3><div class="meta">${esc(item.autor)}</div>${item.resumen ? `<p>${esc(item.resumen)}</p>` : ''}<span class="accion">Abrir lectura →</span>`;
@@ -265,12 +285,61 @@ async function cargar() {
   }
   const n = { libro: 0, articulo: 0, lectura: 0 };
   datos.forEach(item => {
+    n[item.tipo] = (n[item.tipo] || 0) + 1;
+    if (item.tipo === 'articulo') return;            // los artículos se pintan con filtros
     const col = document.getElementById('col-' + item.tipo);
-    if (!col) return;
-    col.appendChild(crearFicha(item));
-    n[item.tipo]++;
+    if (col) col.appendChild(crearFicha(item));
   });
-  Object.keys(n).forEach(t => document.getElementById('n-' + t).textContent = n[t]);
+  Object.keys(n).forEach(t => { const el = document.getElementById('n-' + t); if (el) el.textContent = n[t]; });
+  iniciarArticulos(datos.filter(d => d.tipo === 'articulo'));
+}
+
+/* ARTÍCULOS: filtros por tipo, buscador y «Ver más» (8 cada vez), de más reciente a más antiguo */
+const GRUPOS = [
+  ['todos', 'Todos'], ['escuela', 'Periódico Escuela'], ['prensa', 'Prensa y columnas'],
+  ['revistas', 'Revistas y libros'], ['blog', 'Blog'], ['prologos', 'Prólogos'], ['entrevistas', 'Entrevistas']
+];
+const POR_PAGINA = 8;
+const estadoArt = { grupo: 'todos', texto: '', mostrar: POR_PAGINA, lista: [] };
+const normalizar = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+function iniciarArticulos(lista) {
+  estadoArt.lista = lista.slice().sort((a, b) => (parseInt(b.año) || 0) - (parseInt(a.año) || 0));
+  const caja = document.getElementById('filtros-articulo');
+  GRUPOS.forEach(([id, nombre]) => {
+    const total = id === 'todos' ? lista.length : lista.filter(a => a.grupo === id).length;
+    if (!total) return;
+    const b = document.createElement('button');
+    b.className = 'chip' + (id === estadoArt.grupo ? ' activo' : '');
+    b.dataset.grupo = id;
+    b.setAttribute('aria-pressed', id === estadoArt.grupo);
+    b.innerHTML = `${esc(nombre)}<span class="num">${total}</span>`;
+    b.onclick = () => {
+      estadoArt.grupo = id; estadoArt.mostrar = POR_PAGINA;
+      caja.querySelectorAll('.chip').forEach(c => { c.classList.toggle('activo', c === b); c.setAttribute('aria-pressed', c === b); });
+      pintarArticulos();
+    };
+    caja.appendChild(b);
+  });
+  document.getElementById('buscar-articulo').addEventListener('input', e => {
+    estadoArt.texto = normalizar(e.target.value.trim()); estadoArt.mostrar = POR_PAGINA; pintarArticulos();
+  });
+  document.getElementById('ver-mas-articulo').onclick = () => { estadoArt.mostrar += POR_PAGINA; pintarArticulos(); };
+  pintarArticulos();
+}
+
+function pintarArticulos() {
+  const col = document.getElementById('col-articulo');
+  const visibles = estadoArt.lista.filter(a =>
+    (estadoArt.grupo === 'todos' || a.grupo === estadoArt.grupo) &&
+    (!estadoArt.texto || normalizar([a.titulo, a.revista, a.resumen, a.año].join(' ')).includes(estadoArt.texto)));
+  col.innerHTML = '';
+  visibles.slice(0, estadoArt.mostrar).forEach(a => col.appendChild(crearFicha(a)));
+  if (!visibles.length) col.innerHTML = '<p class="sin-resultados">No hay artículos que coincidan con la búsqueda.</p>';
+  const resto = visibles.length - estadoArt.mostrar;
+  const boton = document.getElementById('ver-mas-articulo');
+  boton.hidden = resto <= 0;
+  boton.textContent = `Ver más (${resto} más)`;
 }
 
 function abrir(id) { document.getElementById(id).classList.add('abierta'); document.body.style.overflow = 'hidden'; }
@@ -312,7 +381,7 @@ function alternarIndice() {
 /* ARTÍCULOS: vista de solo lectura y descarga en PDF */
 function abrirArticulo(item) {
   document.getElementById('doc-titulo').textContent = item.titulo;
-  document.getElementById('doc-meta').textContent = item.revista || '';
+  document.getElementById('doc-meta').textContent = [item.revista, item.año].filter(Boolean).join(' · ');
   const descargar = document.getElementById('doc-descargar');
   descargar.href = item.pdf;
   descargar.setAttribute('download', item.pdf.split('/').pop());
