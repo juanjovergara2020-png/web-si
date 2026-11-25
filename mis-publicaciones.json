@@ -5,7 +5,23 @@
     "editorial": "S.M.-Biblioteca de Innovación Educativa",
     "año": "2016-1",
     "imagen": "img-libros/aprendo.jpg",
-    "enlace": "https://drive.google.com/file/d/ejemplo1"
+    "enlace": "https://juanjovergara.wixsite.com/juanjo/aprendo-porque-quiero"
+  },
+  {
+    "tipo": "libro",
+    "titulo": "Narrar el aprendiaje"
+    "editorial": "S.M.-Biblioteca de Innovación Educativa",
+    "año": "2018",
+    "imagen": "img-libros/narrar.jpg",
+    "enlace": "https://juanjovergara.wixsite.com/juanjo/copia-de-aprendo-porque-quiero-1"
+  },
+  {
+    "tipo": "libro",
+    "titulo": "Un aula un proyecto"
+    "editorial": "Narcea",
+    "año": "2020",
+    "imagen": "img-libros/un_aula.jpg",
+    "enlace": "https://juanjovergara.wixsite.com/juanjo/un-aula-un-proyecto"
   },
   {
     "tipo": "articulo",
