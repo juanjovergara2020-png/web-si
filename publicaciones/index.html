@@ -48,14 +48,15 @@
   .lista-fichas { display: flex; flex-direction: column; gap: 16px; }
 
   /* Filtros, buscador y «Ver más» de la columna Artículos */
-  .herramientas { display: flex; flex-direction: column; gap: 10px; margin: -6px 0 18px; }
-  .buscador { width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 22px; font: inherit; font-size: 14px; background: #fff; }
-  .buscador:focus { outline: none; border-color: var(--color-rojo-claro); box-shadow: 0 0 0 3px rgba(214,90,71,0.15); }
-  .filtros { display: flex; flex-wrap: wrap; gap: 6px; }
-  .chip { border: 1px solid #ddd; background: #fff; color: #555; border-radius: 16px; padding: 5px 11px; font: inherit; font-size: 12px; cursor: pointer; transition: all .2s; }
-  .chip:hover { border-color: var(--color-rojo-claro); color: var(--color-rojo-claro); }
-  .chip.activo { background: var(--color-rojo-claro); border-color: var(--color-rojo-claro); color: #fff; }
-  .chip .num { opacity: .7; margin-left: 3px; }
+  .herramientas { display: flex; gap: 8px; align-items: center; margin: -6px 0 16px; }
+  .buscador { flex: 1; min-width: 0; padding: 9px 14px; border: 1px solid #ddd; border-radius: 22px; font: inherit; font-size: 14px; background: #fff; }
+  .buscador:focus, .tipo:focus { outline: none; border-color: var(--color-rojo-claro); box-shadow: 0 0 0 3px rgba(214,90,71,0.15); }
+  .tipo { flex: 0 1 auto; min-width: 0; max-width: 55%; text-overflow: ellipsis; padding: 9px 30px 9px 14px; border: 1px solid #ddd; border-radius: 22px; font: inherit; font-size: 14px; color: #333; cursor: pointer;
+    -webkit-appearance: none; appearance: none;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center; }
+  .tipo.activo { border-color: var(--color-rojo-claro); background-color: #fdf0f0; color: #a3402f; font-weight: 500; }
+  .aviso-filtro { font-size: 12px; color: #777; margin: -6px 0 14px; }
+  .aviso-filtro button { border: none; background: none; padding: 0; font: inherit; font-weight: 700; color: var(--color-rojo-claro); cursor: pointer; }
   .ver-mas { margin-top: 16px; width: 100%; padding: 11px; border: 1.5px dashed #ccc; border-radius: 10px; background: transparent; font: inherit; font-size: 13px; font-weight: 700; color: #666; cursor: pointer; }
   .ver-mas:hover { border-color: var(--color-rojo-claro); color: var(--color-rojo-claro); }
   .sin-resultados { font-size: 14px; color: #888; padding: 10px 2px; }
@@ -135,11 +136,13 @@
 
   /* ── MÓVIL ── */
   @media (max-width: 900px) {
-    .site-header { padding: 0 20px; }
+    .site-header { padding: 0 16px; gap: 12px; }
+    .site-header .logo { min-width: 0; flex: 1; }
+    .site-header .logo img { height: auto; max-height: 52px; max-width: 100%; }
     .menu-hamburguesa { display: block; }
     nav#nav-escritorio { display: none; position: fixed; top: var(--header-height); left: 0; width: 100%; background: #fff; padding: 20px; flex-direction: column; align-items: flex-start; gap: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
     nav#nav-escritorio.show { display: flex; }
-    .grid-publicaciones { grid-template-columns: 1fr; }
+    .grid-publicaciones { grid-template-columns: minmax(0, 1fr); }
     .titulo-seccion { font-size: 28px; letter-spacing: 3px; }
     .main-container { padding: 0 16px; margin-top: 30px; }
     .visor { width: 100%; height: 90vh; }
@@ -174,9 +177,10 @@
     <section class="columna libros"><h2 class="columna-titulo">Libros <span class="contador" id="n-libro"></span></h2><div class="lista-fichas" id="col-libro"></div></section>
     <section class="columna articulos"><h2 class="columna-titulo">Artículos <span class="contador" id="n-articulo"></span></h2>
       <div class="herramientas">
-        <input type="search" class="buscador" id="buscar-articulo" placeholder="Buscar en los artículos…" aria-label="Buscar en los artículos">
-        <div class="filtros" id="filtros-articulo" role="group" aria-label="Filtrar artículos por tipo"></div>
+        <input type="search" class="buscador" id="buscar-articulo" placeholder="Buscar…" aria-label="Buscar en los artículos">
+        <select class="tipo" id="tipo-articulo" aria-label="Tipo de artículo"></select>
       </div>
+      <p class="aviso-filtro" id="aviso-articulo" hidden></p>
       <div class="lista-fichas" id="col-articulo"></div>
       <button class="ver-mas" id="ver-mas-articulo" hidden></button>
     </section>
@@ -305,26 +309,26 @@ const normalizar = s => String(s || '').toLowerCase().normalize('NFD').replace(/
 
 function iniciarArticulos(lista) {
   estadoArt.lista = lista.slice().sort((a, b) => (parseInt(b.año) || 0) - (parseInt(a.año) || 0));
-  const caja = document.getElementById('filtros-articulo');
+  const sel = document.getElementById('tipo-articulo');
   GRUPOS.forEach(([id, nombre]) => {
     const total = id === 'todos' ? lista.length : lista.filter(a => a.grupo === id).length;
     if (!total) return;
-    const b = document.createElement('button');
-    b.className = 'chip' + (id === estadoArt.grupo ? ' activo' : '');
-    b.dataset.grupo = id;
-    b.setAttribute('aria-pressed', id === estadoArt.grupo);
-    b.innerHTML = `${esc(nombre)}<span class="num">${total}</span>`;
-    b.onclick = () => {
-      estadoArt.grupo = id; estadoArt.mostrar = POR_PAGINA;
-      caja.querySelectorAll('.chip').forEach(c => { c.classList.toggle('activo', c === b); c.setAttribute('aria-pressed', c === b); });
-      pintarArticulos();
-    };
-    caja.appendChild(b);
+    const o = document.createElement('option');
+    o.value = id; o.textContent = `${nombre} (${total})`;
+    sel.appendChild(o);
   });
+  sel.addEventListener('change', () => { elegirTipo(sel.value); });
   document.getElementById('buscar-articulo').addEventListener('input', e => {
     estadoArt.texto = normalizar(e.target.value.trim()); estadoArt.mostrar = POR_PAGINA; pintarArticulos();
   });
   document.getElementById('ver-mas-articulo').onclick = () => { estadoArt.mostrar += POR_PAGINA; pintarArticulos(); };
+  pintarArticulos();
+}
+
+function elegirTipo(id) {
+  estadoArt.grupo = id; estadoArt.mostrar = POR_PAGINA;
+  const sel = document.getElementById('tipo-articulo');
+  sel.value = id; sel.classList.toggle('activo', id !== 'todos');
   pintarArticulos();
 }
 
@@ -340,6 +344,14 @@ function pintarArticulos() {
   const boton = document.getElementById('ver-mas-articulo');
   boton.hidden = resto <= 0;
   boton.textContent = `Ver más (${resto} más)`;
+  const aviso = document.getElementById('aviso-articulo');
+  if (estadoArt.grupo === 'todos') { aviso.hidden = true; aviso.innerHTML = ''; }
+  else {
+    const nombre = (GRUPOS.find(g => g[0] === estadoArt.grupo) || [, ''])[1];
+    aviso.hidden = false;
+    aviso.innerHTML = `Mostrando ${Math.min(estadoArt.mostrar, visibles.length)} de ${visibles.length} · ${esc(nombre)} · <button type="button">Ver todos</button>`;
+    aviso.querySelector('button').onclick = () => elegirTipo('todos');
+  }
 }
 
 function abrir(id) { document.getElementById(id).classList.add('abierta'); document.body.style.overflow = 'hidden'; }
