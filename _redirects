@@ -1,0 +1,3 @@
+# Redirecciones de Netlify
+# La antigua página de publicaciones ahora está en la carpeta publicaciones/
+/publicaciones.html   /publicaciones/   301

@@ -1,0 +1,448 @@
+[
+  {
+    "tipo": "libro",
+    "titulo": "Aprendo porque quiero",
+    "subtitulo": "El Aprendizaje Basado en Proyectos (ABP), paso a paso",
+    "editorial": "SM · Biblioteca de Innovación Educativa",
+    "año": "2015",
+    "portada": "libros/aprendo.jpg",
+    "resumen": "<p>El Aprendizaje Basado en Proyectos (ABP) ofrece el marco para una transformación educativa que parte de la necesidad de conectar con los intereses del alumno.</p><p>Los alumnos, y nosotros mismos, aprendemos porque queremos. Aprendemos cuando hay algo que se sitúa en el plano de la necesidad de conocer. Para que esto suceda es preciso que conecte con nuestras vidas y nuestros intereses.</p><p>El ABP permite también desterrar la idea de un aula cerrada al exterior que trabaja con simulaciones. Los proyectos abordan la realidad para que los alumnos la analicen, la empleen como herramienta de aprendizaje, intervengan en ella y se comprometan.</p><p>Se trata de una estrategia de aprendizaje que no busca la mera transmisión de contenidos, sino crear experiencias educativas cooperativas que provocan un cambio personal y de grupo al enfrentarse a ellas.</p><p>Esta obra plantea a los docentes cómo conseguir a través del ABP que los contenidos se incorporen al modo de entender la realidad de sus alumnos. Cómo lograr que vivan experiencias capaces de aportarles información que ellos consideren relevante, cuestionar sus ideas previas y remodelar en parte su manera de entender el mundo.</p>",
+    "indice": [
+      {
+        "t": "Prólogo",
+        "p": "9",
+        "n": 1
+      },
+      {
+        "t": "Agradecimientos",
+        "p": "19",
+        "n": 1
+      },
+      {
+        "t": "Introducción",
+        "p": "21",
+        "n": 1
+      },
+      {
+        "t": "Capítulo 1. ¿Por qué el Aprendizaje Basado en Proyectos (ABP)?",
+        "p": "27",
+        "n": 1
+      },
+      {
+        "t": "I. Aprender es un acto intencional: aprendo porque quiero",
+        "p": "27",
+        "n": 2
+      },
+      {
+        "t": "II. Aprender es una acción práctica y útil: aprendo para algo",
+        "p": "30",
+        "n": 2
+      },
+      {
+        "t": "III. ¿Es el ABP la solución para mis clases?",
+        "p": "32",
+        "n": 2
+      },
+      {
+        "t": "IV. ¿Cómo aprenden mis alumnos?",
+        "p": "36",
+        "n": 2
+      },
+      {
+        "t": "V. ¿Cómo enseñar a mis alumnos?",
+        "p": "48",
+        "n": 2
+      },
+      {
+        "t": "Capítulo 2. El ABP paso a paso",
+        "p": "57",
+        "n": 1
+      },
+      {
+        "t": "I. Sorpréndete. ¿Cómo nace un proyecto? La ocasión",
+        "p": "57",
+        "n": 2
+      },
+      {
+        "t": "II. Decide hacerlo. Primeros pasos del proyecto. Crear la intención",
+        "p": "70",
+        "n": 2
+      },
+      {
+        "t": "III. Diseña el proyecto. Dirigir la mirada",
+        "p": "90",
+        "n": 2
+      },
+      {
+        "t": "IV. Investigar y hacer. La estrategia",
+        "p": "103",
+        "n": 2
+      },
+      {
+        "t": "V. Actuar y cambiar. La acción",
+        "p": "136",
+        "n": 2
+      },
+      {
+        "t": "VI. Herramientas para visibilizar un proyecto. La arquitectura",
+        "p": "144",
+        "n": 2
+      },
+      {
+        "t": "VII. Evalúa. ¿Qué y cómo hacerlo?",
+        "p": "152",
+        "n": 2
+      },
+      {
+        "t": "Capítulo 3. Cómo implantar el ABP en tu centro. Herramientas para armar un proyecto",
+        "p": "183",
+        "n": 1
+      },
+      {
+        "t": "Capítulo 4. El ABP en la práctica",
+        "p": "193",
+        "n": 1
+      },
+      {
+        "t": "Proyecto I: Gnro mjr",
+        "p": "193",
+        "n": 2
+      },
+      {
+        "t": "Proyecto II: Jornada temática: ¿Consumo?… te resumo",
+        "p": "197",
+        "n": 2
+      },
+      {
+        "t": "Proyecto III: Vídeo-documental Hop!",
+        "p": "204",
+        "n": 2
+      },
+      {
+        "t": "Proyecto IV: El Muro de la Diversidad",
+        "p": "209",
+        "n": 2
+      },
+      {
+        "t": "Proyecto V: El bosque de Z_oma",
+        "p": "211",
+        "n": 2
+      },
+      {
+        "t": "Proyecto VI: El péndulo de Ifoulou",
+        "p": "214",
+        "n": 2
+      },
+      {
+        "t": "Referencias del prólogo",
+        "p": "221",
+        "n": 1
+      }
+    ]
+  },
+  {
+    "tipo": "libro",
+    "titulo": "Narrar el aprendizaje",
+    "subtitulo": "La fuerza del relato en el Aprendizaje Basado en Proyectos (ABP)",
+    "editorial": "SM · Biblioteca de Innovación Educativa",
+    "año": "2018",
+    "portada": "libros/narrar.jpg",
+    "resumen": "<p>Los alumnos necesitan narraciones para comprender el mundo, hasta el punto de que prácticamente nada de lo que aprenden fuera del centro educativo se les presenta como ajeno a la narrativa. Por ello es importante plantearles el aprendizaje como una historia en la que tienen un papel activo relevante que acaba convirtiéndolos en verdaderos protagonistas.</p><p>El aprendizaje basado en proyectos busca una lógica narrativa en el diseño didáctico. Cuando planteamos un proyecto lo que hacemos es diseñar una situación conflictiva a la que enfrentamos al alumnado, que está conectada con su propio entorno.</p><p>Esperamos que la resuelva y para eso emprende un viaje de aprendizaje. En ese camino los alumnos trabajan cooperativamente y ponen encima de la mesa sus distintos intereses, opiniones y valores.</p><p>La capacidad del grupo para resolver grandes problemas demuestra a sus miembros que, juntos, mediante el conflicto y la búsqueda de consenso e ideas creativas, pueden lograr lo que por separado pensaban que no podrían conseguir. De este modo el proyecto les forma, les transforma y les mueve a actuar, a participar en la mejora de la sociedad desde su contexto cercano, como héroes y heroínas de una historia que les implica y compromete.</p>",
+    "indice": [
+      {
+        "t": "Prólogo",
+        "p": "9",
+        "n": 1
+      },
+      {
+        "t": "Introducción",
+        "p": "17",
+        "n": 1
+      },
+      {
+        "t": "Parte I. Las historias están en nuestro ADN",
+        "p": "",
+        "n": 1
+      },
+      {
+        "t": "Somos depredadores de historias",
+        "p": "23",
+        "n": 2
+      },
+      {
+        "t": "Capítulo uno. Primer acto: busca una historia y explora su potencia educativa",
+        "p": "77",
+        "n": 2
+      },
+      {
+        "t": "Capítulo dos. Segundo acto: sumerge a tus protagonistas en la aventura de aprender",
+        "p": "99",
+        "n": 2
+      },
+      {
+        "t": "Capítulo tres. Tercer acto: acompaña el retorno con una mochila cargada de aprendizajes",
+        "p": "131",
+        "n": 2
+      },
+      {
+        "t": "Capítulo cuatro. Arquitecturas nuevas para nuevas historias de aprendizaje",
+        "p": "155",
+        "n": 2
+      },
+      {
+        "t": "Parte II. ¿Cómo pronarro esto? Guía práctica para programar tus clases como una aventura paso a paso",
+        "p": "165",
+        "n": 1
+      },
+      {
+        "t": "Capítulo cinco. Fases y materiales",
+        "p": "167",
+        "n": 2
+      },
+      {
+        "t": "Fase uno. Busca una buena historia: la ocasión",
+        "p": "168",
+        "n": 2
+      },
+      {
+        "t": "Fase dos. Convierte a tus alumnos en héroes de la aventura: la intención",
+        "p": "173",
+        "n": 2
+      },
+      {
+        "t": "Fase tres. Invita a tus alumnos a que emprendan el viaje: la mirada",
+        "p": "176",
+        "n": 2
+      },
+      {
+        "t": "Fase cuatro. Permite que decidan los caminos que han de recorrer: la estrategia",
+        "p": "179",
+        "n": 2
+      },
+      {
+        "t": "Fase cinco. Define el final de la historia y el regreso al mundo ordinario: la acción",
+        "p": "182",
+        "n": 2
+      },
+      {
+        "t": "Capítulo seis. Materiales e ideas para desarrollar tu proyecto",
+        "p": "187",
+        "n": 2
+      },
+      {
+        "t": "Final… de la primera temporada",
+        "p": "239",
+        "n": 1
+      },
+      {
+        "t": "Agradecimientos",
+        "p": "241",
+        "n": 1
+      },
+      {
+        "t": "Bibliografía",
+        "p": "243",
+        "n": 1
+      }
+    ]
+  },
+  {
+    "tipo": "libro",
+    "titulo": "Un aula, un proyecto",
+    "subtitulo": "El ABP y la nueva educación a partir de 2020",
+    "editorial": "Narcea",
+    "año": "2021",
+    "portada": "libros/un-aula.jpg",
+    "resumen": "<p>Este trabajo expone, desarrolla y resume, con un lenguaje sencillo, profundo y sugerente, lo trabajado minuto a minuto con cientos de docentes de varios países y distintos niveles educativos en la formación del Aprendizaje Basado en Proyectos (ABP). Además, lo hace en clave de actualidad. La realidad que el planeta está viviendo a partir de la pandemia de COVID-19 constituye, para el autor, un punto de inflexión en la enseñanza…</p>",
+    "indice": [
+      {
+        "t": "Prólogo. Miguel Á. Zabalza",
+        "p": "",
+        "n": 1
+      },
+      {
+        "t": "I. El escenario",
+        "p": "",
+        "n": 1
+      },
+      {
+        "t": "Aulas llenas de proyectos que cambian las aulas",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "Qué no es ABP",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "Un «manifiesto educativo» para construir proyectos de aprendizaje",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "Qué es ABP. Características para que sea el motor de cambio de nuestras escuelas",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "II. La aventura. El viaje del ABP minuto a minuto",
+        "p": "",
+        "n": 1
+      },
+      {
+        "t": "1. La idea que nos lleva al proyecto",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "2. El ABP debe ser útil para mis clases",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "3. Desarrollar habilidades, no acumular contenidos",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "4. ¿Es posible en mi centro?",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "5. ¡Me organizo!",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "6. La aventura de aprender conduce a un viaje fantástico",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "7. Empoderar al alumno",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "8. Partir del conocimiento del grupo",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "9. Organizar la aventura de aprender",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "10. Sin el mentor",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "11. Vivir el proyecto con los demás",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "12. La acción final",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "13. Compromiso con la realidad",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "14. La evaluación",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "15. Arquitecturas para narrar el aprendizaje",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "III. Los compañeros de la aventura del aprendizaje",
+        "p": "",
+        "n": 1
+      },
+      {
+        "t": "Una vida de proyectos. Juntos mejor que en solitario",
+        "p": "",
+        "n": 2
+      },
+      {
+        "t": "El ABP y la nueva educación en un mundo en crisis",
+        "p": "",
+        "n": 2
+      }
+    ]
+  },
+  {
+    "tipo": "articulo",
+    "titulo": "La performance como recurso didáctico: una experiencia sobre género",
+    "revista": "Cuadernos de Pedagogía",
+    "resumen": "«El elefante está enamorado del milímetro». Hans Arp",
+    "pdf": "articulos/performance.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "titulo": "10 claves para trabajar la educación para el desarrollo por el método de proyectos (ABP)",
+    "revista": "Revista Internacional sobre Investigación en Educación Global y para el Desarrollo",
+    "resumen": "La sociedad ha acercado la realidad hasta alojarla en los bolsillos. Tanto que queda depositada allí hasta que la educación la despierta.",
+    "pdf": "articulos/10-claves.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "titulo": "Norte, Sur, Este, Oeste y Aquí: El péndulo de Ifoulou. Educar en la era de la convergencia",
+    "revista": "Cuadernos de Pedagogía",
+    "resumen": "Un proyecto educativo no dibuja una línea continua, tampoco siempre es previsible. Pero se compromete con vivir el aprendizaje.",
+    "pdf": "articulos/norte-sur-este-oeste-aqui.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "titulo": "Las tareas escolares después de la escuela",
+    "revista": "Revista Debates · Consejo Escolar de la Comunidad de Madrid",
+    "resumen": "Los deberes escolares a debate en el Consejo Escolar de la Comunidad de Madrid.",
+    "pdf": "articulos/las-tareas-escolares-despues-de-la-escuela.pdf"
+  },
+  {
+    "tipo": "articulo",
+    "titulo": "Las metodologías activas: ¿cómo llevar la innovación a tu aula?",
+    "revista": "Cátedra de Formación en la Práctica Álvaro Marchesi · Dirigido por Álvaro Marchesi y Juan José Vergara",
+    "resumen": "Por qué las metodologías activas, cuáles son sus características y qué herramientas necesitas para llevarlas a tu aula.",
+    "pdf": "articulos/las-metodologias-activas.pdf"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Libros sobre ABP en castellano",
+    "autor": "Educación 3.0",
+    "resumen": "Libros para descubrirlo todo sobre el ABP. Funcionan a modo de guía y en ellos se explica cómo aplicar esta metodología en el aula, paso a paso.",
+    "enlace": "https://www.educaciontrespuntocero.com/libros/libros-abp/"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Investigación-acción y aprendizaje basado en proyectos. Una revisión bibliográfica",
+    "autor": "Ana María Botella Nicolás y Pablo Ramos Ramos",
+    "resumen": "En el aprendizaje basado en proyectos (ABP) el alumnado construye un artefacto final mediante el empleo de estrategias de investigación.",
+    "enlace": "https://www.scielo.org.mx/scielo.php?pid=S0185-26982019000100127&script=sci_arttext"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Paulo Freire",
+    "autor": "Wikipedia",
+    "resumen": "Freire elaboró una propuesta de alfabetización cuyo principio básico era: La lectura del mundo precede a la lectura de la palabra.",
+    "enlace": "https://es.wikipedia.org/wiki/Paulo_Freire#Alfabetizaci%C3%B3n_cr%C3%ADtica"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Ciencia postdigital y educación",
+    "autor": "Jandric, P et al.",
+    "resumen": "Hemos dejado de pertenecer a un mundo donde la tecnología digital y los medios de comunicación están separados. Este hecho ha inspirado el surgimiento de un nuevo concepto: ‘lo postdigital’",
+    "enlace": "https://revistascientificas.us.es/index.php/Communiars/article/view/12727"
+  }
+]

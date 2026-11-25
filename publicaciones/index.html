@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publicaciones | Juanjo Vergara</title>
+<meta name="description" content="Libros, artículos y lecturas de Juanjo Vergara sobre Aprendizaje Basado en Proyectos (ABP), metodologías activas y educación.">
+<meta property="og:title" content="Publicaciones | Juanjo Vergara">
+<meta property="og:description" content="Libros, artículos y lecturas sobre ABP, metodologías activas y educación.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-text: #333;
+    --color-accent: #e60000;
+    --color-rojo-claro: #d65a47;
+    --header-height: 70px;
+    --font-principal: 'Roboto', sans-serif;
+    --bg-libros: #fdfaf4;
+    --bg-articulos: #f4f4f4;
+    --bg-lecturas: #fcf9eb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-principal); color: var(--color-text); background: #fff; line-height: 1.6; }
+
+  /* ── CABECERA (igual que en la portada) ── */
+  .site-header { display: flex; align-items: center; justify-content: space-between; padding: 0 60px; background: #fff; position: sticky; top: 0; z-index: 2000; height: var(--header-height); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+  .site-header .logo img { height: 52px; display: block; }
+  nav#nav-escritorio { display: flex; gap: 4px; align-items: center; }
+  .nav-button { text-decoration: none; color: #555; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; padding: 6px 10px; border-radius: 4px; transition: color .2s, background .2s; }
+  .nav-button:hover, .nav-button.actual { color: var(--color-accent); background: #fdf0f0; }
+  .nav-cta { text-decoration: none; color: var(--color-accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 6px 14px; border-radius: 4px; border: 1.5px solid var(--color-accent); margin-left: 6px; }
+  .nav-cta:hover { background: var(--color-accent); color: #fff; }
+  .menu-hamburguesa { display: none; background: #eee; border: none; padding: 7px 11px; border-radius: 4px; font-size: 20px; cursor: pointer; }
+
+  /* ── PÁGINA ── */
+  .main-container { max-width: 1200px; margin: 50px auto 80px; padding: 0 30px; }
+  .titulo-seccion { font-weight: 300; font-size: 42px; color: var(--color-accent); margin: 0 0 10px; text-transform: uppercase; letter-spacing: 5px; }
+  .intro { color: #666; margin: 0 0 45px; font-size: 16px; }
+
+  .grid-publicaciones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; align-items: start; }
+  .columna { border-radius: 16px; padding: 22px 20px 26px; }
+  .columna.libros { background: var(--bg-libros); }
+  .columna.articulos { background: var(--bg-articulos); }
+  .columna.lecturas { background: var(--bg-lecturas); }
+  .columna-titulo { display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--color-rojo-claro); margin: 0 0 20px; }
+  .contador { font-size: 12px; font-weight: 500; color: #999; letter-spacing: 0; }
+  .lista-fichas { display: flex; flex-direction: column; gap: 16px; }
+
+  /* Fichas: sombra suave y crecen un poco al pasar el ratón */
+  .ficha { background: #fff; border-radius: 12px; padding: 18px; cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.08); transition: transform .25s ease, box-shadow .25s ease; border: none; text-align: left; font: inherit; color: inherit; width: 100%; }
+  .ficha:hover, .ficha:focus-visible { transform: scale(1.03); box-shadow: 0 12px 28px rgba(0,0,0,0.14); outline: none; }
+  .ficha h3 { margin: 0 0 6px; font-size: 15px; font-weight: 700; color: #111; line-height: 1.3; }
+  .ficha .meta { font-size: 12px; color: #888; }
+  .ficha p { margin: 8px 0 0; font-size: 13px; color: #555; line-height: 1.45; }
+  .ficha .accion { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 700; color: var(--color-rojo-claro); }
+  .ficha-libro { display: flex; gap: 14px; align-items: center; }
+  .ficha-libro img { width: 64px; height: 92px; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); flex-shrink: 0; }
+
+  /* ── VENTANAS (modales) con fondo borroso ── */
+  .modal { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; background: rgba(20,20,20,0.45); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 20px; }
+  .modal.abierta { display: flex; animation: aparecer .25s ease; }
+  @keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+  .btn-cerrar { position: absolute; top: 14px; right: 14px; z-index: 5; width: 38px; height: 38px; border-radius: 50%; border: none; background: rgba(255,255,255,0.95); font-size: 22px; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); color: #444; }
+  .btn-cerrar:hover { color: var(--color-accent); }
+
+  /* Libro: ficha que se da la vuelta */
+  .libro-escena { position: relative; width: min(440px, 92vw); height: min(640px, 84vh); perspective: 1600px; }
+  .libro-tarjeta { position: absolute; inset: 0; transition: transform .7s cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; }
+  .libro-tarjeta.girada { transform: rotateY(180deg); }
+  .cara { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 30px 70px rgba(0,0,0,0.35); }
+  .cara.frente { display: flex; align-items: center; justify-content: center; background: #f6f3ee; cursor: pointer; }
+  .cara.frente img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .pista { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: #fff; font-size: 12px; padding: 6px 14px; border-radius: 20px; white-space: nowrap; pointer-events: none; }
+  .cara.dorso { transform: rotateY(180deg); padding: 30px 30px 24px; display: flex; flex-direction: column; }
+  .dorso h2 { margin: 0 50px 2px 0; font-size: 24px; line-height: 1.2; color: #111; }
+  .dorso .subtitulo { font-size: 14px; color: #555; margin-bottom: 4px; }
+  .dorso .meta { color: #888; font-size: 13px; margin-bottom: 16px; }
+  .dorso .texto { flex: 1; overflow-y: auto; font-size: 15px; color: #444; line-height: 1.65; padding-right: 6px; }
+  .dorso .texto p { margin: 0 0 12px; }
+  .dorso .botones { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .indice { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+  .indice li { display: flex; gap: 10px; align-items: baseline; padding: 5px 0; border-bottom: 1px dotted #e2e2e2; }
+  .indice li.n1 { font-weight: 700; color: #222; margin-top: 6px; }
+  .indice li.n2 { padding-left: 16px; color: #555; }
+  .indice .tit { flex: 1; }
+  .indice .pag { color: #999; font-variant-numeric: tabular-nums; font-weight: 400; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 11px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; letter-spacing: .3px; font-family: inherit; }
+  .btn-rojo { background: var(--color-accent); color: #fff; }
+  .btn-rojo:hover { background: #b30000; }
+  .btn-claro { background: #f1f1f1; color: #333; }
+  .btn-claro:hover { background: #e6e6e6; }
+
+  /* Visor de artículos y navegador de lecturas */
+  .visor { position: relative; width: min(900px, 94vw); height: 86vh; background: #fff; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 30px 70px rgba(0,0,0,0.35); }
+  .visor-cabecera { padding: 20px 64px 16px 26px; border-bottom: 1px solid #eee; }
+  .visor-cabecera h2 { margin: 0; font-size: 19px; line-height: 1.3; color: #111; }
+  .visor-cabecera .meta { font-size: 13px; color: #888; margin-top: 3px; }
+  .visor-cuerpo { flex: 1; background: #525659; position: relative; }
+  .visor-cuerpo iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+  .visor-pie { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 14px 20px; border-top: 1px solid #eee; flex-wrap: wrap; }
+  .visor-pie .nota { font-size: 12px; color: #888; }
+  .pdf-movil { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #eee; text-align: center; padding: 30px; }
+  .pdf-movil .icono { font-size: 54px; line-height: 1; }
+
+  .barra-navegador { display: flex; align-items: center; gap: 8px; padding: 10px 64px 10px 14px; background: #f1f1f1; border-bottom: 1px solid #ddd; }
+  .barra-navegador button { width: 32px; height: 32px; border: none; border-radius: 50%; background: transparent; cursor: pointer; font-size: 16px; color: #555; }
+  .barra-navegador button:hover { background: #e2e2e2; }
+  .barra-direccion { flex: 1; background: #fff; border-radius: 18px; padding: 7px 14px; font-size: 13px; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px solid #ddd; }
+  .barra-navegador a { font-size: 12px; font-weight: 700; color: var(--color-rojo-claro); text-decoration: none; white-space: nowrap; }
+  .web-cuerpo { background: #f7f7f7; overflow-y: auto; padding: 24px 28px 28px; }
+  .web-info h2 { margin: 0; font-size: 20px; line-height: 1.3; color: #111; }
+  .web-info .meta { font-size: 13px; color: #888; margin-top: 3px; }
+  .web-info p { font-size: 14px; color: #555; margin: 10px 0 20px; max-width: 70ch; }
+  .web-captura { position: relative; display: block; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.15); cursor: pointer; background: #fff; aspect-ratio: 16 / 10; }
+  .web-captura img, #web-imagen { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .web-capa { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0); color: #fff; font-weight: 700; font-size: 16px; opacity: 0; transition: opacity .25s, background .25s; }
+  .web-captura:hover .web-capa, .web-captura:focus-visible .web-capa { opacity: 1; background: rgba(0,0,0,0.45); }
+  .sim { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: repeating-linear-gradient(45deg,#fafafa 0 12px,#f2f2f2 12px 24px); color: #888; font-size: 14px; text-align: center; padding: 20px; }
+
+  footer { text-align: center; color: #999; font-size: 13px; padding: 30px 20px 40px; border-top: 1px solid #f0f0f0; }
+
+  /* ── MÓVIL ── */
+  @media (max-width: 900px) {
+    .site-header { padding: 0 20px; }
+    .menu-hamburguesa { display: block; }
+    nav#nav-escritorio { display: none; position: fixed; top: var(--header-height); left: 0; width: 100%; background: #fff; padding: 20px; flex-direction: column; align-items: flex-start; gap: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+    nav#nav-escritorio.show { display: flex; }
+    .grid-publicaciones { grid-template-columns: 1fr; }
+    .titulo-seccion { font-size: 28px; letter-spacing: 3px; }
+    .main-container { padding: 0 16px; margin-top: 30px; }
+    .visor { width: 100%; height: 90vh; }
+    .modal { padding: 10px; }
+    .cara.dorso { padding: 24px 20px 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .libro-tarjeta, .ficha { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="../index.html#top"><img src="../logo-juanjo.png" alt="Juanjo Vergara, ir al inicio"></a>
+  <button class="menu-hamburguesa" aria-label="Abrir menú" onclick="document.getElementById('nav-escritorio').classList.toggle('show')">☰</button>
+  <nav id="nav-escritorio">
+    <a href="../index.html#acerca-de-mi" class="nav-button">Acerca de mí</a>
+    <a href="../formacion.html" class="nav-button">Formación</a>
+    <a href="./" class="nav-button actual" aria-current="page">Publicaciones</a>
+    <a href="../index.html#videos" class="nav-button">Vídeos</a>
+    <a href="../index.html#imagenes" class="nav-button">Imágenes</a>
+    <a href="../proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
+    <a href="../mas-de-mi.html" class="nav-button">Saber más</a>
+    <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+  </nav>
+</header>
+
+<main class="main-container">
+  <h1 class="titulo-seccion">Publicaciones</h1>
+  <p class="intro">Libros, artículos y lecturas sobre ABP, metodologías activas y educación.</p>
+
+  <div class="grid-publicaciones">
+    <section class="columna libros"><h2 class="columna-titulo">Libros <span class="contador" id="n-libro"></span></h2><div class="lista-fichas" id="col-libro"></div></section>
+    <section class="columna articulos"><h2 class="columna-titulo">Artículos <span class="contador" id="n-articulo"></span></h2><div class="lista-fichas" id="col-articulo"></div></section>
+    <section class="columna lecturas"><h2 class="columna-titulo">Lecturas <span class="contador" id="n-lectura"></span></h2><div class="lista-fichas" id="col-lectura"></div></section>
+  </div>
+</main>
+
+<footer>© Juanjo Vergara</footer>
+
+<!-- Ventana de LIBRO -->
+<div class="modal" id="modal-libro" role="dialog" aria-modal="true" aria-label="Libro" onclick="if(event.target===this) cerrarTodo()">
+  <div class="libro-escena">
+    <button class="btn-cerrar" onclick="cerrarTodo()" aria-label="Cerrar">×</button>
+    <div class="libro-tarjeta" id="libro-tarjeta">
+      <div class="cara frente" onclick="girarLibro()" role="button" tabindex="0" aria-label="Dar la vuelta para ver el resumen">
+        <img id="libro-portada" src="" alt="">
+        <span class="pista">Pulsa la portada para ver el resumen</span>
+      </div>
+      <div class="cara dorso">
+        <h2 id="libro-titulo"></h2>
+        <div class="subtitulo" id="libro-subtitulo"></div>
+        <div class="meta" id="libro-meta"></div>
+        <div class="texto" id="libro-texto"></div>
+        <div class="botones">
+          <button class="btn btn-rojo" id="btn-indice" onclick="alternarIndice()">Ver índice</button>
+          <button class="btn btn-claro" onclick="girarLibro()">↺ Ver portada</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ventana de ARTÍCULO -->
+<div class="modal" id="modal-doc" role="dialog" aria-modal="true" aria-label="Artículo" onclick="if(event.target===this) cerrarTodo()">
+  <div class="visor">
+    <button class="btn-cerrar" onclick="cerrarTodo()" aria-label="Cerrar">×</button>
+    <div class="visor-cabecera"><h2 id="doc-titulo"></h2><div class="meta" id="doc-meta"></div></div>
+    <div class="visor-cuerpo" id="doc-cuerpo"></div>
+    <div class="visor-pie">
+      <span class="nota">Vista de solo lectura</span>
+      <a class="btn btn-rojo" id="doc-descargar" href="#" download>⬇ Descargar PDF</a>
+    </div>
+  </div>
+</div>
+
+<!-- Ventana de LECTURA -->
+<div class="modal" id="modal-web" role="dialog" aria-modal="true" aria-label="Lectura" onclick="if(event.target===this) cerrarTodo()">
+  <div class="visor">
+    <button class="btn-cerrar" onclick="cerrarTodo()" aria-label="Cerrar">×</button>
+    <div class="barra-navegador">
+      <button onclick="recargarWeb()" title="Recargar" aria-label="Recargar">⟳</button>
+      <div class="barra-direccion" id="web-direccion"></div>
+      <a id="web-externa" href="#" target="_blank" rel="noopener">Abrir en pestaña nueva ↗</a>
+    </div>
+    <div class="visor-cuerpo web-cuerpo">
+      <div class="web-info">
+        <h2 id="web-titulo"></h2>
+        <div class="meta" id="web-autor"></div>
+        <p id="web-resumen"></p>
+      </div>
+      <a class="web-captura" id="web-captura" href="#" target="_blank" rel="noopener">
+        <div id="web-imagen"></div>
+        <span class="web-capa">Abrir la web en una ventana nueva ↗</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+{
+/* Los datos están en publicaciones.json (en esta misma carpeta).
+   Para añadir un libro, artículo o lectura basta con añadir una ficha a ese archivo. */
+const VISTA_PREVIA = window.VISTA_PREVIA === true;   // solo para la vista previa en Claude
+const ES_MOVIL = window.matchMedia('(max-width: 900px), (pointer: coarse)').matches;
+
+let libroActual = null;
+let mostrandoIndice = false;
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function crearFicha(item) {
+  const f = document.createElement('button');
+  f.className = 'ficha' + (item.tipo === 'libro' ? ' ficha-libro' : '');
+  if (item.tipo === 'libro') {
+    f.innerHTML = `<img src="${esc(item.portada)}" alt="">
+      <div><h3>${esc(item.titulo)}</h3><div class="meta">${esc(item.editorial)} · ${esc(item.año)}</div><span class="accion">Ver libro →</span></div>`;
+    f.onclick = () => abrirLibro(item);
+  } else if (item.tipo === 'articulo') {
+    f.innerHTML = `<h3>${esc(item.titulo)}</h3><div class="meta">${esc(item.revista)}</div>${item.resumen ? `<p>${esc(item.resumen)}</p>` : ''}<span class="accion">Leer artículo →</span>`;
+    f.onclick = () => abrirArticulo(item);
+  } else {
+    f.innerHTML = `<h3>${esc(item.titulo)}</h3><div class="meta">${esc(item.autor)}</div>${item.resumen ? `<p>${esc(item.resumen)}</p>` : ''}<span class="accion">Abrir lectura →</span>`;
+    f.onclick = () => abrirWeb(item);
+  }
+  return f;
+}
+
+async function cargar() {
+  let datos;
+  try {
+    datos = window.DATOS || await (await fetch('publicaciones.json', { cache: 'no-cache' })).json();
+  } catch (e) {
+    document.querySelector('.grid-publicaciones').insertAdjacentHTML('beforebegin', '<p>No se han podido cargar las publicaciones. Prueba a recargar la página.</p>');
+    console.error('Error en publicaciones.json:', e);
+    return;
+  }
+  const n = { libro: 0, articulo: 0, lectura: 0 };
+  datos.forEach(item => {
+    const col = document.getElementById('col-' + item.tipo);
+    if (!col) return;
+    col.appendChild(crearFicha(item));
+    n[item.tipo]++;
+  });
+  Object.keys(n).forEach(t => document.getElementById('n-' + t).textContent = n[t]);
+}
+
+function abrir(id) { document.getElementById(id).classList.add('abierta'); document.body.style.overflow = 'hidden'; }
+function cerrarTodo() {
+  document.querySelectorAll('.modal').forEach(m => m.classList.remove('abierta'));
+  document.getElementById('doc-cuerpo').innerHTML = '';
+  document.body.style.overflow = '';
+}
+
+/* LIBROS: portada → (clic) resumen → índice */
+function abrirLibro(item) {
+  libroActual = item;
+  document.getElementById('libro-tarjeta').classList.remove('girada');
+  const img = document.getElementById('libro-portada');
+  img.src = item.portada; img.alt = 'Portada de ' + item.titulo;
+  document.getElementById('libro-titulo').textContent = item.titulo;
+  document.getElementById('libro-subtitulo').textContent = item.subtitulo || '';
+  document.getElementById('libro-meta').textContent = item.editorial + ' · ' + item.año;
+  mostrarResumen();
+  document.getElementById('btn-indice').style.display = (item.indice && item.indice.length) ? '' : 'none';
+  abrir('modal-libro');
+}
+function girarLibro() { document.getElementById('libro-tarjeta').classList.toggle('girada'); }
+function mostrarResumen() {
+  mostrandoIndice = false;
+  document.getElementById('libro-texto').innerHTML = libroActual.resumen || '';  // el resumen lo escribe Juanjo (admite <p>)
+  document.getElementById('btn-indice').textContent = 'Ver índice';
+}
+function alternarIndice() {
+  if (mostrandoIndice) return mostrarResumen();
+  mostrandoIndice = true;
+  const lineas = libroActual.indice.map(l => `<li class="n${l.n}"><span class="tit">${esc(l.t)}</span><span class="pag">${esc(l.p)}</span></li>`).join('');
+  const caja = document.getElementById('libro-texto');
+  caja.innerHTML = `<ul class="indice">${lineas}</ul>`;
+  caja.scrollTop = 0;
+  document.getElementById('btn-indice').textContent = 'Ver resumen';
+}
+
+/* ARTÍCULOS: vista de solo lectura y descarga en PDF */
+function abrirArticulo(item) {
+  document.getElementById('doc-titulo').textContent = item.titulo;
+  document.getElementById('doc-meta').textContent = item.revista || '';
+  const descargar = document.getElementById('doc-descargar');
+  descargar.href = item.pdf;
+  descargar.setAttribute('download', item.pdf.split('/').pop());
+  const cuerpo = document.getElementById('doc-cuerpo');
+  if (VISTA_PREVIA) {
+    cuerpo.innerHTML = `<div class="sim">Vista previa en Claude: aquí se verá el PDF (${esc(item.pdf.split('/').pop())}).</div>`;
+  } else if (ES_MOVIL) {
+    // Los móviles no muestran bien un PDF dentro de una página: se abre con su visor propio
+    cuerpo.innerHTML = `<div class="pdf-movil"><div class="icono">📄</div><div>En el móvil el artículo se abre en el visor de PDF del teléfono.</div>
+      <a class="btn btn-claro" href="${esc(item.pdf)}" target="_blank" rel="noopener">Leer el artículo</a></div>`;
+  } else {
+    cuerpo.innerHTML = `<iframe src="${esc(item.pdf)}#toolbar=0&navpanes=0&view=FitH" title="${esc(item.titulo)}"></iframe>`;
+  }
+  abrir('modal-doc');
+}
+
+/* LECTURAS: ficha con imagen de la web; al pulsar, ventana nueva algo más pequeña y desplazada */
+function abrirWeb(item) {
+  document.getElementById('web-direccion').textContent = item.enlace;
+  document.getElementById('web-titulo').textContent = item.titulo;
+  document.getElementById('web-autor').textContent = item.autor || '';
+  document.getElementById('web-resumen').textContent = item.resumen || '';
+  ['web-externa', 'web-captura'].forEach(id => {
+    const a = document.getElementById(id);
+    a.href = item.enlace;
+    a.onclick = e => { if (abrirVentana(item.enlace)) e.preventDefault(); };
+  });
+  const dominio = new URL(item.enlace).hostname.replace('www.', '');
+  const hueco = document.getElementById('web-imagen');
+  if (VISTA_PREVIA) {
+    hueco.innerHTML = `<div class="sim">Vista previa en Claude: aquí aparecerá la imagen de ${esc(dominio)}.</div>`;
+  } else {
+    // Imagen guardada (campo "captura") o, si no hay, captura automática de WordPress mShots
+    const src = item.captura || 'https://s.wordpress.com/mshots/v1/' + encodeURIComponent(item.enlace) + '?w=1280&h=800';
+    hueco.innerHTML = `<img src="${esc(src)}" alt="Vista de la web ${esc(dominio)}" loading="lazy">`;
+  }
+  abrir('modal-web');
+}
+function abrirVentana(url) {
+  if (ES_MOVIL) return false;                       // en el móvil, pestaña normal
+  const desplaz = 60;
+  const ancho = Math.round(window.outerWidth * 0.85);
+  const alto = Math.round(window.outerHeight * 0.85);
+  const izq = (window.screenX ?? window.screenLeft ?? 0) + desplaz;
+  const arriba = (window.screenY ?? window.screenTop ?? 0) + desplaz;
+  const v = window.open(url, '_blank', `popup=yes,width=${ancho},height=${alto},left=${izq},top=${arriba}`);
+  if (v) { try { v.opener = null; } catch (e) {} return true; }
+  return false;                                     // bloqueada: se abre como pestaña normal
+}
+function recargarWeb() { const h = document.getElementById('web-imagen'); const c = h.innerHTML; h.innerHTML = ''; setTimeout(() => h.innerHTML = c, 50); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') cerrarTodo();
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('frente')) { e.preventDefault(); girarLibro(); }
+});
+
+Object.assign(window, { cerrarTodo, girarLibro, alternarIndice, recargarWeb });
+cargar();
+}
+</script>
+</body>
+</html>
