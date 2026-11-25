@@ -1,7 +1,7 @@
 # Configuración de Pages CMS (app.pagescms.org) para el blog de juanjovergara.com
 media:
-  input: imagenes-blog
-  output: /imagenes-blog
+  input: img-blog
+  output: /img-blog
 
 content:
   - name: blog
@@ -43,6 +43,14 @@ content:
         label: Etiquetas
         type: string
         list: true
+      - name: origen
+        label: Blog de origen
+        type: string
+        description: Solo en los posts que vienen de los blogs antiguos.
+      - name: enlace_original
+        label: Enlace al post original
+        type: string
+        description: Dirección del post en el blog antiguo (no se muestra en la web).
       - name: borrador
         label: Borrador (no publicar todavía)
         type: boolean

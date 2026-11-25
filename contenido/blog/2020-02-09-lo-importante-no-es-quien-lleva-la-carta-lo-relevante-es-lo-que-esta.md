@@ -1,0 +1,34 @@
+---
+title: "Lo importante no es quién lleva la carta, lo relevante es lo que esta dice."
+date: 2020-02-09
+image: "/img-blog/wix-b27c126cbe0f47ff95a73b84ff5f4432.jpg"
+origen: "Blog de Wix (2013-2025)"
+enlace_original: "https://juanjovergara.wixsite.com/juanjo/post/2020/02/09/lo-importante-no-es-qui\u00e9n-lleva-la-carta-lo-relevante-es-lo-que-esta-dice"
+---
+Es posible -no probable- que uno de cada diez mil lectores de este diario, busquen leer mis humildes columnas sabiendo quién soy y algunas de los proyectos en los que llevo sumergido más de tres décadas. Esto es improbable, pero posible. Para ellas y ellos es mi agradecimiento.
+
+También para quienes no cumplen esta condición pero deciden -por alguna incomprensible casualidad- terminar de leer mis palabras. Para todos y todas ellas debo compartir una experiencia sorprendente que aconteció hace unos días y aún me tiene sorprendido. El jueves pasado llegué a la Cineteca (Matadero-Madrid) porque las gentes del IES Garci estrenaban un documental que era conclusión del viaje que compartimos hace dos años al Atlas marroquí en el proyecto “El péndulo de Ifoulou”
+
+El documental se llama “Dentro del péndulo” y allí me fui para compartir con estas gentes maravillosas que dejan tan alta la formación profesional madrileña. Cuando llegué me encontré que la sala estaba repleta. No cabía un alfiler y en ella estaban todo tipo de responsables de la política educativa madrileña, amigos y amigas docentes, responsables políticos, académicos y educativos. Pero sobre todo algunas de las personas que más me reconfortó encontrar. Pude saludar a Lidia, Laura, Zamo, Katia, Widen, Pablo, Aleko y tantos otros que hacía tiempo que no veía pero con quienes compartí este proyecto.
+
+El péndulo de Ifoulou es un proyecto que lleva acompañándome una década de viajes con educadores en formación a Marruecos en el que -año tras año- recorremos escuelas buscando algo que necesitamos en la formación de los docentes del siglo XXI: una mirada comprometida con la realidad que habitamos. Esto es posible si somos capaces de parar el día a día que nos envuelve y dedicarnos a mirarnos a nosotros mismos durante unos días.
+
+Este es el proyecto “el péndulo de Ifoulou”: viajar a intervenir en escuelas en el Atlas marroquí para descubrir que el aprendizaje es ser capaces de ponernos delante de un espejo e interrogarnos sobre la educación a la que queremos dedicarnos en delante. Un futuro que -en el caso de mis alumnos- recorrerá más de treinta años de profesión futura. No describiré un proyecto que exigiría paginas de las que no dispongo en este espacio. Os dejo un enlace para quien quiera curiosear en él:
+
+[https://www.juanjovergara.com/pendulo](http://www.juanjovergara.com/pendulo)
+
+A este proyecto han viajado en torno a trescientos docentes en formación durante diez años. En mayo de 2020 volveremos a recorrer escuelas y miradas que nos construyan. La verdad es que sigo convencido que viajar es lo mas educativo que podemos hacer para formarnos como educadores. Viajes interiores y exteriores que educan nuestras miradas que se replicarán -año tras año- a lo largo de nuestra carrera profesional. Este fue uno de los motivos de promover una pequeña asociación Labine.org que apuesta por las Estancias Formativas como el gran escenario de aprendizaje para docentes. Sin duda “el péndulo de Ifoulou” es uno de ellos. No describiré el proyecto -ya digo que no hay espacio aquí y dispones de decenas de enlaces para hacerlo-, pero sí mis sensaciones al ver representado el excelente documental “dentro del péndulo” el jueves pasado.
+
+Hace un par de años un par de años Juan Carlos Mazo viene a verme al centro. Era director del IES Garci y estaba interesado en el ABP. Tras un café quedó el compromiso de que un grupo de sus alumnos -de comunicación audiovisual- viajaran en el proyecto del péndulo de Ifoulou para realizar un proyecto paralelo sobre el mismo. Me pareció una gran idea y no pude hacer otra cosa que agradecerla y ofrecerla lo mas generosamente que fui capaz. En los meses siguientes dos docentes Luis y Marco hacen posible esta propuesta. Organizan equipos de grabación y -junto a los educadores del ES Barrio de Bilbao- diseñamos una estancia formativa en el Atlas que llevará educación al terreno, pero también la edición de un documental que lo recoja todo. Tras nuestro regreso ha habido dos años de trabajo incesante de este grupo de profesionales de la comunicación audiovisual. Cientos de horas no pagadas más que con el compromiso que han tenido con el proyecto y los alumnos que llevaron.
+
+Debemos reconocer la profesionalidad inmensa de estos docentes. El IES Garci y el IES Barrio de Bilbao así lo hacen. También las autoridades educativas de la comunidad de Madrid que invitados por Carlos (actual director del IES Barrio de Bilbao) e Inés (del IES Garci) pudieron valorar un modelo de formación docentes basado en la práctica educativa y el Aprendizaje Basado en Proyectos como recurso docente para el que humildemente he reflexionado en algunas páginas aquí y allá. Previo a la presentación del documental, los autores tuvieron la generosidad de invitarme a celebrar el estreno con unas palabras.
+
+Hay cuatro protagonistas que es necesario nombrar -y así lo hice-:
+
+En primero lugar las niñas y niños del valle de Tessout. Los jóvenes, mujeres y hombres que viven una dura realidad que nos invita -cada año- a crear miradas de compromiso educativo y comunitario.
+
+En segundo lugar las entidades que intervienen en terreno día a día -y hace décadas- allí. En concreto la Fundación Acción Geoda que lleva más de una década creando escuelas, llevando sanidad, infraestructuras y todo de forma voluntaria y desinteresada. Ya es hora de que las administraciones educativas les llamen y trabajen juntos en esta inmensa labor.
+
+En tercer lugar, los verdaderos autores y protagonistas del documental. Los profesionales formados en el IES Garci que han demostrado ser capaces de crear un producto impresionante en calidad y narrativa. Cada día -en el viaje- demostraban una profesionalidad inmensa. Gracias por vuestro trabajo.
+
+Y por último, mis queridos y queridas docentes que se formaron en el IES Barrio de Bilbao- y que pasaron, hace tiempo, por mis clases. Aquellas en que escucharon que no es posible convertirse en educador sin trabajarse personalmente y que decidieron que lo que mejor podían hacer -en su formación de docentes- era vivir una experiencia educativa que recordarían cada día de su profesión. Ellos y ellas son mis grandes protagonistas. A ellas he dedicado diez años de mi vida en un proyecto que en el próximo mayo de 2020 volveremos a viajar con otra treintena de docentes en formación que han decidido que lo mejor que pueden hacer es mirar la realidad, mirarse a si mismo y proyectar esa mirada en su profesión de educadores: enhorabuena, es un honor para mi acompañarles!

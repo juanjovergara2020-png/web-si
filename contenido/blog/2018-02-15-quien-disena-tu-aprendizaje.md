@@ -1,0 +1,14 @@
+---
+title: "¿Quién diseña tu aprendizaje?"
+date: 2018-02-15
+image: "/img-blog/wix-8f9e5d6a778c46ffb6e88d50ef452365.jpg"
+origen: "Blog de Wix (2013-2025)"
+enlace_original: "https://juanjovergara.wixsite.com/juanjo/post/2018/02/15/-qui\u00e9n-dise\u00f1a-tu-aprendizaje"
+---
+En la primavera pasada daba cierre a un año de proyectos compartidos con distintas escuelas en un contexto singular. Hacia la mitad de la soleada mañana de junio, un par de autobuses llenos de alumnos de educación infantil y primaria desembarcaban en el campus de la universidad y ocuparon sus verdes praderas distribuyéndose en grupos para vivir una mañana de juegos cooperativos, talleres y actividades de todo tipo. Estaban frente a la Facultad de Educación.
+
+Era un suceso singular. Las facultades de educación no son el espacio habitual al que los escolares acudan y mucho menos a realizar actividades educativas. Sin embargo esa era precisamente la excepcionalidad. La facultad de educación tenía frente a sí una oportunidad rica de aprendizaje real. Con niños reales, maestros reales y actividades a las que podían sumarse para vivir en la piel todo aquello que estudiaban a diario en sus libros de texto. La verdad es que nada de esto sucedió. Los docentes en formación –alumnos de la facultad- salían como cada día por la puerta charlando con sus compañeros sobre exámenes, trabajos o las bondades de tal o cual profesor. Cruzaban la plaza y se sentaban en la terraza de la cafetería para seguir hablando de los contenidos que aparecen en su plan de estudios universitarios. Nada de lo que allí sucedía parecía ir con ellos, sin embargo era –posiblemente- una experiencia de aprendizaje única para un estudiante de educación. El profesorado universitario tampoco –en general- se inmutó con el acontecimiento. Los investigadores siguieron en sus despachos indagando cómo mejorar la forma de educar o explicando a grupos de alumnos cómo deben hacer para ser buenos docentes.
+
+Sin duda el exceso de actividades que se realizan en las universidades y las muchas exigencias de trabajo y estudio explican parcialmente este hecho. Pero hay un elemento de fondo que me interesa destacar y que no solo protagonizan los planes de estudio de las universidades –aunque son especialmente agudas en ellas-. La frontera entre al educación formal y la no-formal sigue estando edificada férreamente. Desgraciadamente seguimos pensando en alumnos que aprenden seis horas al día dentro de las instituciones académicas y dentro de los férreos planes de estudio que aseguran su formación. Lo que ocurre fuera no parece importar a nadie. Aunque tenga mucho que ver con lo que esos programas de estudio contienen.
+
+Hace bastantes décadas que todo el mundo ha aceptado la idea de que aprendemos veinticuatro horas al día y todos los días del año. Es hora de que el diseño didáctico y la elaboración del currículo responda a esa idea.

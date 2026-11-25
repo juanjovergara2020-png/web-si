@@ -188,6 +188,9 @@ function paginaListado(posts) {
 
 const archivos = fs.existsSync(ORIGEN) ? fs.readdirSync(ORIGEN).filter(f => f.endsWith('.md')) : [];
 const posts = archivos.map(leerPost).filter(p => !p.borrador).sort((a, b) => b.fecha - a.fecha);
+// si dos posts tienen el mismo título, el más reciente lleva -2, -3…
+const usados = new Set();
+[...posts].reverse().forEach(p => { let s = p.slug, n = 2; while (usados.has(s)) s = `${p.slug}-${n++}`; usados.add(s); p.slug = s; });
 fs.rmSync(DESTINO, { recursive: true, force: true });
 fs.mkdirSync(DESTINO, { recursive: true });
 fs.copyFileSync(path.join(RAIZ, 'build/blog.css'), path.join(DESTINO, 'blog.css'));
