@@ -1777,5 +1777,58 @@
     "autor": "Jandric, P et al.",
     "resumen": "Hemos dejado de pertenecer a un mundo donde la tecnología digital y los medios de comunicación están separados. Este hecho ha inspirado el surgimiento de un nuevo concepto: ‘lo postdigital’",
     "enlace": "https://revistascientificas.us.es/index.php/Communiars/article/view/12727"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Aprendizaje de las ciencias basado en proyectos: del contexto a la acción",
+    "autor": "Neus Sanmartí y Conxita Márquez · Ápice. Revista de Educación Científica, 2017",
+    "resumen": "Cómo diseñar proyectos de ciencias que parten de un contexto real y desembocan en una acción, sin perder de vista las ideas clave de la ciencia.",
+    "enlace": "https://ddd.uab.cat/pub/artpub/2017/179937/apice_a2017v1n1p3.pdf"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Aprendizaje basado en proyectos: una experiencia universitaria",
+    "autor": "Purificación Toledo y José Manuel Sánchez · Profesorado, 2018",
+    "resumen": "Una experiencia de innovación con ABP en la formación de futuros docentes: cómo se planificó, se desarrolló y se evaluó en la universidad.",
+    "enlace": "https://digibug.ugr.es/bitstream/handle/10481/53157/66383-205811-1-PB.pdf?sequence=1&isAllowed=y"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Un acercamiento al aprendizaje basado en proyectos, cien años después de «The Project Method», de W. H. Kilpatrick",
+    "autor": "Luis Torrego y Rafael A. Méndez (coords.) · REIFOP, 2018",
+    "resumen": "Monográfico que celebra el centenario del ensayo de Kilpatrick y reúne investigación sobre el ABP, un campo con más experiencias que estudios científicos.",
+    "enlace": "https://revistas.um.es/reifop/article/download/328301/228331/1118471"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Reflections on Gold Standard PBL’s 10th Anniversary",
+    "traduccion": "Reflexiones sobre el décimo aniversario del Gold Standard PBL",
+    "autor": "John Larmer · PBLWorks, 2025",
+    "resumen": "Origen y evolución del modelo Gold Standard PBL y de sus siete elementos esenciales de diseño de proyectos, diez años después.",
+    "enlace": "https://www.pblworks.org/blog/reflections-gold-standard-pbls-10th-anniversary"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "A Review of the Research on Project-Based Learning",
+    "traduccion": "Una revisión de la investigación sobre el aprendizaje basado en proyectos",
+    "autor": "John W. Thomas · Autodesk Foundation, 2000",
+    "resumen": "La revisión clásica de la investigación sobre ABP en primaria y secundaria: definición, fundamentos, eficacia y retos de su puesta en práctica.",
+    "enlace": "https://www.pblworks.org/research/research-review-research-project-based-learning"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Project-Based Learning: A Literature Review",
+    "traduccion": "Aprendizaje basado en proyectos: una revisión de la literatura",
+    "autor": "Barbara Condliffe y otros · MDRC, 2017",
+    "resumen": "Actualiza la revisión de Thomas: principios del ABP, dificultades para aplicarlo y lo que se sabe de su eficacia, que califica de prometedora pero no probada.",
+    "enlace": "https://www.mdrc.org/work/publications/project-based-learning"
+  },
+  {
+    "tipo": "lectura",
+    "titulo": "Project-Based Learning Research Review",
+    "traduccion": "Aprendizaje basado en proyectos: revisión de la investigación",
+    "autor": "Edutopia",
+    "resumen": "Resumen práctico de lo que dice la investigación sobre el ABP: resultados de aprendizaje, componentes que funcionan y buenas prácticas por materias.",
+    "enlace": "https://www.edutopia.org/pbl-Research-learning-outcomes"
   }
 ]
