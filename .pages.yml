@@ -1,0 +1,53 @@
+# Configuración de Pages CMS (app.pagescms.org) para el blog de juanjovergara.com
+media:
+  input: imagenes-blog
+  output: /imagenes-blog
+
+content:
+  - name: blog
+    label: Blog
+    type: collection
+    path: contenido/blog
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, borrador]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+      search: [title, body]
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: date
+        label: Fecha
+        type: date
+        required: true
+      - name: image
+        label: Imagen destacada
+        type: image
+        description: Aparece en la tarjeta del listado y arriba del post.
+      - name: alt
+        label: Descripción de la imagen
+        type: string
+        description: Una frase que describa la imagen (para personas que no la ven).
+      - name: resumen
+        label: Resumen
+        type: text
+        description: Opcional. Si lo dejas vacío se usan las primeras líneas del texto.
+      - name: etiquetas
+        label: Etiquetas
+        type: string
+        list: true
+      - name: borrador
+        label: Borrador (no publicar todavía)
+        type: boolean
+      - name: body
+        label: Texto
+        type: rich-text
+        options:
+          format: markdown

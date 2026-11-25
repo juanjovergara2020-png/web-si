@@ -1,0 +1,5 @@
+# Netlify ejecuta este comando en cada publicación: genera las páginas del blog
+# a partir de los posts de contenido/blog. El resto de la web se publica tal cual.
+[build]
+  command = "node build/blog.mjs"
+  publish = "."

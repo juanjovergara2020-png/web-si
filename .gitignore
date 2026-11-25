@@ -1,0 +1,3 @@
+# La carpeta blog/ la genera Netlify con build/blog.mjs: no se sube
+/blog/
+.DS_Store
