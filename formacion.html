@@ -27,46 +27,6 @@
       line-height: 1.8;
     }
 
-    /* --- CABECERA --- */
-    .site-header { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      padding: 0 50px; 
-      background: #fff; 
-      position: sticky; 
-      top: 0; 
-      z-index: 2000; 
-      height: var(--header-height); 
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      width: 100%;
-    }
-
-    .site-header a img { height: 55px; display: block; }
-    
-    nav#nav-escritorio { display: flex; gap: 20px; align-items: center; height: 100%; }
-
- 
-    .nav-button {
-      text-decoration: none;
-      color: #333;
-      font-size: 11.5px;
-      font-weight: 500;
-      text-transform: uppercase; 
-      letter-spacing: 1px;      
-      transition: color 0.3s ease;
-      padding: 5px 2px;
-    }
-    
-    .nav-button:hover { color: var(--color-accent); }
-
-    .menu-hamburguesa {
-      display: none;
-      font-size: 28px;
-      color: var(--color-accent);
-      cursor: pointer;
-    }
-
     /* --- ESTRUCTURA --- */
     .page {
       max-width: var(--max-width-content);
@@ -166,55 +126,24 @@
     .cta-section { padding: 60px 0 80px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #e8e8e8; }
     .cta-btn { background: var(--color-accent); color: #fff; padding: 15px 35px; font-size: 13px; font-weight: 700; text-decoration: none; border-radius: 4px; text-transform: uppercase; }
 
-    .footer { padding: 25px 0; border-top: 1px solid #e8e8e8; display: flex; justify-content: space-between; font-size: 11px; color: #bbb; }
 
+
+    /* --- MÓVIL --- */
     @media (max-width: 900px) {
-      .menu-hamburguesa { 
-        display: block !important; 
-        position: absolute; 
-        right: 20px; 
-        top: 15px; 
-        background-color: #e0e0e0; 
-        padding: 8px 12px; 
-        border-radius: 4px; 
-        z-index: 2100;
-        cursor: pointer;
-      }
-      .menu-hamburguesa i.fa-bars { 
-        color: #000000 !important; 
-      }
-      nav#nav-escritorio {
-  display: none;
-  flex-direction: column;
-  position: fixed;        /* CAMBIA absolute POR fixed */
-  top: var(--header-height);
-  left: 0;
-  width: 100%;
-  background: #ffffff;    /* blanco sólido, sin transparencias */
-  padding: 20px;
-  gap: 12px;
-  align-items: flex-start;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 9999;
-}
+      .page { padding: 0 20px; }
+      .modalities { grid-template-columns: 1fr; gap: 20px; }
+      .modality-card { padding: 28px 24px; }
+      .cta-section { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .quote-band { margin: 0 -20px; padding: 44px 24px; }
+      .quote-band blockquote { font-size: 21px; padding-left: 20px; }
+      .quote-band cite { padding-left: 20px; }
     }
   </style>
+  <link rel="stylesheet" href="/comun/menu.css">
 </head>
 <body id="top">
 
-  <header class="site-header">
-    <a href="index.html#top"><img src="logo-juanjo.png" alt="Juanjo Vergara"></a>
-    <div class="menu-hamburguesa" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-    <nav id="nav-escritorio">
-      <a href="index.html#acerca-de-mi" class="nav-button">Acerca de mí</a>
-      <a href="index.html#publicaciones" class="nav-button">Publicaciones</a>
-      <a href="index.html#videos" class="nav-button">Vídeos</a>
-      <a href="index.html#imagenes" class="nav-button">Algunas imágenes</a>
-      <a href="proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
-      <a href="mas-de-mi.html" class="nav-button">Saber más</a>
-      <a href="index.html#contacto" class="nav-button">Contacto</a>
-    </nav>
-  </header>
+  <script src="/comun/menu.js"></script>
 
 <div class="page">
   <section class="hero">
@@ -315,17 +244,7 @@
     <a href="index.html#contacto" class="cta-btn">Contactar</a>
   </section>
 
-  <footer class="footer">
-    <span>juanjo vergara</span>
-    <span>© Juanjo Vergara</span>
-  </footer>
 </div>
 
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('nav-escritorio');
-    nav.classList.toggle('show');
-  }
-</script>
 </body>
 </html>

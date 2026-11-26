@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi web anterior | Juanjo Vergara</title>
+  <meta name="description" content="Web anterior de Juanjo Vergara, con más trabajos y proyectos de su trayectoria.">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* La web anterior (Wix) se muestra dentro de esta página, debajo del menú de siempre */
+    html, body { margin: 0; height: 100%; }
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      background: #fff;
+    }
+    .aviso-web-anterior {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 8px 60px;
+      background: #f7f7f7;
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+      color: #666;
+    }
+    .aviso-web-anterior a { color: #d65a47; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .aviso-web-anterior a:hover { text-decoration: underline; }
+    .marco-web-anterior { flex: 1; width: 100%; min-height: 0; border: 0; display: block; }
+    @media (max-width: 1150px) { .aviso-web-anterior { padding: 8px 24px; } }
+    @media (max-width: 900px)  { .aviso-web-anterior { padding: 8px 16px; font-size: 12px; } }
+  </style>
+  <link rel="stylesheet" href="/comun/menu.css">
+</head>
+<body>
+<script src="/comun/menu.js" data-sin-pie></script>
+
+<div class="aviso-web-anterior">
+  <span>Estás viendo mi web anterior, con más trabajos de otros años.</span>
+  <a href="https://juanjovergara.wixsite.com/juanjo" target="_blank" rel="noopener">Abrir en otra pestaña ↗</a>
+</div>
+
+<iframe class="marco-web-anterior" src="https://juanjovergara.wixsite.com/juanjo" title="Web anterior de Juanjo Vergara"></iframe>
+
+</body>
+</html>

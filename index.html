@@ -60,75 +60,6 @@
       letter-spacing: 2px;
     }
 
-    /* ── CABECERA ── */
-    .site-header {
-      overflow: visible;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 60px;
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 2000;
-      height: var(--header-height);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.08);
-    }
-
-    .site-header a img { height: 52px; display: block; }
-
-    nav#nav-escritorio {
-      display: flex;
-      gap: 4px;
-      align-items: center;
-      height: 100%;
-    }
-
-    .nav-button {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: #555;
-      font-size: 12px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 6px 10px;
-      border-radius: 4px;
-      transition: color 0.2s ease, background 0.2s ease;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-button:hover { color: var(--color-accent); background: #fdf0f0; }
-    .nav-button img { display: none; }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: var(--color-accent);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 6px 14px;
-      border-radius: 4px;
-      border: 1.5px solid var(--color-accent);
-      transition: background 0.2s ease, color 0.2s ease;
-      margin-left: 6px;
-    }
-    .nav-cta:hover { background: var(--color-accent); color: #fff; }
-
-    .menu-hamburguesa {
-      display: none;
-      font-size: 26px;
-      color: var(--color-accent);
-      cursor: pointer;
-      z-index: 2100;
-    }
-
     /* ── HERO ── */
     .hero-inicio {
       position: relative;
@@ -459,32 +390,6 @@
         position: relative;
       }
 
-      .site-header { padding: 0 20px; }
-
-      .menu-hamburguesa {
-        display: block !important;
-        background: #eee;
-        padding: 7px 11px;
-        border-radius: 4px;
-      }
-      .menu-hamburguesa i { color: #000 !important; }
-
-      nav#nav-escritorio {
-       display: none;
-        flex-direction: column;
-        position: fixed;        
-        top: var(--header-height);
-        left: 0;
-        width: 100%;
-        background: #ffffff;    
-        padding: 20px;
-        gap: 12px;
-        align-items: flex-start;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        z-index: 9999;
-      } 
-      nav#nav-escritorio.show { display: flex; }
-
       .titulo-seccion { font-size: 28px; }
 
       /* Inicio en móvil: sin carrusel, foto a pantalla completa sobre blanco */
@@ -566,27 +471,11 @@
       .form-box { padding: 30px 20px; }
     }
   </style>
+  <link rel="stylesheet" href="/comun/menu.css">
 </head>
 <body id="top">
 
-<header class="site-header">
-  <a href="#top"><img src="logo-juanjo.png" alt="Logo Juanjo Vergara"></a>
-
-<button class="menu-hamburguesa" onclick="toggleMenu()" style="border: none; cursor: pointer;">
-  <i class="fas fa-bars"></i>
-</button>
-
-  <nav id="nav-escritorio">
-    <a href="#acerca-de-mi" class="nav-button">Acerca de mí</a>
-    <a href="formacion.html" class="nav-button">Formación</a>
-    <a href="#publicaciones" class="nav-button">Publicaciones</a>
-    <a href="#videos" class="nav-button">Vídeos</a>
-    <a href="#imagenes" class="nav-button">Imágenes</a>
-    <a href="proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
-    <a href="https://juanjovergara.wixsite.com/juanjo" target="_blank" class="nav-button">Saber más</a>
-    <a href="#contacto" class="nav-cta">Contacto</a>
-  </nav>
-</header>
+<script src="/comun/menu.js"></script>
 
 <section class="hero-inicio">
   <div class="carrusel-full" id="carrusel-hero"></div>
@@ -684,27 +573,6 @@
 </section>
 
 <script>
-  function toggleMenu() {
-    const nav = document.getElementById("nav-escritorio");
-    if (nav) nav.classList.toggle('show');
-  }
-
-  // Cerrar menú automáticamente al hacer clic en una opción (móvil)
-  document.addEventListener('DOMContentLoaded', function() {
-    const navEscritorio = document.getElementById('nav-escritorio');
-    if (navEscritorio) {
-      // Buscamos todos los enlaces que van a secciones de la página dentro del menú
-      const enlaces = navEscritorio.querySelectorAll('a[href^="#"]');
-      
-      enlaces.forEach(enlace => {
-        enlace.addEventListener('click', () => {
-          // Quitamos la clase 'show' para que el menú se esconda inmediatamente
-          navEscritorio.classList.remove('show');
-        });
-      });
-    }
-  });
-
   const fotosHero = [
     'img-inicio/fanzine_1.jpg',
     'img-inicio/gnro_6.jpg',

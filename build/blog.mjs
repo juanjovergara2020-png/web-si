@@ -91,25 +91,11 @@ ${imagen ? `<meta property="og:image" content="${esc(/^https?:/.test(imagen) ? i
 <link rel="canonical" href="${WEB}${url}">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${raiz}blog/blog.css">
+<link rel="stylesheet" href="/comun/menu.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="logo" href="${raiz}index.html#top"><img src="${raiz}logo-juanjo.png" alt="Juanjo Vergara, ir al inicio"></a>
-  <button class="menu-hamburguesa" aria-label="Abrir menú" onclick="document.getElementById('nav-escritorio').classList.toggle('show')">☰</button>
-  <nav id="nav-escritorio">
-    <a href="${raiz}index.html#acerca-de-mi" class="nav-button">Acerca de mí</a>
-    <a href="${raiz}formacion.html" class="nav-button">Formación</a>
-    <a href="${raiz}publicaciones/" class="nav-button">Publicaciones</a>
-    <a href="${raiz}blog/" class="nav-button actual" aria-current="page">Blog</a>
-    <a href="${raiz}index.html#videos" class="nav-button">Vídeos</a>
-    <a href="${raiz}index.html#imagenes" class="nav-button">Imágenes</a>
-    <a href="${raiz}proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
-    <a href="${raiz}mas-de-mi.html" class="nav-button">Saber más</a>
-    <a href="${raiz}index.html#contacto" class="nav-cta">Contacto</a>
-  </nav>
-</header>
+<script src="/comun/menu.js"></script>
 ${cuerpo}
-<footer>© Juanjo Vergara</footer>
 </body>
 </html>
 `;

@@ -8,11 +8,15 @@
 <style>
   body {
     margin: 0;
-    padding: 40px;
+    padding: 0;
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     text-align: center;
     color: #333;
+  }
+
+  .gracias {
+    padding: 60px 30px 80px;
   }
 
   h1 {
@@ -28,7 +32,7 @@
     margin-bottom: 25px;
   }
 
-  a {
+  .boton-volver {
     display: inline-block;
     padding: 14px 26px;
     background: hsl(7, 98%, 58%);
@@ -39,16 +43,20 @@
     box-shadow: 5px 4px 10px rgba(0,0,0,0.15);
   }
 </style>
+<link rel="stylesheet" href="/comun/menu.css">
 </head>
 
 <body>
+<script src="/comun/menu.js"></script>
 
+<main class="gracias">
 <h1>¡Gracias por tu mensaje!</h1>
 
 <p>He recibido tu mensaje correctamente.  
 Me pondré en contacto contigo lo antes posible.</p>
 
-<a href="index.html">Volver al inicio</a>
+<a class="boton-volver" href="/">Volver al inicio</a>
+</main>
 
 </body>
 </html>

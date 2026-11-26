@@ -26,62 +26,6 @@
       line-height: 1.8; 
     }
 
-    /* --- CABECERA (Menú limpio sin óvalos ni iconos) --- */
-    .site-header { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      padding: 0 40px; 
-      background: #fff; 
-      position: sticky; 
-      top: 0; 
-      z-index: 2000; 
-      height: var(--header-height); 
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-    }
-
-    .site-header a img { 
-      height: 60px; 
-      display: block;
-    }
-    
-    nav#nav-escritorio { 
-      display: flex; 
-      gap: 20px; 
-      align-items: center; 
-      height: 100%;        
-    }
-
-    .nav-button {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: #555;
-      font-size: 13px;
-      font-weight: 500;
-      text-transform: uppercase; 
-      letter-spacing: 1.2px;      
-      transition: color 0.3s ease;
-      background: none;
-      border: none;
-      padding: 0 5px;
-    }
-    
-    .nav-button:hover {
-      color: var(--color-accent); 
-    }
-
-    /* Ocultamos los iconos antiguos */
-    .nav-button img { display: none; }
-
-    .menu-hamburguesa {
-      display: none;
-      font-size: 28px;
-      color: var(--color-accent);
-      cursor: pointer;
-      z-index: 2100;
-    }
-
     /* --- CONTENIDO --- */
     .contenedor-bio {
       max-width: 900px;
@@ -131,53 +75,56 @@
       display: block;
     }
 
+    /* --- WEB ANTERIOR (final de la página) --- */
+    .web-anterior {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 40px 40px 0;
+      border-top: 1px solid #eee;
+    }
+    .web-anterior h2 {
+      margin: 0 0 10px;
+      color: var(--color-accent);
+      font-weight: 300;
+      font-size: 26px;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    .web-anterior p { margin: 0 0 22px; font-size: 17px; color: #555; }
+    .boton-web-anterior {
+      display: inline-flex;
+      align-items: center;
+      padding: 11px 20px;
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      color: #333;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .boton-web-anterior:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
     /* --- RESPONSIVE --- */
     @media (max-width: 900px) {
-      .menu-hamburguesa { display: block; position: absolute; right: 20px; top: 25px; }
-nav#nav-escritorio {
-  display: none;
-  flex-direction: column;
-  position: fixed;        /* CAMBIA absolute POR fixed */
-  top: var(--header-height);
-  left: 0;
-  width: 100%;
-  background: #ffffff;    /* blanco sólido, sin transparencias */
-  padding: 20px;
-  gap: 12px;
-  align-items: flex-start;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 9999;
-}
-      nav#nav-escritorio.show { display: flex; }
       .foto-perfil-derecha {
         float: none;
         width: 100%;
         margin: 0 0 20px 0;
       }
       .contenedor-bio, .premios-contenedor { padding: 0 20px; }
+      .web-anterior { padding: 30px 20px 0; margin-bottom: 60px; }
     }
   </style>
+  <link rel="stylesheet" href="/comun/menu.css">
 </head>
 <body id="top">
 
-<header class="site-header">
-  <a href="index.html#top"><img src="logo-juanjo.png" alt="Logo"></a>
-  
-  <div class="menu-hamburguesa" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
-
-  <nav id="nav-escritorio">
-    <a href="index.html#acerca-de-mi" class="nav-button">Acerca de mí</a>
-    <a href="formacion.html" class="nav-button">Formación</a>
-    <a href="#publicaciones" class="nav-button">Publicaciones</a>
-    <a href="#videos" class="nav-button">Vídeos</a>
-    <a href="#imagenes" class="nav-button">Algunas imágenes</a>
-    <a href="proyectos/index-proyectos.html" class="nav-button">Proyectos</a>
-    <a href="#" class="nav-button">Saber más</a>
-    <a href="#contacto" class="nav-button">Contacto</a>
-  </nav>
-</header>
+<script src="/comun/menu.js"></script>
 
 <main class="contenedor-bio">
   <h1 class="titulo-rojo-fino">... un currículum en dos palabras</h1>
@@ -211,23 +158,12 @@ nav#nav-escritorio {
   <img src="premios.jpg" alt="Premios">
 </div>
 
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('nav-escritorio');
-    if(nav) nav.classList.toggle('show');
-  }
-// Cerrar menú al hacer clic en una opción de esta página
-  const navEscritorio = document.getElementById('nav-escritorio');
-  if (navEscritorio) {
-    const enlaces = navEscritorio.querySelectorAll('.nav-button');
-    enlaces.forEach(enlace => {
-      enlace.addEventListener('click', () => {
-        navEscritorio.classList.remove('show');
-      });
-    });
-  }
+<section class="web-anterior">
+  <h2>Mi trayectoria anterior</h2>
+  <p>Si quieres conocer más trabajos y proyectos de otros años, puedes visitar mi web anterior.</p>
+  <a href="/web-anterior.html" class="boton-web-anterior">Visitar mi web anterior →</a>
+</section>
 
-</script>
 
 </body>
 </html>
