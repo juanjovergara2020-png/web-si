@@ -52,7 +52,8 @@
   var cabecera =
     '<header class="cabecera-sitio">' +
       '<a class="logo-sitio" href="' + (enPortada ? '#top' : '/') + '">' +
-        '<img src="/logo-juanjo.png" alt="Juanjo Vergara, ir al inicio">' +
+        '<img class="logo-normal" src="/logo-juanjo.png" alt="Juanjo Vergara, ir al inicio">' +
+        '<img class="logo-blanco" src="/logo-juanjo-blanco.png" alt="" aria-hidden="true">' +
       '</a>' +
       '<button class="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-sitio">' + iconoAbrir + '</button>' +
       '<nav class="menu-sitio" id="menu-sitio" aria-label="Menú principal">' +

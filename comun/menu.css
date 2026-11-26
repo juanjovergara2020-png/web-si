@@ -160,6 +160,18 @@
   }
 }
 
+/* ── CABECERA SOBRE UN VÍDEO (móvil) ──
+   La portada añade la clase «sobre-video» cuando la sección de vídeos ocupa la pantalla:
+   la cabecera se vuelve transparente y el logo y el botón se ven en blanco sobre el vídeo. */
+.cabecera-sitio .logo-sitio .logo-blanco { display: none; }
+@media (max-width: 900px) {
+  .cabecera-sitio { transition: background .3s ease, box-shadow .3s ease; }
+  .cabecera-sitio.sobre-video:not(:has(.menu-sitio.abierto)) { background: transparent; box-shadow: none; }
+  .cabecera-sitio.sobre-video:not(:has(.menu-sitio.abierto)) .logo-sitio .logo-normal { display: none; }
+  .cabecera-sitio.sobre-video:not(:has(.menu-sitio.abierto)) .logo-sitio .logo-blanco { display: block; }
+  .cabecera-sitio.sobre-video:not(:has(.menu-sitio.abierto)) .boton-menu { background: rgba(0, 0, 0, .35); color: #fff; }
+}
+
 /* ── PIE DE PÁGINA ── */
 .pie-sitio {
   margin: 0;

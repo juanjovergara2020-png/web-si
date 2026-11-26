@@ -91,6 +91,9 @@ ${imagen ? `<meta property="og:image" content="${esc(/^https?:/.test(imagen) ? i
 <link rel="canonical" href="${WEB}${url}">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${raiz}blog/blog.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/comun/menu.css">
 </head>
 <body>
